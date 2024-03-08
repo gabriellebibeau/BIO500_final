@@ -10,11 +10,16 @@
 
 #2. Changer les types de donnees
 
-#3. Nettoyer donnees
+#4. Enlever les colonnes de NA
+source("Retirer_colonnes_GB1")
 
-#4. Ajouter IDs et code especes
+#5. Changer les types de donnees des colonnes pertinentes
 
-#5. Extraire les colonnes pour former les dataframe conceptuels ###En faire une fonction separe comme dans le cours
+#6. Nettoyer donnees
+
+#7. Ajouter IDs et code especes
+
+#8. Extraire les colonnes pour former les dataframe conceptuels ###En faire une fonction separe comme dans le cours
 df.abondance <- dataframe.fus[, c("nom_sci","abondance")] #ajouter ID espece
 df.ref <- dataframe.fus[, c("site","date_obs","heure_obs","nom_sci")] #ajouter ID site et ID espece
 df.site <- dataframe.fus[, c("largeur_riviere","profondeur_riviere","vitesse_courant","transparence_eau","temperature_eau_c")] #ajouter ID site   
