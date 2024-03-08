@@ -13,12 +13,16 @@ dataframe1 <- lect_donnees(fichier1)
 dataframe.fus <- rbind(dataframe, dataframe1)
 
 #4. Enlever les colonnes de NA
-source("Retirer_colonnes_GB1")
+source("Retirer_colonnes_GB1.R")
+Retirer_colonnes() 
 
 #5. Changer les types de donnees des colonnes pertinentes
+source("Classer_colonnes_GB2.R")
+Classer_colonnes()
 
 #6. Nettoyer donnees
-
+source("Remplacer_NA_GB3.R")
+Remplacer_NA()
 
 #7. Ajouter IDs et code especes
 
