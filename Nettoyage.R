@@ -1,4 +1,3 @@
-library(chron)
 d_test <- read.csv('benthos/site_145_141_R01_2018-09-18.csv')
 summary(d_test)
 #j'obtiens la table fusionnée brute (résultat de l'étape 2)
@@ -31,7 +30,7 @@ summary(d_test)
           else if(k == "date" | k == "date_obs"){
             donnees_fusionnees[k] <- as.Date(donnees_fusionnees[1:nrow(donnees_fusionnees), k])
           }
-          else if(k == "site" | k == "nom_sci" | k == "transparence"){
+          else if(k == "site" | k == "nom_sci" | k == "transparence" | k == "ETIQSTATION"){
             donnees_fusionnees[k] <- as.character(donnees_fusionnees[1:nrow(donnees_fusionnees), k])
           }
           else{
