@@ -1,11 +1,12 @@
-# 1. Importer les fichiers et les fusionner avec la fonction fusion_pls_fichiers
+# 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
-  # Création d'un vecteur contenant les noms de fichiers à lire
-  noms_fichiers <- c("site_86_180_R01_2018-08-09.csv", "site_99_88_R01_2019-09-12.csv", "site_100_92_R01_2021-10-01.csv")
+  #Définir les objects de la fonction
+  repertoire <- ("C:/Users/cloet/Desktop/BIO500/BIO500_final/benthos")#Spécifier le chemin vers le répertoire contenant les fichiers
+  type_fichier <- "\\.csv$" #Pour importer tous les fichiers .csv dans le répertoire
   
-  #Importer et effectuer la fonction 
+  #Importer et appliquer la fonction 
   source("fonct_fusion_pls_fichiers.r")
-  df_fusionne <- fusion_pls_fichiers(noms_fichiers)
+  df_complet <- fusion_pls_fichiers(repertoire, type_fichier)
 
 
 #2. Changer les types de donnees
