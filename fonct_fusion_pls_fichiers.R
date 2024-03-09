@@ -1,4 +1,4 @@
-### Fonction permettant d'importer et fusionner des fichiers d'un même type ###
+### Fonction permettant d'importer et fusionner des fichiers d'un même type dans un répertoire spécifique ###
 
 
 # Objets à spécifier pour utiliser la fonction
