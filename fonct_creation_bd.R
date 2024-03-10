@@ -29,9 +29,9 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
     "CREATE TABLE infos_sites (
     
       id_site             VARCHAR(15)
+      site                VARCHAR(150)
       date_obs            VARCHAR(100)
       heure_obs           DATETIME
-      site                VARCHAR(150)
       largeur_riviere     INTEGER
       profondeur_riviere  INTEGER
       vitesse_courant     INTEGER
