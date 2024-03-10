@@ -1,6 +1,11 @@
+### Fonction permettant de produire nos tables de données dans la base de données relationnelle
 
 
-#Creation de la fonction qui permettra de produire nos tables de donnees pour la base de donnees relationnelles
+# Objets à spécifier pour utiliser la fonction
+  #bd <- dbConnect(RSQLite::SQLite(), dbname) #dbname est le chemin vers l'emplacement du fichier à créer. Donc, il s'agirait de setwd() en ajoutant la fin de se dernier le nom du fichier contenant les tables de données et se terminant par .bd
+
+
+#Creation de la fonction
 creation_bd <- function(donnees, bd){
   #Le fichier donn?es dit contenir les m?mes noms de variables que notre fichier df.propre
 
@@ -10,10 +15,10 @@ creation_bd <- function(donnees, bd){
   creer_especes_par_site <- 
     "CREATE TABLE especes_par_site (
       
-      id_site VARCHAR(100)
-      nom_sci VARCHAR(100)
+      id_site   VARCHAR(100)
+      nom_sci   VARCHAR(100)
       abondance INTEGER
-      fraction REAL
+      fraction  REAL
       
       PRIMARY KEY (id_site, nom_sci)
       FOREIGN KEY (id_site) REFERENCES infos_sites(id_site)
