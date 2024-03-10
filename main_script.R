@@ -14,9 +14,9 @@
   df_propre <- Retirer_colonnes(df_complet) 
 
   
-# 3. Enlever les lignes problématiques
-  source("fonct_enlever_lignes.R")
-  df_propre <- Enlever_lignes(df_propre)
+# 3. Remplacer les données problématiques par des NA
+  source("fonct_remplacer_NA.R")
+  df_propre <- Remplacer_NA(df_propre)
   
   
 # 4. Changer les types de donnees des colonnes pertinentes ***À voir si encore pertinent
@@ -25,7 +25,11 @@
 
 
 # 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
-  source("traitement_donnees_IDs")
+  
+  #Installer de package dplyr
+  install.packages("dplyr")
+  
+  source("fonct_ids.R")
   df_ID <- traitement_donnees_IDs(df_propre)
   
 
