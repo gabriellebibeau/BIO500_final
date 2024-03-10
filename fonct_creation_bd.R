@@ -43,10 +43,9 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
       );"
     dbSendQuery(bd, creer_infos_sites)
   
-    # Injection des enregistrements dans la B
-    dbWriteTable(con, append = TRUE, name = "especes_par_site", value = , row.names = FALSE)
-    dbWriteTable(con, append = TRUE, name = "infos_sites", value = , row.names = FALSE)
+    # Injection des enregistrements dans la base
+    dbWriteTable(bd, append = TRUE, name = "especes_par_site", value = donnees, row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "infos_sites", value = donnees, row.names = FALSE)
     
-    # Lister les tables
-    dbListTables(bd)
+    return(print("Good job!"))
 }
