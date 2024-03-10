@@ -24,3 +24,15 @@
 
 # 5. Séparer les données dans des tables dans une base de données relationnelle dans SQLite
   
+  #Installer de package RSQLite permettant de se connecter au serveur SQLite
+  install.packages("RSQLite")  
+  
+  #Connection de notre fichier de donnees au serveur SQLite
+  #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
+  bd <- dbConnect(RSQLite::SQLite(), dbname) 
+  donnees <- 
+  
+  source("???.R")
+  blabla  <- creation bd()
+    
+  dbDisconnect()
