@@ -1,7 +1,7 @@
 # 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
   #Définir les objects de la fonction
-  repertoire <- ("C:/Users/cloet/Desktop/BIO500/BIO500_final/benthos")#Spécifier le chemin vers le répertoire contenant les fichiers
+  repertoire <- ("C:/Users/Gabib/Documents/GitHub/BIO500_final/benthos")#Spécifier le chemin vers le répertoire contenant les fichiers
   type_fichier <- "\\.csv$" #Pour importer tous les fichiers .csv dans le répertoire
   
   #Importer et appliquer la fonction 
@@ -9,19 +9,14 @@
   df_complet <- fusion_pls_fichiers(repertoire, type_fichier)
 
 
-#2. Changer les types de donnees
+#2. Enlever les colonnes de NA et les doublons
+  source("Retirer_colonnes_GB1.R")
+  df_propre <- Retirer_colonnes(df_complet) 
 
-#3. Enlever les colonnes de NA
-source("Retirer_colonnes_GB1.R")
-Retirer_colonnes() 
-
+  
 #4. Changer les types de donnees des colonnes pertinentes
-source("Classer_colonnes_GB2.R")
-Classer_colonnes()
-
-#5. Nettoyer donnees
-source("Remplacer_NA_GB3.R")
-Remplacer_NA()
+  source("Classer_colonnes_GB2.R")
+  Classer_colonnes()
 
 
 #6. Ajouter IDs et code especes
