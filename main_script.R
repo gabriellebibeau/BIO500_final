@@ -28,15 +28,22 @@
   
   #Installer de package dplyr
   install.packages("dplyr")
+  library(dplyr)
   
   source("fonct_ids.R")
   df_ID <- traitement_donnees_IDs(df_propre)
   
-
-# 6. Séparer les données dans des tables dans une base de données relationnelle dans SQLite
+  
+#6. Créer les dataframes qui seront injectés dans SQLite
+  df_especes_par_site <- df_ID[, c("id_site","nom_sci","abondance", "fraction")]
+  df_infos_sites <- df_ID[, c("id_site","site", "date_obs", "heure_obs","largeur_riviere","profondeur_riviere","vitesse_courant","temperature_eau_c","transparence_eau","ETIQSTATION")]
+  
+  
+# 7. Créer les tables dans la base de données relationnelle dans SQLite
   
   #Installer de package RSQLite permettant de se connecter au serveur SQLite
-  install.packages("RSQLite")  
+  install.packages("RSQLite")
+  library(RSQLite)
   
   #Connection de notre fichier de donnees au serveur SQLite
   bd <- dbConnect(RSQLite::SQLite(), dbname) #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
