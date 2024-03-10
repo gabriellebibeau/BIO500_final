@@ -1,5 +1,7 @@
 Retirer_colonnes <- function(table_fusionnee){ #La fonction a seulement besoin d'une matrice ou data frame quelconque pour fonctionner
   
+  table_fusionnee <- table_fusionnee[-1] #On enlève date car il est doublé par date_obs
+  
   nv_data <- c(1:nrow(table_fusionnee)) #Création d'une nouvelle table pour les colonnes utilisées
   
   for (j in colnames(table_fusionnee)) { #boucle lisant chacune des colonnnes
