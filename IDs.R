@@ -1,35 +1,36 @@
 #Afficher le répertoire de travail
 getwd()
 
-#Lecture du fichier CSV/table complète
-donnees <- read.csv("site_86_180_R01_2018-08-09.csv")
+#Lecture de la table complète
+donnees <- read.csv('df.fus.csv')
 donnees
 
 #Installer le package dyplyr
 install.packages("dplyr")
 library(dplyr)
 
-#Fonction (mettre la table complète en argument)#
-traitement_donnees_IDs <- function(donnees) {
+                                              #Fonction#
+
+traitement_donnees_IDs <- function(df_propre) {
   
-#Créer la colonne «ID date_site_heure»
-donnees$IDsite <- paste(donnees$date, donnees$site, donnees$heure_obs, sep = ";")
+#Créer la colonne «ID date_site_heure_station»
+df_propre$IDsite <- paste(df_propre$date, df_propre$site, df_propre$heure_obs, df_propre$ETIQSTATION, sep = ';')
 
 #Créer la colonne «ID espèce_abondance_fraction»
-donnees$IDespèce <- paste(donnees$nom_sci, donnees$abondance, donnees$fraction, sep = ";")
+df_propre$IDespèce <- paste(df_propre$nom_sci, df_propre$abondance, df_propre$fraction, sep = ';')
 
 #Attribuer des nombres uniques à chacun des IDs des deux colonnes
-donnees$IDsite_unique <- match(donnees$IDsite, unique(donnees$IDsite))
-donnees$IDespèce_unique <- match(donnees$IDespèce, unique(donnees$IDespèce))
+df_propre$IDsite_unique <- match(df_propre$IDsite, unique(df_propre$IDsite))
+df_propre$IDespèce_unique <- match(df_propre$IDespèce, unique(df_propre$IDespèce))
 
 #Mise en forme du tableau final
-donnees$IDsite <- NULL
-donnees$IDespèce <- NULL
-donnees <- donnees %>% rename('ID date_site_heure' = 'IDsite_unique')
-donnees <- donnees %>% rename('ID espèce_abondance_fraction' = 'IDespèce_unique')
-donnees <- donnees[, c(1, 2, 3, 4, 31, 5, 6, 7, 32, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)]
+df_propre$IDsite <- NULL
+df_propre$IDespèce <- NULL
+df_propre <- df_propre %>% rename('ID date_site_heure_station' = 'IDsite_unique')
+df_propre <- df_propre %>% rename('ID espèce_abondance_fraction' = 'IDespèce_unique')
+df_propre <- df_propre[, c(1, 2, 3, 4, 14, 5, 6, 15, 7, 8, 9, 10, 11, 12, 13]
 #À ajuster selon le nombre de colonnes
 }
 
 #Appel de la fonction pour donner le tableau final
-donnees_finales_IDs <- traitement_donnees_IDs(donnees)
+donnees_finales_IDs <- traitement_donnees_IDs(df_propre)
