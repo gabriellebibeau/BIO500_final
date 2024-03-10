@@ -14,13 +14,13 @@
   df_propre <- Retirer_colonnes(df_complet) 
 
   
-# 3. Changer les types de donnees des colonnes pertinentes
+# 3. Changer les types de donnees des colonnes pertinentes ***À voir si encore pertinent
   source("Classer_colonnes_GB2.R")
   Classer_colonnes()
 
 
-# 4. Ajouter IDs
+# 4. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
   
 
-#5. Séparer les données dans des dataframes conceptuels 
+# 5. Séparer les données dans des tables conceptuelles 
   
