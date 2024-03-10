@@ -29,9 +29,9 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
     "CREATE TABLE infos_sites (
     
       id_site             VARCHAR(15)
-      site                VARCHAR(150)
       date_obs            VARCHAR(100)
       heure_obs           DATETIME
+      site                VARCHAR(150)
       largeur_riviere     INTEGER
       profondeur_riviere  INTEGER
       vitesse_courant     INTEGER
@@ -43,6 +43,11 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
       );"
     dbSendQuery(bd, creer_infos_sites)
   
-  #Injection des données dans les tables SQLite
-  dbWriteTable()
+    # Injection des enregistrements dans la B
+    dbWriteTable(con, append = TRUE, name = "especes_par_site", value = , row.names = FALSE)
+    dbWriteTable(con, append = TRUE, name = "infos_sites", value = , row.names = FALSE)
+    
+    # Lister les tables
+    dbListTables(bd)
+    #> [1] "automobiles"   "proprios"
 }
