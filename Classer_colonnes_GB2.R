@@ -1,23 +1,17 @@
-Classer_colonnes <- function(donnees_fus_pert){ #La fonction ne peut prendre que des tables portant les titres de colonnes des données Benthos
+Classer_colonnes <- function(donnees_fusionnees_pertinentes){ #La fonction ne peut prendre que des tables portant les titres de colonnes des données Benthos
   #On devrait mettre dans la fonction les données brutes fusionnées, puis dont les colonnes sans entrées ont été enlevées.
-  
-  donnees_fusionnees_pertinentes <- donnees_fus_pert #copie des données
   
   vec_col <- colnames(donnees_fusionnees_pertinentes) #Création d'un vecteur comportant le nom des colonnes
     for (k in vec_col) { #Boucle passant par chacune des colonnes
       if(k == "heure_obs"){ #Si c'est la colonne du temps
         donnees_fusionnees_pertinentes[k] <- as.difftime(donnees_fusionnees_pertinentes[1:nrow(donnees_fusionnees_pertinentes), k], format = "%Hh%M.%S")
+      } #mettre les valeurs de cette colonne en difftime (h)
       
-        for (l in 1:nrow(donnees_fusionnees_pertinentes)) {
-          if(is.na(donnees_fusionnees_pertinentes[l,k]) == TRUE){
-            donnees_fusionnees_pertinentes[l,k] <- as.difftime(donnees_fus_pert[l,k])
-          }
-          
-        } #fin de la boucle l
-        
-        } #mettre les valeurs de cette colonne en difftime (h)
+        else if(k == "date" | k == "date_obs"){ #Si c'est une des deux colonnes de date
+          donnees_fusionnees_pertinentes[k] <- as.Date(donnees_fusionnees_pertinentes[1:nrow(donnees_fusionnees_pertinentes), k])
+        }#mettre les valeurs de cette colonne en format Date
       
-        else if(k == "site" | k == "date_obs" | k == "nom_sci" | k == "transparence_eau" | k == "ETIQSTATION"){ #Si colonne en mots
+        else if(k == "site" | k == "nom_sci" | k == "transparence_eau" | k == "ETIQSTATION"){ #Si colonne en mots
           donnees_fusionnees_pertinentes[k] <- as.character(donnees_fusionnees_pertinentes[1:nrow(donnees_fusionnees_pertinentes), k])
         } #mettre les valeurs de cette colonne en character
       
@@ -25,10 +19,9 @@ Classer_colonnes <- function(donnees_fus_pert){ #La fonction ne peut prendre que
           donnees_fusionnees_pertinentes[k] <- as.numeric(donnees_fusionnees_pertinentes[1:nrow(donnees_fusionnees_pertinentes), k])
           } #mettre en numeric
       
-  } #fin de la boucle k
+  } #fin de la boucle
   
   print(summary(donnees_fusionnees_pertinentes)) #aperçu des classes
   return(donnees_fusionnees_pertinentes) #Retour de la table initiale dont les valeurs sont maintenant bien classées
   
 } #fin fonction
-
