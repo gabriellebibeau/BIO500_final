@@ -20,7 +20,8 @@
 
 
 # 4. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
-  
+  source('traitement_donnees_IDs')
+  df_ID <- traitement_donnees_IDs(df_complet)
 
 # 5. Séparer les données dans des tables conceptuelles 
   
