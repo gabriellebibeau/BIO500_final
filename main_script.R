@@ -22,5 +22,5 @@
 # 4. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
   
 
-# 5. Séparer les données dans des tables conceptuelles 
+# 5. Séparer les données dans des tables dans une base de données relationnelle dans SQLite
   
