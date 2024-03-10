@@ -24,13 +24,9 @@
   df_propre <- Classer_colonnes(df_propre)
 
 
-
-# 4. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
+# 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
   source('traitement_donnees_IDs')
   df_ID <- traitement_donnees_IDs(df_complet)
-
-# 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
-  
 
 
 # 6. Séparer les données dans des tables dans une base de données relationnelle dans SQLite
