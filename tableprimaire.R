@@ -1,15 +1,10 @@
-setwd("C:/Users/manue/OneDrive - USherbrooke/Documents/Documents/Notes Université/Session 6 - UdeS/Méthodes computationnelles/GitHub/BIO500/BIO500_final")
+
 
 #Creation de la fonction qui permettra de produire nos tables de donnees pour la base de donnees relationnelles
-creation_bd <- function(donnees, dbname){
-  #Le fichier données dit contenir les mêmes noms de variables que notre fichier df.propre
-  #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut créer. Donc, il s'agirait de setwd() en ajoutant à la fin de se dernier le nom du fichier contenant les tables de données et se terminant par .bd
-  install.packages("RSQLite") #Le package RSQLite permet de se connecter au serveur SQLite et de l'utiliser a partir de R afin de pouvoir creer une base de donnees relationnelles
-  
-  #Connection de notre fichier de donnees au serveur SQLite
-  bd <- dbConnect(RSQLite::SQLite(), dbname) 
-  
-  #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires à l'analyse, liées entre elles par l'ID_site (clé étrangère).
+creation_bd <- function(donnees, bd){
+  #Le fichier donn?es dit contenir les m?mes noms de variables que notre fichier df.propre
+
+  #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re).
   
   #table des abondances d'espece
   creer_especes_par_site <- 
@@ -47,7 +42,6 @@ creation_bd <- function(donnees, dbname){
   #Injection des donnees dans les tables SQLite
   dbWriteTable()
   
-  dbDisconnect()
 }
 
 
@@ -70,7 +64,7 @@ library(RSQLite)
 #Connection de notre fichier de donnees au serveur SQLite
 bd <- dbConnect(RSQLite::SQLite(), dbname="./tables_donnees.db")
 
-#Creer deux tables contenant dans l'ensemble toutes les donnees necessaires à l'analyse, liées entre elles par l'ID_site (clé étrangère)
+#Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re)
 
 #table des abondances d'espece
 creer_especes_par_site <- 
