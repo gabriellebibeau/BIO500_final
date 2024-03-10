@@ -25,6 +25,8 @@
 
 
 # 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
+  source("traitement_donnees_IDs")
+  df_ID <- traitement_donnees_IDs(df_propre)
   
 
 # 6. Séparer les données dans des tables dans une base de données relationnelle dans SQLite
