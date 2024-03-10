@@ -1,6 +1,3 @@
-#Installer le package dyplyr
-install.packages("dplyr")
-library(dplyr)
 
                                  #Fonction «traitement_donnees_IDs»#
 
