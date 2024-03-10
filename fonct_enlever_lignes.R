@@ -15,6 +15,4 @@ Enlever_lignes <- function(donnees) {
   return(donnees)
 }#fin fonction
 
-###################################
 
-c <- Enlever_lignes(b)
