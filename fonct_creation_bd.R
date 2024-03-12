@@ -10,22 +10,8 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
   #Note: Le dataframe de données doit contenir les mêmes noms de variables que notre fichier df.propre
 
   #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re).
-    #Table des abondances d'espèces
-    creer_especes_par_site <- 
-    "CREATE TABLE especes_par_site (
-     
-      id_site   VARCHAR(100),
-      nom_sci   VARCHAR(100),
-      abondance INTEGER,
-      fraction  REAL,
-        
-      PRIMARY KEY (id_site, nom_sci),
-      FOREIGN KEY (id_site) REFERENCES infos_sites(id_site)
-      );"
-    dbSendQuery(bd, creer_especes_par_site)
-  
-    #Table des sites
-    creer_infos_sites <-
+  #Table des sites
+  creer_infos_sites <-
     "CREATE TABLE infos_sites (
     
       id_site             VARCHAR(15),
@@ -41,8 +27,24 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
       
       PRIMARY KEY (id_site)
       );"
-    dbSendQuery(bd, creer_infos_sites)
   
+  dbSendQuery(bd, creer_infos_sites)
+  
+   #Table des abondances d'espèces
+    creer_especes_par_site <- 
+    "CREATE TABLE especes_par_site (
+     
+      id_site   VARCHAR(100),
+      nom_sci   VARCHAR(100),
+      abondance INTEGER,
+      fraction  REAL,
+        
+      PRIMARY KEY (id_site, nom_sci),
+      FOREIGN KEY (id_site) REFERENCES infos_sites(id_site)
+      );"
+    dbSendQuery(bd, creer_especes_par_site)
+  
+
     # Injection des enregistrements dans la base
     dbWriteTable(bd, append = TRUE, name = "especes_par_site", value = donnees, row.names = FALSE)
     dbWriteTable(bd, append = TRUE, name = "infos_sites", value = donnees, row.names = FALSE)
