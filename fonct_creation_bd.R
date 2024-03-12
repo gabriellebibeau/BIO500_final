@@ -6,7 +6,7 @@
   
 
 #Creation de la fonction
-creation_bd <- function(df.especes, df.site, bd){ #donnees doit être remplacer par le dataframe contenant les données à utiliser
+creation_bd <- function(df.site, df.especes, bd){ #df.site/especes doivent être remplacer par les dataframes contenant les données à utiliser
   #Note: Le dataframe de données doit contenir les mêmes noms de colonnes que la base de données créée
 
   #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re).
