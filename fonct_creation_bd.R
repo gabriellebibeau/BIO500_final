@@ -14,12 +14,12 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
     creer_especes_par_site <- 
     "CREATE TABLE especes_par_site (
      
-      id_site   VARCHAR(100)
-      nom_sci   VARCHAR(100)
-      abondance INTEGER
-      fraction  REAL
+      id_site   VARCHAR(100),
+      nom_sci   VARCHAR(100),
+      abondance INTEGER,
+      fraction  REAL,
         
-      PRIMARY KEY (id_site, nom_sci)
+      PRIMARY KEY (id_site, nom_sci),
       FOREIGN KEY (id_site) REFERENCES infos_sites(id_site)
       );"
     dbSendQuery(bd, creer_especes_par_site)
@@ -28,16 +28,16 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
     creer_infos_sites <-
     "CREATE TABLE infos_sites (
     
-      id_site             VARCHAR(15)
-      site                VARCHAR(150)
-      date_obs            VARCHAR(100)
-      heure_obs           DATETIME
-      largeur_riviere     INTEGER
-      profondeur_riviere  INTEGER
-      vitesse_courant     INTEGER
-      temperature_eau_c   REAL
-      transparence_eau    VARCHAR(15)
-      ETIQSTATION         VARCHAR(20)
+      id_site             VARCHAR(15),
+      site                VARCHAR(150),
+      date_obs            VARCHAR(100),
+      heure_obs           DATETIME,
+      largeur_riviere     INTEGER,
+      profondeur_riviere  INTEGER,
+      vitesse_courant     INTEGER,
+      temperature_eau_c   REAL,
+      transparence_eau    VARCHAR(15),
+      ETIQSTATION         VARCHAR(20),
       
       PRIMARY KEY (id_site)
       );"
