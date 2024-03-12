@@ -49,6 +49,6 @@
   bd <- dbConnect(RSQLite::SQLite(), dbname) #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
   
   source("fonct_creation_bd.R")
-  tables_relation  <- creation_bd(df_propre, bd)
+  tables_relation  <- creation_bd(df_df_especes_par_site, df_infos_sites, bd)
   
   dbDisconnect()
