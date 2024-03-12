@@ -6,8 +6,8 @@
   
 
 #Creation de la fonction
-creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataframe contenant les données à utiliser
-  #Note: Le dataframe de données doit contenir les mêmes noms de variables que notre fichier df.propre
+creation_bd <- function(df.especes, df.site, bd){ #donnees doit être remplacer par le dataframe contenant les données à utiliser
+  #Note: Le dataframe de données doit contenir les mêmes noms de colonnes que la base de données créée
 
   #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re).
     #Table des abondances d'espèces
@@ -44,8 +44,8 @@ creation_bd <- function(donnees, bd){ #donnees doit être remplacer par le dataf
     dbSendQuery(bd, creer_infos_sites)
   
     # Injection des enregistrements dans la base
-    dbWriteTable(bd, append = TRUE, name = "especes_par_site", value = donnees, row.names = FALSE)
-    dbWriteTable(bd, append = TRUE, name = "infos_sites", value = donnees, row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "especes_par_site", value = df.especes, row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "infos_sites", value = df.site, row.names = FALSE)
     
     return(print("Good job!"))
 }
