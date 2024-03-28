@@ -2,15 +2,14 @@
 
   #Définir les objects de la fonction
   repertoire <- ("C:/Users/cloet/Desktop/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
-  type_fichier <- "\\.csv$" #Pour importer tous les fichiers .csv dans le répertoire
   
   #Importer et appliquer la fonction 
-  source("fonct_fusion_pls_fichiers.r")
-  df_complet <- fusion_pls_fichiers(repertoire, type_fichier)
+  source("fonct_fus_fichiers.r")
+  df_complet <- fus_fichiers(repertoire, type_fichier)
 
 
 # 2. Enlever les colonnes de NA et autres non-pertinentes
-  source("fonct_retirer_colonnes_GB1.R")
+  source("fonct_retirer_colonnes.R")
   df_propre <- Retirer_colonnes(df_complet) 
 
   
@@ -20,7 +19,7 @@
   
   
 # 4. Changer les types de donnees des colonnes pertinentes ***À voir si encore pertinent
-  source("fonct_classer_colonnes_GB2.R")
+  source("fonct_classer_colonnes.R")
   df_propre <- Classer_colonnes(df_propre)
 
 
