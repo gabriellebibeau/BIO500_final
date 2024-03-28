@@ -15,12 +15,12 @@
   
 # 3. Remplacer les données problématiques par des NA
   source("fonct_remplacer_NA.R")
-  df_propre <- Remplacer_NA(df_propre)
+  df_propre <- remplacer_NA(df_propre)
   
   
 # 4. Changer les types de donnees des colonnes pertinentes ***À voir si encore pertinent
-  source("fonct_classer_colonnes.R")
-  df_propre <- Classer_colonnes(df_propre)
+  source("fonct_classer_col.R")
+  df_propre <- classer_col(df_propre)
 
 
 # 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
@@ -29,8 +29,8 @@
   install.packages("dplyr") #si nécessaire
   library(dplyr) ########rajouter dans la fonction?????
   
-  source("fonct_ids.R")
-  df_ID <- traitement_donnees_IDs(df_propre)
+  source("fonct_ajout_IDs.R")
+  df_ID <- ajout_IDs(df_propre)
   
   
 #6. Créer les dataframes qui seront injectés dans SQLite

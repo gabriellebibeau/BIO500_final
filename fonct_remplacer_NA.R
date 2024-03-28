@@ -1,4 +1,4 @@
-Remplacer_NA <- function(donnees) {
+remplacer_NA <- function(donnees) {
   
   for (m in 1:nrow(donnees)) {
     for (n in 4:ncol(donnees)) {

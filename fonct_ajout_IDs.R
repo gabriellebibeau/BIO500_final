@@ -1,7 +1,7 @@
 
                                  #Fonction «traitement_donnees_IDs»#
 
-traitement_donnees_IDs <- function(df_pp) {
+ajout_IDs <- function(df_pp) {
   
 #Créer la colonne «ID date_site_heure_station»
 df_pp$ID_date_site_heure_station <- paste(df_pp$date, df_pp$site, df_pp$heure_obs, df_pp$ETIQSTATION, sep = ';')
