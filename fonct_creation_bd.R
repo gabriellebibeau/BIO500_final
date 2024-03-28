@@ -6,20 +6,20 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
   library(RSQLite)
   
   #Connection de notre fichier de donnees au serveur SQLite
-  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
+  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
   
   #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re).
   #Table des sites
   creer_infos_sites <-
     "CREATE TABLE sites (
     
-      id_site             VARCHAR(15),
+      id_site             INTEGER(15),
       site                VARCHAR(150),
       date_obs            VARCHAR(100),
-      heure_obs           DATETIME,
-      largeur_riviere     INTEGER,
-      profondeur_riviere  INTEGER,
-      vitesse_courant     INTEGER,
+      heure_obs           VARCHAR(30),
+      largeur_riviere     REAL,
+      profondeur_riviere  REAL,
+      vitesse_courant     REAL,
       temperature_eau_c   REAL,
       transparence_eau    VARCHAR(15),
       ETIQSTATION         VARCHAR(20),
@@ -43,6 +43,9 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
       );"
     dbSendQuery(bd, creer_especes_par_site)
 
+    dbDisconnect(bd)
+    bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd")
+    
     # Injection des enregistrements dans la base
     dbWriteTable(bd, append = TRUE, name = "especes", value = df.especes, row.names = FALSE)
     dbWriteTable(bd, append = TRUE, name = "sites", value = df.site, row.names = FALSE)
@@ -51,3 +54,4 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
     
     return(print("Good job!"))
 }
+
