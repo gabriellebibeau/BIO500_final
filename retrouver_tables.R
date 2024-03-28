@@ -1,7 +1,7 @@
 # 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
 #Définir les objects de la fonction
-repertoire <- ("C:/Users/manue/OneDrive - USherbrooke/Documents/Documents/Notes Université/Session 6 - UdeS/Méthodes computationnelles/GitHub/BIO500/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
+repertoire <- ("C:/Users/cloet/Desktop/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
 
 #Importer et appliquer la fonction 
 source("fonct_fus_fichiers.R")
@@ -51,3 +51,4 @@ dbSendQuery(bd, "DROP TABLE sites")
 dbSendQuery(bd, "DROP TABLE especes")
 
 dbGetQuery(bd, 'SELECT * FROM sites LIMIT 4')
+dbGetQuery(bd, 'SELECT * FROM especes LIMIT 4')
