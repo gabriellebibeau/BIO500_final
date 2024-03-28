@@ -6,7 +6,7 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
   library(RSQLite)
   
   #Connection de notre fichier de donnees au serveur SQLite
-  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
+  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
   
   #Creer deux tables contenant dans l'ensemble toutes les donnees necessaires ? l'analyse, li?es entre elles par l'ID_site (cl? ?trang?re).
   #Table des sites
@@ -43,11 +43,13 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
       );"
     dbSendQuery(bd, creer_especes_par_site)
 
-    # Injection des enregistrements dans la base
-    dbWriteTable(bd, append = TRUE, name = "especes", value = df.especes, row.names = FALSE)
-    dbWriteTable(bd, append = TRUE, name = "sites", value = df.site, row.names = FALSE)
-    
     dbDisconnect(bd)
+    
+    # Injection des enregistrements dans la base
+    dbWriteTable(bd, append = TRUE, name = "especes", value = `"df.especes", row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "sites", value = "df.site", row.names = FALSE)
+    
     
     return(print("Good job!"))
 }
+
