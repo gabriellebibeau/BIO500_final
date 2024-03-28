@@ -1,7 +1,7 @@
 # 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
   #Définir les objects de la fonction
-  repertoire <- ("C:/Users/cloet/Desktop/BIO500/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
+  repertoire <- ("C:/Users/cloet/Desktop/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
   type_fichier <- "\\.csv$" #Pour importer tous les fichiers .csv dans le répertoire
   
   #Importer et appliquer la fonction 
@@ -26,7 +26,7 @@
 
 # 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
   
-  #Installer de package dplyr
+  #Installer de package dplyr si ce n'est pas déjà fait
   install.packages("dplyr") #si nécessaire
   library(dplyr) ########rajouter dans la fonction?????
   
@@ -46,4 +46,7 @@
 
   source("fonct_creation_bd.R")
   tables_relation  <- creation_bd(df_especes, df_sites)
+  
+  
+  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
   
