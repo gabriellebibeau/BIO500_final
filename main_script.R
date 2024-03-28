@@ -10,7 +10,7 @@
 
 # 2. Enlever les colonnes de NA et autres non-pertinentes
   source("fonct_retirer_col.R")
-  df_propre <- Retirer_colonnes(df_complet) 
+  df_propre <- retirer_col(df_complet) 
 
   
 # 3. Remplacer les données problématiques par des NA
