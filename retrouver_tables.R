@@ -4,7 +4,7 @@
 repertoire <- ("C:/Users/manue/OneDrive - USherbrooke/Documents/Documents/Notes Université/Session 6 - UdeS/Méthodes computationnelles/GitHub/BIO500/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
 
 #Importer et appliquer la fonction 
-source("fonct_fus_fichiers.r")
+source("fonct_fus_fichiers.R")
 df_complet <- fus_fichiers(repertoire)
 
 

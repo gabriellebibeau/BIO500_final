@@ -13,13 +13,13 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
   creer_infos_sites <-
     "CREATE TABLE sites (
     
-      id_site             VARCHAR(15),
+      id_site             INTEGER(15),
       site                VARCHAR(150),
       date_obs            VARCHAR(100),
-      heure_obs           DATETIME,
-      largeur_riviere     INTEGER,
-      profondeur_riviere  INTEGER,
-      vitesse_courant     INTEGER,
+      heure_obs           VARCHAR(30),
+      largeur_riviere     REAL,
+      profondeur_riviere  REAL,
+      vitesse_courant     REAL,
       temperature_eau_c   REAL,
       transparence_eau    VARCHAR(15),
       ETIQSTATION         VARCHAR(20),
@@ -44,11 +44,13 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
     dbSendQuery(bd, creer_especes_par_site)
 
     dbDisconnect(bd)
+    bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd")
     
     # Injection des enregistrements dans la base
-    dbWriteTable(bd, append = TRUE, name = "especes", value = `"df.especes", row.names = FALSE)
-    dbWriteTable(bd, append = TRUE, name = "sites", value = "df.site", row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "especes", value = df.especes, row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "sites", value = df.site, row.names = FALSE)
     
+    dbDisconnect(bd)
     
     return(print("Good job!"))
 }
