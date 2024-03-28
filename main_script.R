@@ -5,7 +5,7 @@
   
   #Importer et appliquer la fonction 
   source("fonct_fus_fichiers.r")
-  df_complet <- fus_fichiers(repertoire, type_fichier)
+  df_complet <- fus_fichiers(repertoire)
 
 
 # 2. Enlever les colonnes de NA et autres non-pertinentes
