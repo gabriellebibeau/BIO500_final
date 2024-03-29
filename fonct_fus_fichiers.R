@@ -1,4 +1,4 @@
-### Fonction permettant d'importer et fusionner des fichiers de tyep .csv dans un répertoire spécifique ###
+### Fonction permettant d'importer et fusionner des fichiers de type .csv dans un répertoire spécifique ###
 
 
 # Objets à spécifier pour utiliser la fonction

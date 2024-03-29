@@ -1,6 +1,6 @@
 ### Fonction permettant de produire nos tables de données dans la base de données relationnelle
 
-creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être remplacer par les dataframes contenant les données à utiliser
+creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être remplacer par les dataframes contenant les données à utiliser
   #Note: Le dataframe de données doit contenir les mêmes noms de colonnes que la base de données créée
 
   library(RSQLite)
@@ -47,8 +47,8 @@ creation_bd <- function(df.site, df.especes){ #df.site/especes doivent être rem
     bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd")
     
     # Injection des enregistrements dans la base
-    dbWriteTable(bd, append = TRUE, name = "especes", value = df.especes, row.names = FALSE)
-    dbWriteTable(bd, append = TRUE, name = "sites", value = df.site, row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "especes", value = df_especes, row.names = FALSE)
+    dbWriteTable(bd, append = TRUE, name = "sites", value = df_sites, row.names = FALSE)
     
     dbDisconnect(bd)
     
