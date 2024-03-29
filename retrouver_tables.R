@@ -26,7 +26,7 @@ df_propre <- classer_col(df_propre)
 # 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
 
 #Installer de package dplyr si ce n'est pas déjà fait
-install.packages("dplyr") #si nécessaire
+#install.packages("dplyr") #si nécessaire
 library(dplyr) ########rajouter dans la fonction?????
 
 source("fonct_ajout_IDs.R")
@@ -41,7 +41,7 @@ df_sites<- df_ID[, c("id_site","site", "date_obs", "heure_obs","largeur_riviere"
 # 7. Créer les tables dans la base de données relationnelle dans SQLite
 
 #Installer de package RSQLite permettant de se connecter au serveur SQLite
-install.packages("RSQLite") #si nécessaire
+#install.packages("RSQLite") #si nécessaire
 
 source("fonct_creation_bd.R")
 tables_relation  <- creation_bd(df_sites, df_especes)
