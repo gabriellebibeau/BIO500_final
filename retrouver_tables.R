@@ -15,7 +15,7 @@ df_propre <- retirer_col(df_complet)
 
 # 3. Remplacer les données problématiques par des NA
 source("fonct_remplacer_NA.R")
-df_propre <- remplacer_NA(df_propre)
+df_classer <- remplacer_NA(df_propre)
 
 
 # 4. Changer les types de donnees des colonnes pertinentes ***À voir si encore pertinent
