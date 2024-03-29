@@ -2,32 +2,61 @@
 
 # Dépendances
 library(targets)
+tar_option_set(packages = c("RSQLite", "dplyr","rmarkdown"))
 
 # Scripts R
-source(".R")
-source(".R")
+source("fonct_fus_fichiers.r")
+source("fonct_retirer_col.R")
+source("fonct_remplacer_NA.R")
+source("fonct_classer_col.R")
+source("fonct_ajout_IDs.R")
+source("fonct_creation_bd.R")
 
 # Pipeline
 list(
-  # Une target pour le chemin du fichier de donnée permet de suivre les 
-  # changements dans le fichier
+  #Emplacement des fichiers
   tar_target(
-    name = repertoire, # Cible
-    command = "C:/Users/cloet/Desktop/BIO500_final/benthos", # Emplacement du fichier
+    name = repertoire,
+    command = "C:/Users/cloet/Desktop/BIO500_final/benthos",
   ),
-  # La target suivante a "path" pour dépendance et importe les données. Sans
-  # la séparation de ces deux étapes, la dépendance serait brisée et une
-  # modification des données n'entrainerait pas l'exécution du pipeline
+  #Fusionner les fichiers
   tar_target(
-    name = data, # Cible pour l'objet de données
-    command = read.table(path) # Lecture des données
-  ),   
+    name = df_complet,
+    command = fus_fichiers(repertoire)
+  ),  
+  #Enlever les colonnes non-pertinentes
   tar_target(
-    resultat_modele, # Cible pour le modèle 
-    mon_modele(data) # Exécution de l'analyse
+    name = df_propre,
+    command = retirer_col(df_complet)
+  ), 
+  #Remplacer les donnees problematiques par des NAs
+  tar_target(
+    name = df_propre,
+    command = remplacer_NA(df_propre)
+  ), 
+  #Changer classes des colonnes
+  tar_target(
+    name = df_classe,
+    command = classer_col(df_propre)
   ),
+  #Ajouter les IDs uniques
   tar_target(
-    figure, # Cible pour l'exécution de la figure
-    ma_figure(data, resultat_modele) # Réalisation de la figure
-  )
+    name = df_IDs,
+    command = ajout_IDs(df_classe)
+  ),
+  #Creation du dataframe especes a injecter dans SQLite
+  tar_target(
+    name = df_especes,
+    command = df_ID[, c("id_site","nom_sci","abondance", "fraction")]
+  ),
+  #Creation du dataframe sites a injecter dans SQLite
+  tar_target(
+    name = df_sites,
+    command = df_ID[, c("id_site","site", "date_obs", "heure_obs","largeur_riviere","profondeur_riviere","vitesse_courant","temperature_eau_c","transparence_eau","ETIQSTATION")]
+  ),
+  #
+  tar_target(
+    name = tables_SQL,
+    command = creation_bd(df_especes, df_sites)
+  ),
 )

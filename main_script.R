@@ -11,26 +11,24 @@
 # 2. Enlever les colonnes de NA et autres non-pertinentes
   source("fonct_retirer_col.R")
   df_propre <- retirer_col(df_complet) 
-
-  
-# 3. Remplacer les données problématiques par des NA
+# 3. Remplacer les données problématiques par des NAs
   source("fonct_remplacer_NA.R")
   df_propre <- remplacer_NA(df_propre)
   
+  #Mettre les etapes 2 et 3 ensemble si possible
   
-# 4. Changer les types de donnees des colonnes pertinentes ***À voir si encore pertinent
+  
+# 4. Changer les types de donnees des colonnes
   source("fonct_classer_col.R")
-  df_propre <- classer_col(df_propre)
+  df_classe <- classer_col(df_propre)
 
 
 # 5. Créer des identifiants uniques pour chaque station par site pour une date et heure précises
   
-  #Installer de package dplyr si ce n'est pas déjà fait
-  install.packages("dplyr") #si nécessaire
-  library(dplyr) ########rajouter dans la fonction?????
+  #Installer de package dplyr
   
   source("fonct_ajout_IDs.R")
-  df_ID <- ajout_IDs(df_propre)
+  df_IDs <- ajout_IDs(df_classe)
   
   
 #6. Créer les dataframes qui seront injectés dans SQLite
@@ -41,11 +39,7 @@
 # 7. Créer les tables dans la base de données relationnelle dans SQLite
   
   #Installer de package RSQLite permettant de se connecter au serveur SQLite
-  install.packages("RSQLite") #si nécessaire
 
   source("fonct_creation_bd.R")
-  tables_relation  <- creation_bd(df_especes, df_sites)
-  
-  
-  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
+  tables_SQL  <- creation_bd(df_especes, df_sites)
   
