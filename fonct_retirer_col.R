@@ -26,7 +26,7 @@ for (h in 1:ncol(nv_table)) {
   for (i in 1:ncol(nv_table)) {
     for (j in 1:nrow(table_fusionnee)) {
       
-      if(nv_table[j,h] = nv_table[j,i]) {
+      if(nv_table[j,h] == nv_table[j,i]) {
         
       }
       
