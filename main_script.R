@@ -16,9 +16,6 @@
   source("fonct_remplacer_NA.R")
   df_propre <- remplacer_NA(df_propre)
   
-  #Mettre les etapes 2 et 3 ensemble si possible
-  
-  
 # 4. Changer les types de donnees des colonnes
   source("fonct_classer_col.R")
   df_classe <- classer_col(df_propre)
