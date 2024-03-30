@@ -15,7 +15,7 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
     
       id_site             INTEGER(15),
       site                VARCHAR(150),
-      date_obs            VARCHAR(100),
+      date                VARCHAR(100),
       heure_obs           VARCHAR(30),
       largeur_riviere     REAL,
       profondeur_riviere  REAL,

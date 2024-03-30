@@ -17,7 +17,7 @@ classer_col <- function(donnees_fus_pert){ #La fonction ne peut prendre que des 
         
         } #mettre les valeurs de cette colonne en difftime (h)
       
-        else if(k == "site" | k == "date_obs" | k == "nom_sci" | k == "transparence_eau" | k == "ETIQSTATION"){ #Si colonne en mots
+        else if(k == "site" | k == "date" | k == "nom_sci" | k == "transparence_eau" | k == "ETIQSTATION"){ #Si colonne en mots
           donnees_fusionnees_pertinentes[k] <- as.character(donnees_fusionnees_pertinentes[1:nrow(donnees_fusionnees_pertinentes), k])
         } #mettre les valeurs de cette colonne en character
       
@@ -27,7 +27,7 @@ classer_col <- function(donnees_fus_pert){ #La fonction ne peut prendre que des 
       
   } #fin de la boucle k
   
-  print(summary(donnees_fusionnees_pertinentes)) #aper?u des classes
+  print(summary(donnees_fusionnees_pertinentes)) #apercu des classes
   return(donnees_fusionnees_pertinentes) #Retour de la table initiale dont les valeurs sont maintenant bien class?es
   
 } #fin fonction
