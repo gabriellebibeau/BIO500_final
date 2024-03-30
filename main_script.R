@@ -11,6 +11,7 @@
 # 2. Enlever les colonnes de NA et autres non-pertinentes
   source("fonct_retirer_col.R")
   df_propre <- retirer_col(df_complet) 
+  
 # 3. Remplacer les données problématiques par des NAs
   source("fonct_remplacer_NA.R")
   df_propre <- remplacer_NA(df_propre)
