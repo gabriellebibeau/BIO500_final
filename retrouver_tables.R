@@ -23,7 +23,7 @@ df_IDs <- ajout_IDs(df_classe)
 
 # 5. Créer les dataframes qui seront injectés dans SQLite
 df_especes <- df_IDs[, c("id_site","nom_sci","abondance", "fraction")]
-df_sites<- df_IDs[, c("id_site","site", "date", "heure_obs","largeur_riviere","profondeur_riviere","vitesse_courant","temperature_eau_c","transparence_eau","ETIQSTATION")]
+df_sites <- unique(df_IDs[, c("id_site","site", "date", "heure_obs","largeur_riviere","profondeur_riviere","vitesse_courant","temperature_eau_c","transparence_eau","ETIQSTATION")])
 
 # 6. Créer les tables dans la base de données relationnelle dans SQLite
 
