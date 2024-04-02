@@ -13,16 +13,16 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
   creer_infos_sites <-
     "CREATE TABLE sites (
     
-      id_site             INTEGER(15),
-      site                VARCHAR(150),
-      date                VARCHAR(100),
-      heure_obs           VARCHAR(30),
-      largeur_riviere     REAL,
-      profondeur_riviere  REAL,
-      vitesse_courant     REAL,
-      temperature_eau_c   REAL,
-      transparence_eau    VARCHAR(15),
-      ETIQSTATION         VARCHAR(20),
+      id_site             INTEGER(15) CHECK(id_site >= 1), 
+      site                VARCHAR(150) NOT NULL,
+      date                VARCHAR(100) NOT NULL,
+      heure_obs           VARCHAR(30) NOT NULL,
+      largeur_riviere     REAL CHECK(largeur_riviere > 0),
+      profondeur_riviere  REAL CHECK(profondeur_riviere > 0),
+      vitesse_courant     REAL CHECK(vitesse_courant > 0),
+      temperature_eau_c   REAL CHECK(temperature_eau_c > 0),
+      transparence_eau    VARCHAR(15) NOT NULL,
+      ETIQSTATION         VARCHAR(20) NOT NULL,
       
       PRIMARY KEY (id_site)
       );"
@@ -33,10 +33,10 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
     creer_especes_par_site <- 
     "CREATE TABLE especes (
      
-      id_site   VARCHAR(100),
-      nom_sci   VARCHAR(100),
-      abondance INTEGER,
-      fraction  REAL,
+      id_site   INTEGER(15) CHECK(id_site >= 1),
+      nom_sci   VARCHAR(100) NOT NULL,
+      abondance INTEGER CHECK(abondance > 0),
+      fraction  REAL CHECK(fraction > 0),
         
       PRIMARY KEY (id_site, nom_sci),
       FOREIGN KEY (id_site) REFERENCES infos_sites(id_site)
