@@ -22,7 +22,7 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
       vitesse_courant     REAL CHECK(vitesse_courant > 0),
       temperature_eau_c   REAL CHECK(temperature_eau_c > 0),
       transparence_eau    VARCHAR(15) NOT NULL,
-      ETIQSTATION         VARCHAR(20) NOT NULL,
+      ETIQSTATION         VARCHAR(20),
       
       PRIMARY KEY (id_site)
       );"
@@ -35,7 +35,7 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
      
       id_site   INTEGER(15) CHECK(id_site >= 1),
       nom_sci   VARCHAR(100) NOT NULL,
-      abondance INTEGER CHECK(abondance > 0),
+      abondance INTEGER CHECK(abondance >= 0),
       fraction  REAL CHECK(fraction > 0),
         
       PRIMARY KEY (id_site, nom_sci),
