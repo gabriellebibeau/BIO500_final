@@ -1,7 +1,7 @@
 # 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
   #Définir les objects de la fonction
-  repertoire <- ("~/GitHub/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
+  repertoire <- ("C:/Users/cloet/Desktop/BIO500_final/benthos") #Spécifier le chemin vers le dossier contenant les fichiers
   
   #Importer et appliquer la fonction 
   source("fonct_fus_fichiers.r")
@@ -29,5 +29,5 @@
   
   #Installer de package RSQLite permettant de se connecter au serveur SQLite si besoin
   source("fonct_creation_bd.R")
-  tables_SQL  <- creation_bd(df_especes, df_sites)
+  tables_SQL  <- creation_bd(df_sites, df_especes)
   
