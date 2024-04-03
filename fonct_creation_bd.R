@@ -49,7 +49,7 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
     # Injection des enregistrements dans la base
     dbWriteTable(bd, append = TRUE, name = "especes", value = df_especes, row.names = FALSE)
     dbWriteTable(bd, append = TRUE, name = "sites", value = df_sites, row.names = FALSE)
-    
+
     dbDisconnect(bd)
     
     return(print("Good job!"))
