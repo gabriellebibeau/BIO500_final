@@ -6,8 +6,7 @@ tar_option_set(packages = c("RSQLite", "dplyr","rmarkdown"))
 
 # Scripts R
 source("fonct_fus_fichiers.r")
-source("fonct_retirer_col.R")
-source("fonct_remplacer_NA.R")
+source("fonct_nettoyage.R")
 source("fonct_classer_col.R")
 source("fonct_ajout_IDs.R")
 source("fonct_creation_bd.R")
@@ -23,17 +22,12 @@ list(
   tar_target(
     name = df_complet,
     command = fus_fichiers(repertoire)
-  ),  
+  ),
   #Enlever les colonnes non-pertinentes
   tar_target(
     name = df_propre,
-    command = retirer_col(df_complet)
-  ), 
-  #Remplacer les donnees problematiques par des NAs
-  tar_target(
-    name = df_propre,
-    command = remplacer_NA(df_propre)
-  ), 
+    command = nettoyage(df_complet)
+  ),
   #Changer classes des colonnes
   tar_target(
     name = df_classe,
@@ -44,19 +38,19 @@ list(
     name = df_IDs,
     command = ajout_IDs(df_classe)
   ),
-  #Creation du dataframe especes a injecter dans SQLite
-  tar_target(
-    name = df_especes,
-    command = df_ID[, c("id_site","nom_sci","abondance", "fraction")]
-  ),
   #Creation du dataframe sites a injecter dans SQLite
   tar_target(
     name = df_sites,
-    command = df_ID[, c("id_site","site", "date_obs", "heure_obs","largeur_riviere","profondeur_riviere","vitesse_courant","temperature_eau_c","transparence_eau","ETIQSTATION")]
+    command = unique(df_IDs[, c("id_site","site", "date", "heure_obs","largeur_riviere","profondeur_riviere","vitesse_courant","temperature_eau_c","transparence_eau","ETIQSTATION")])
   ),
-  #
+  #Creation du dataframe especes a injecter dans SQLite
+  tar_target(
+    name = df_especes,
+    command = df_IDs[, c("id_site","nom_sci","abondance", "fraction")]
+  ),
+  #Creation des tables SQLite et injection des donnees
   tar_target(
     name = tables_SQL,
-    command = creation_bd(df_especes, df_sites)
-  ),
+    command = creation_bd(df_sites, df_especes)
+  )
 )
