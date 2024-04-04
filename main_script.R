@@ -30,4 +30,8 @@
   #Installer de package RSQLite permettant de se connecter au serveur SQLite si besoin
   source("fonct_creation_bd.R")
   tables_SQL  <- creation_bd(df_sites, df_especes)
+
+# 7. Extraire les données des tables SQLite
+  
+  source()
   
