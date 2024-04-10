@@ -52,6 +52,6 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
 
     dbDisconnect(bd)
     
-    return(print("Good job!"))
+    return(print("bd_benthos.bd"))
 }
 
