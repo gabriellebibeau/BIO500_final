@@ -1,10 +1,10 @@
-abondance_tot <- function(nom_fichier_SQL){
+abondance_ajust <- function(nom_fichier_SQL){
 
   #Établir la connection
   bd <- dbConnect(RSQLite::SQLite(), dbname = nom_fichier_SQL)
 
   # Requête SQL pour créer une nouvelle colonne dans la table
-  req_add_col <- "ALTER TABLE especes ADD COLUMN abondance_tot INTEGER"
+  req_add_col <- "ALTER TABLE especes ADD COLUMN abondance_ajust INTEGER"
 
   # Exécuter la requête SQL pour créer la nouvelle colonne
   dbExecute(bd, req_add_col)

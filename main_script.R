@@ -31,14 +31,12 @@
   source("fonct_creation_bd.R")
   fichier_SQL  <- creation_bd(df_sites, df_especes)
 
-# 7. Calculs d'abondances corrigees
+# 7. Calculs d'abondances ajustees
   
-  source("fonct_abondance_tot.R")
-  fichier_SQL <- abondance_tot(fichier_SQL)
+  source("fonct_abondance_ajust.R")
+  fichier_SQL <- abondance_ajust(fichier_SQL)
   
 #8. Extraire les données des tables SQLite
   
-  bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd")
-  donnnes_sites <- dbGetQuery(bd, 'SELECT id_site, largeur_riviere, profondeur_riviere, vitesse_courant, temperature_eau_c, transparence_eau FROM sites')
-  donnnes_sp <- dbGetQuery(bd, 'SELECT * FROM especes')
+  
   
