@@ -1,7 +1,7 @@
 abondance_tot <- function(nom_fichier_SQL){
 
   #Établir la connection
-  bd <- dbConnect(RSQLite::SQLite(), dbname = fichier_SQL)
+  bd <- dbConnect(RSQLite::SQLite(), dbname = nom_fichier_SQL)
 
   # Requête SQL pour créer une nouvelle colonne dans la table
   req_add_col <- "ALTER TABLE especes ADD COLUMN abondance_tot INTEGER"
@@ -17,4 +17,6 @@ abondance_tot <- function(nom_fichier_SQL){
 
   #Fermer la connection
   dbDisconnect(bd)
+  
+  return("genial")
 }

@@ -10,6 +10,7 @@ source("fonct_nettoyage.R")
 source("fonct_classer_col.R")
 source("fonct_ajout_IDs.R")
 source("fonct_creation_bd.R")
+source("fonct_abondance_tot.R")
 
 # Pipeline
 list(
@@ -50,7 +51,7 @@ list(
   ),
   #Creation des tables SQLite et injection des donnees
   tar_target(
-    name = tables_SQL,
+    name = fichier_SQL,
     command = creation_bd(df_sites, df_especes)
   )
 )
