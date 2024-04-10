@@ -10,7 +10,7 @@ abondance_ajust <- function(nom_fichier_SQL){
   dbExecute(bd, req_add_col)
 
   # Requête SQL pour mettre à jour la nouvelle colonne avec les résultats de l'opération mathématique
-  req_abondance <- "UPDATE especes SET abondance_tot = ROUND(abondance/ fraction)"
+  req_abondance <- "UPDATE especes SET abondance_ajust = ROUND(abondance/ fraction)"
 
   # Exécuter la requête SQL pour mettre à jour la nouvelle colonne
   dbExecute(bd, req_abondance)
@@ -18,5 +18,5 @@ abondance_ajust <- function(nom_fichier_SQL){
   #Fermer la connection
   dbDisconnect(bd)
   
-  return("genial")
+  return(nom_fichier_SQL)
 }
