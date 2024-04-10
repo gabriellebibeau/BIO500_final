@@ -38,5 +38,19 @@
   
 #8. Extraire les données des tables SQLite
   
+  bd <- dbConnect(RSQLite::SQLite(), dbname = fichier_SQL)
+  # Requête SQL pour créer une nouvelle colonne dans la table
+  req_add_col <- "ALTER TABLE sites 
+                  ADD COLUMN richesse INTEGER"
   
+  # Exécuter la requête SQL pour créer la nouvelle colonne
+  dbExecute(bd, req_add_col)
+  
+  # Requête SQL pour mettre à jour la nouvelle colonne avec les résultats
+  req_richesse <- "UPDATE sites 
+                   SET richesse = (SELECT COUNT(nom_sci) 
+                    FROM especes 
+                    WHERE especes.id_site = sites.id_site)"
+  
+  donnees_sites <- dbGetQuery(bd, 'SELECT * FROM sites') 
   
