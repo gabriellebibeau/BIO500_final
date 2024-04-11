@@ -10,7 +10,8 @@ source("fonct_nettoyage.R")
 source("fonct_classer_col.R")
 source("fonct_ajout_IDs.R")
 source("fonct_creation_bd.R")
-source("fonct_abondance_tot.R")
+source("fonct_extract_rich.R")
+source("fonct_extract_abond.R")
 
 # Pipeline
 list(
@@ -53,5 +54,15 @@ list(
   tar_target(
     name = fichier_SQL,
     command = creation_bd(df_sites, df_especes)
+  ),
+  #Extraction des donnees de richesse de SQLite
+  tar_target(
+    name = table_richesse,
+    command = extract_rich(fichier_SQL)
+  ),
+  #Extraction des donnees d'abondance de SQLite
+  tar_target(
+    name = table_abondance,
+    command = extract_abond(fichier_SQL)
   )
 )

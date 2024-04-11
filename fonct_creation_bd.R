@@ -50,6 +50,10 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
     dbWriteTable(bd, append = TRUE, name = "especes", value = df_especes, row.names = FALSE)
     dbWriteTable(bd, append = TRUE, name = "sites", value = df_sites, row.names = FALSE)
 
+    # Ajouter une colonne dans especes et y calculer l'abondance ajustée
+    dbExecute(bd, "ALTER TABLE especes ADD COLUMN abondance_ajust")
+    dbExecute(bd, "UPDATE especes SET abondance_ajust = ROUND(abondance/ fraction)")
+    
     dbDisconnect(bd)
     
     return("bd_benthos.bd")

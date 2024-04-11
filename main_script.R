@@ -30,27 +30,12 @@
   #Installer de package RSQLite permettant de se connecter au serveur SQLite si besoin
   source("fonct_creation_bd.R")
   fichier_SQL  <- creation_bd(df_sites, df_especes)
-
-# 7. Calculs d'abondances ajustees
   
-  source("fonct_abondance_ajust.R")
-  fichier_SQL <- abondance_ajust(fichier_SQL)
+#7. Extraire les données des tables SQLite
   
-#8. Extraire les données des tables SQLite
+  source("fonct_extract_rich.R")
+  table_richesse <- extract_rich(fichier_SQL)
   
-  bd <- dbConnect(RSQLite::SQLite(), dbname = fichier_SQL)
-  # Requête SQL pour créer une nouvelle colonne dans la table
-  req_add_col <- "ALTER TABLE sites 
-                  ADD COLUMN richesse INTEGER"
-  
-  # Exécuter la requête SQL pour créer la nouvelle colonne
-  dbExecute(bd, req_add_col)
-  
-  # Requête SQL pour mettre à jour la nouvelle colonne avec les résultats
-  req_richesse <- "UPDATE sites 
-                   SET richesse = (SELECT COUNT(nom_sci) 
-                    FROM especes 
-                    WHERE especes.id_site = sites.id_site)"
-  
-  donnees_sites <- dbGetQuery(bd, 'SELECT * FROM sites') 
+  source("fonct_extract_abond.R")
+  table_abondance <- extract_abond(fichier_SQL)
   
