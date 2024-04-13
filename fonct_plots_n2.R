@@ -50,7 +50,7 @@ bd <- dbConnect(RSQLite::SQLite(), dbname = fichier_SQL)
 donnees_sites <- dbGetQuery(bd, 'SELECT * FROM sites') 
 
 #plot largeur
-plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,30))
+plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,80))
 reg_largeur <-lm(table_richesse$richesse~table_richesse$largeur_riviere)
 summary(reg_largeur)
 abline(reg_largeur)
@@ -61,7 +61,7 @@ reg_profondeur <-lm(table_richesse$richesse~table_richesse$profondeur_riviere)
 summary(reg_profondeur)
 abline(reg_profondeur)
 
-#plot vreg_profondeur#plot vitesse
+#plot vitesse
 plot_vitesse <- plot(table_richesse$vitesse_courant,table_richesse$richesse, xlim = c(0,9))
 reg_vitesse <- lm(table_richesse$richesse~table_richesse$vitesse_courant)
 summary(reg_vitesse)
