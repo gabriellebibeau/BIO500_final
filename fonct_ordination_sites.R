@@ -1,3 +1,16 @@
+#Librairies et données ----
+library(segregation)
+
+table_abondance
+
+#Table de dissimilarité ----
+
+
+
+
+
+
+
 #### exemple Sarah ####
 # Prepare for ordination for all treatments
 comm.phylo16S.mat <- vegdist(phylo16S.mat , "bray")
