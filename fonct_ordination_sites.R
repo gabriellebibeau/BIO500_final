@@ -1,5 +1,4 @@
 #Librairies 
-library(segregation)
 library(vegan)
 library(dplyr)
 library(ggplot2)
@@ -64,14 +63,16 @@ ordination_sites <- function(tbl_abd){ #on rentre la table d'abondance
   
     pts_site <- cbind(pts, site)
   
-  #4.4 Visualisation avec ggplot2
+  #4.4 Visualisation avec ggplot2 et enregistrement
     nom_axe <- c(glue('PCo 1 ({prct_axe1}%)'), glue('PCo 2 ({prct_axe2}%)')) #Noms des axes récurssifs
   
+    png('ordination_sites.png')
     ordination <- ggplot(data = pts_site, aes(x = pcoa1, y = pcoa2, color = site)) + #le graphique
       geom_point() +
       stat_ellipse() +
       labs(x = nom_axe[1], y = nom_axe[2]) +
       theme_minimal()
+    dev.off()
     
     return(ordination)
   
