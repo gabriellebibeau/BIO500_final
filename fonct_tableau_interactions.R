@@ -48,5 +48,7 @@ tableau_interaction <- function(tbl_rich){
   png('tableau_interaction.png')
   gridExtra::grid.table(resultats)
   dev.off()
+  
+  return(resultats)
 
 } #fin fonction
