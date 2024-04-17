@@ -39,3 +39,22 @@
   source("fonct_extract_abond.R")
   table_abondance <- extract_abond(fichier_SQL)
   
+#8. Régressions
+  
+  source()
+  
+#9. Boxplot
+  
+  source()
+  
+#10. Interactions
+  
+  source("fonct_tab_inter.R")
+  interactions <- tab_inter(table_richesse)
+  
+#11. Ordination
+  
+  source("fonct_ordination_sites.R")
+  ordination <- ordination_sites(table_abondance)
+ 
+  tbl_abd <- table_abondance  

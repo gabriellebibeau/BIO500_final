@@ -1,5 +1,5 @@
 ##########  Début fonction  ###########
-tableau_interaction <- function(tbl_rich){
+tab_inter <- function(tbl_rich){
   
   #1. # Créer toutes les combinaisons d'interactions possibles
     interactions <- c("largeur_riviere", "profondeur_riviere", "vitesse_courant", "temperature_eau_c", "transparence_eau")
