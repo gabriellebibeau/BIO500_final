@@ -47,7 +47,7 @@
 #9. Boxplot
   
   source("fonct_boxplot_rich.R")
-  graphs_richesse <- boxplot_rich(table_richesse)
+  boxplot_trans <- boxplot_rich(table_richesse)
   
 #10. Interactions
   
