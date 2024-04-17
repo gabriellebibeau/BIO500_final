@@ -41,11 +41,13 @@
   
 #8. Régressions
   
-  source()
+  source("fonct_graph_rich.R")
+  graphs_richesse <- graph_rich(table_richesse)
   
 #9. Boxplot
   
-  source()
+  source("fonct_boxplot_rich.R")
+  graphs_richesse <- boxplot_rich(table_richesse)
   
 #10. Interactions
   

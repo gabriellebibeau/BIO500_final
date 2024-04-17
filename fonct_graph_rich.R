@@ -1,4 +1,4 @@
-graph_rich_larg <- function(tbl_rich) {
+graph_rich <- function(tbl_rich) {
 
   #plot largeur
   plot(tbl_rich$largeur_riviere,tbl_rich$richesse, xlim = c(0,80))
@@ -24,4 +24,5 @@ graph_rich_larg <- function(tbl_rich) {
   summary(reg_temperature) #p<0,05! p=0,0295
   abline(reg_temperature)
   
+  return()
 }
