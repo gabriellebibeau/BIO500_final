@@ -72,115 +72,21 @@ information please see the [PNAS Information for
 Authors](http://www.pnas.org/site/authors/format.xhtml).
 
 
-Author Affiliations {#author-affiliations .unnumbered}
--------------------
-
-Include department, institution, and complete address, with the
-ZIP/postal code, for each author. Use lower case letters to match
-authors with institutions, as shown in the example. Authors with an
-ORCID ID may supply this information at submission.
-
-Submitting Manuscripts {#submitting-manuscripts .unnumbered}
-----------------------
-
-All authors must submit their articles at
-[PNAScentral](http://www.pnascentral.org/cgi-bin/main.plex). If you are
-using Overleaf to write your article, you can use the "Submit to PNAS"
-option in the top bar of the editor window.
-
-Format {#format .unnumbered}
-------
-
-Many authors find it useful to organize their manuscripts with the
-following order of sections; Title, Author Affiliation, Keywords,
-Abstract, Significance Statement, Results, Discussion, Materials and
-methods, Acknowledgments, and References. Other orders and headings are
-permitted.
-
-Manuscript Length {#manuscript-length .unnumbered}
------------------
-
-PNAS generally uses a two-column format averaging 67 characters,
-including spaces, per line. The maximum length of a Direct Submission
-research article is six pages and a PNAS PLUS research article is ten
-pages including all text, spaces, and the number of characters displaced
-by figures, tables, and equations. When submitting tables, figures,
-and/or equations in addition to text, keep the text for your manuscript
-under 39,000 characters (including spaces) for Direct Submissions and
-72,000 characters (including spaces) for PNAS PLUS.
-
-References {#references .unnumbered}
-----------
-
-References should be cited in numerical order as they appear in text;
-this will be done automatically via bibtex, e.g. @belkin2002using and
-@berard1994embedding [@coifman2005geometric]. All references, including
-for the SI, should be included in the main manuscript file. References
-appearing in both sections should not be duplicated. SI references
-included in tables should be included with the main reference section.
-
-Data Archival {#data-archival .unnumbered}
--------------
-
-PNAS must be able to archive the data essential to a published article.
-Where such archiving is not possible, deposition of data in public
-databases, such as GenBank, ArrayExpress, Protein Data Bank, Unidata,
-and others outlined in the Information for Authors, is acceptable.
-
-
-
-Language-Editing Services {#language-editing-services .unnumbered}
--------------------------
-
-Prior to submission, authors who believe their manuscripts would benefit
-from professional editing are encouraged to use a language-editing
-service (see list at www.pnas.org/site/authors/language-editing.xhtml).
-PNAS does not take responsibility for or endorse these services, and
-their use has no bearing on acceptance of a manuscript for publication.
-
 ![Placeholder image of a frog with a long example caption to show
 justification setting.<span data-label="fig:frog"></span>](frog.png)
 
 
 
-<!-- pandoc writes all tables using longtable, which fails in 2-column mode
+Emma (introduction, pas de titre pcq c'est ce qui est recommandé dans le template de l'article et je trouvais que ça ferait professionnel)
 
-  Species                    CBS     CV     G3
-  ----------------------- ------ ------ ------
-  1\. Acetaldehyde           0.0    0.0    0.0
-  2\. Vinyl alcohol          9.1    9.6   13.5
-  3\. Hydroxyethylidene     50.8   51.2   54.0
-
-  : Comparison of the fitted potential energy surfaces and ab initio
-  benchmark electronic energy calculations
-
--->
-
-
-
-### Introduction {#introduction .unnumbered}
-
-Emma
 
 ### Méthodes {#méthodes .unnumbered}
 
-  Acquisition des données
-  
-  Manipulation des données
-      Joint
-      Nettoyage
-          classe données
-          Enlever colonnes que des NAs et identiques (Doublons)
-          Remplacer données problématiques par NA 
-      IDs
-      DB
-  
-  Analyses
-      lm
-      boxplot
-      test de t
-      interactions
-      ordination (visualisation)
+Le jeu de données utilisé contient une partie des inventaires du benthos faits par le ministère de l'Environnement, de la Lutte contre les Changements Climatiques, de la Faune et des Parcs (MELCCFP) dans le cadre du suivi de la qualité de l'eau des rivières du Québec. Ces données, extraites du site Biodiversité Québec, recensent les espèces de macroinvertébrés benthiques vivant dans les rivières du Québec. L'échantillonnage a été réalisé en suivant le protocole d’échantillonnage des macroinvertébrés benthiques d’eau douce du Québec. 
+
+Avant l'analyse des données, celles-ci sont passées à travers plusieurs étapes de manipulations. Premièrement, les données, extraites sous forme d'une multitude de fichiers .csv, ont été manipulées pour être jointes en une seule matrice. Deuxièmement, la matrice a été nettoyée, notamment en assignant une classe pertinentes aux valeurs de la matrice (ex: les dates en format 'Date' et non en format 'Character'), en enlevant les colonnes importunes (ne contenant que des NAs ou étant des doublons) et en remplaçant les données problématiques par des NAs (valeurs de -99 pour des variables ayant des valeurs réalistiquement positives). Troisièmement, des numéros d'identification (IDs) ont été assignés pour toutes les combinaisons de dates, de sites et d'heures. Finalement, une base de données .db a été créer pour entreposer deux tables : une tables contenant des informations reliées aux IDs de sites et une table contenant des informations sur les abondances des taxons de benthos identifiés.
+
+Différentes analyses ont été performées sur les données pour répondre aux questions posées par ce rapport. D'abord, des régressions linéaires simples (p=0.05) de la richesse spécifique ont été produites en fonction des variables suivantes : la largeur de la rivière, la profoncdeur de la rivière, la vitesse du courant et la température de l'eau. Ensuite, un diagramme à moustache validé par un test de t avec un interval de confiance de 0.95 a été réalisé pour la richesse spécifique en fonction de la transparence de l'eau. Puis, une vérification d'intéractions pour toutes les combinaisons possibles de variables abiotiques a été conduite avec des régressions linéaires simples (p=0.05). La majorité des variables (toutes sauf la température de l'eau) n'ont pas une distribution normale. Toutefois, suite à des tests de régressions linéaires généralisées avec différentes familles (par exemple la poisson), nous en sommes venues à la conclusion que les erreurs avaient une plus belle distribution (normale) lorsque nous utilisions la régression linéaire simple. Finalement, une ordination de type PCoA (Principal Coordinates Analysis) de la composition en abondance des communatés benthiques a été produite seulement avec les échantillons pris plus d'une fois (à des moments différents) sur un même site. Aucun tests statistiques n'a été réalisé pour confirmer la significativité des observations permises par l'outil de visualisation qu'est l'ordination. 
 
 
 ### Résultats {#résultats .unnumbered}
@@ -197,9 +103,9 @@ Ensuite, nous avons vérifié s'il y avait des interactions entre les variables.
 
 ![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.png)
 
-Finalement, la diversité beta a été observé à l'aide d'une ordination de type PCoA (Principal Coordinates Analysis). À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre-eux, les sites sont parfois très proches en terme de composition même s'ils sont différents géographiquement, d'autres fois complètement différents. 
+Finalement, la diversité beta a été observé à l'aide d'une ordination PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre-eux, les sites sont parfois très proches en terme de composition même s'ils sont différents géographiquement, d'autres fois complètement différents. 
 
-![PCoA (Principal Coordinates Analysis) des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
+![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
 
 ### Discussion {#discussion .unnumbered}
 
