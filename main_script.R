@@ -1,3 +1,12 @@
+#Librairies 
+library(vegan)
+library(ggplot2)
+library(glue)
+library(RSQLite)
+library(dplyr)
+library(rmarkdown)
+library(tarchetypes)
+
 # 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
   #Définir les objects de la fonction

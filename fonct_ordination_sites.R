@@ -1,9 +1,3 @@
-#Librairies 
-library(vegan)
-library(dplyr)
-library(ggplot2)
-library(glue)
-
 ################# FONCTION ORDINATION EFFET SITES ######################
 
 ordination_sites <- function(tbl_abd){ #on rentre la table d'abondance

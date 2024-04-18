@@ -2,8 +2,6 @@
 
 creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être remplacer par les dataframes contenant les données à utiliser
   #Note: Le dataframe de données doit contenir les mêmes noms de colonnes que la base de données créée
-
-  library(RSQLite)
   
   #Connection de notre fichier de donnees au serveur SQLite
   bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd") #dbname correspond au chemin que l'ordinateur doit prendre pour retrouver le fichier que l'on veut cr?er. Donc, il s'agirait de setwd() en ajoutant ? la fin de se dernier le nom du fichier contenant les tables de donn?es et se terminant par .bd
