@@ -1,5 +1,6 @@
 graph_rich <- function(tbl_rich) {
-
+  
+  png('regression_richesse.png') #ouverture du png
   par(mfrow = c(2, 2)) 
   
   #plot largeur
@@ -26,6 +27,7 @@ graph_rich <- function(tbl_rich) {
   summary(reg_temperature) #p<0,05! p=0,0295
   abline(reg_temperature)
   
+  dev.off() #fermeture et enregistrement de l'image
   
   return() #retourner une image 
 }

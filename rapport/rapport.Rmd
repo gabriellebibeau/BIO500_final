@@ -141,47 +141,6 @@ their use has no bearing on acceptance of a manuscript for publication.
 ![Placeholder image of a frog with a long example caption to show
 justification setting.<span data-label="fig:frog"></span>](frog.png)
 
-Digital Figures {#sec:figures .unnumbered}
----------------
-
-Only TIFF, EPS, and high-resolution PDF for Mac or PC are allowed for
-figures that will appear in the main text, and images must be final
-size. Authors may submit U3D or PRC files for 3D images; these must be
-accompanied by 2D representations in TIFF, EPS, or high-resolution PDF
-format. Color images must be in RGB (red, green, blue) mode. Include the
-font files for any text.
-
-Figures and Tables should be labelled and referenced in the standard way
-using the `\label{}` and `\ref{}` commands.
-
-Figure \[fig:frog\] shows an example of how to insert a column-wide
-figure. To insert a figure wider than one column, please use the
-`\begin{figure*}...\end{figure*}` environment. Figures wider than one
-column should be sized to 11.4 cm or 17.8 cm wide.
-
-Single column equations {#single-column-equations .unnumbered}
------------------------
-
-Authors may use 1- or 2-column equations in their article, according to
-their preference.
-
-To allow an equation to span both columns, options are to use the
-`\begin{figure*}...\end{figure*}` environment mentioned above for
-figures, or to use the `\begin{widetext}...\end{widetext}` environment
-as shown in equation \[eqn:example\] below.
-
-Please note that this option may run into problems with floats and
-footnotes, as mentioned in the [cuted package
-documentation](http://texdoc.net/pkg/cuted). In the case of problems
-with footnotes, it may be possible to correct the situation using
-commands `\footnotemark` and `\footnotetext`.
-
-$$\begin{aligned}
-(x+y)^3&=(x+y)(x+y)^2\\
-       &=(x+y)(x^2+2xy+y^2) \label{eqn:example} \\
-       &=x^3+3x^2y+3xy^3+x^3. 
-\end{aligned}$$
-
 
 
 <!-- pandoc writes all tables using longtable, which fails in 2-column mode
@@ -197,21 +156,7 @@ $$\begin{aligned}
 
 -->
 
-Supporting Information (SI) {#supporting-information-si .unnumbered}
----------------------------
 
-
-The main text of the paper must stand on its own without the SI. Refer
-to SI in the manuscript at an appropriate point in the text. Number
-supporting figures and tables starting with S1, S2, etc. Authors are
-limited to no more than 10 SI files, not including movie files. Authors
-who place detailed materials and methods in SI must provide sufficient
-detail in the main text methods to enable a reader to follow the logic
-of the procedures and results and also must reference the online
-methods. If a paper is fundamentally a study of a new method or
-technique, then the methods must be described completely in the main
-text. Because PNAS edits SI and composes it into a single PDF, authors
-must provide the following file formats only.
 
 ### Introduction {#introduction .unnumbered}
 
@@ -219,11 +164,33 @@ Emma
 
 ### Méthodes {#méthodes .unnumbered}
 
-Gab
+  Acquisition des données
+  
+  Manipulation des données
+      Joint
+      Nettoyage
+          classe données
+          Enlever colonnes que des NAs et identiques (Doublons)
+          Remplacer données problématiques par NA 
+      IDs
+      DB
+  
+  Analyses
+      lm
+      boxplot
+      test de t
+      interactions
+      ordination (visualisation)
+
 
 ### Résultats {#résultats .unnumbered}
+![PCoA (Principal Coordinates Analysis) des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](regression_richesse.png)
 
-Gab
+![PCoA (Principal Coordinates Analysis) des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
+
+![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.png)
+
+![PCoA (Principal Coordinates Analysis) des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
 
 ### Discussion {#discussion .unnumbered}
 
