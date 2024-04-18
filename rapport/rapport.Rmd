@@ -3,35 +3,28 @@ title: Template for preparing your research report submission to PNAS using RMar
 
 # Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 author:
-  - name: Alice Anonymous
-    affiliation: a,1,2
-  - name: Bob Security
-    affiliation: a,b
+  - name: Gabrielle Bibeau
+    affiliation: a,1
+  - name: Laura Glaude
+    affiliation: a
+  - name: Emmanuelle Langlois
+    affiliation: a
+  - name: Cloé Tanguay
+    affiliation: a
+    
 address:
   - code: a
-    address: Some Institute of Technology, Department, Street, City, State, Zip
-  - code: b
-    address: Another University Department, Street, City, State, Zip
+    address: Université de Sherbrooke, Département de Biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, Canada
 
 corresponding_author:
-  code: 2
-  text: "To whom correspondence should be addressed. E-mail: bob@email.com"
+  code: 1
+  text: "À qui la correspondance devrait être addressée. Courriel: bibg1101@usherbrooke.ca"
 
 # For footer text
 lead_author_surname: Anonymous
 
-## Remove this if not required    
-equal_authors:
-  code: 1
-  text: "A.O.(Author One) and A.T. (Author Two) contributed equally to this work (remove if not applicable)."
-
-
 author_contributions: |
   Please provide details of author contributions here.
-
-## Remove this if not required
-conflict_of_interest: |
-  Please declare any conflict of interest here.
 
 abstract: |
   Please provide an abstract of no more than 250 words in a single paragraph. Abstracts should explain to the general reader the major contributions of the article. References in the abstract must be cited in full within the abstract itself and cited in the text.
@@ -41,14 +34,12 @@ significance: |
   Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the Significance Statement is to explain the relevance of the work in broad context to a broad readership. The Significance Statement appears in the paper itself and is required for all research papers.
 
 acknowledgements: |
-  Please include your acknowledgments here, set in a single paragraph. Please do not include any acknowledgments in the Supporting Information, or anywhere else in the manuscript.
+  Merci à Victor Cameron et Benjamin Mercier sans qui ce projet n'aurait été possible.
 
 keywords:
-  - one
-  - two
-  - optional
-  - optional
-  - optional
+  - Benthos
+  - Biodiversité
+
 
 ## must be one of: pnasresearcharticle (usual two-column layout), pnasmathematics (one column layout), or pnasinvited (invited submissions only)
 pnas_type: pnasresearcharticle
@@ -222,57 +213,21 @@ technique, then the methods must be described completely in the main
 text. Because PNAS edits SI and composes it into a single PDF, authors
 must provide the following file formats only.
 
-### SI Text {#si-text .unnumbered}
+### Introduction {#introduction .unnumbered}
 
-Supply Word, RTF, or LaTeX files (LaTeX files must be accompanied by a
-PDF with the same file name for visual reference).
+Emma
 
-### SI Figures {#si-figures .unnumbered}
+### Méthodes {#méthodes .unnumbered}
 
-Provide a brief legend for each supporting figure after the supporting
-text. Provide figure images in TIFF, EPS, high-resolution PDF, JPEG, or
-GIF format; figures may not be embedded in manuscript text. When saving
-TIFF files, use only LZW compression; do not use JPEG compression. Do
-not save figure numbers, legends, or author names as part of the image.
-Composite figures must be pre-assembled.
+Gab
 
-### 3D Figures {#d-figures .unnumbered}
+### Résultats {#résultats .unnumbered}
 
-Supply a composable U3D or PRC file so that it may be edited and
-composed. Authors may submit a PDF file but please note it will be
-published in raw format and will not be edited or composed.
+Gab
 
-### SI Tables {#si-tables .unnumbered}
+### Discussion {#discussion .unnumbered}
 
-Supply Word, RTF, or LaTeX files (LaTeX files must be accompanied by a
-PDF with the same file name for visual reference); include only one
-table per file. Do not use tabs or spaces to separate columns in Word
-tables.
-
-### SI Datasets {#si-datasets .unnumbered}
-
-Supply Excel (.xls), RTF, or PDF files. This file type will be published
-in raw format and will not be edited or composed.
-
-### SI Movies {#si-movies .unnumbered}
-
-Supply Audio Video Interleave (avi), Quicktime (mov), Windows Media
-(wmv), animated GIF (gif), or MPEG files and submit a brief legend for
-each movie in a Word or RTF file. All movies should be submitted at the
-desired reproduction size and length. Movies should be no more than 10
-MB in size.
-
-### Still images {#still-images .unnumbered}
-
-Authors must provide a still image from each video file. Supply TIFF,
-EPS, high-resolution PDF, JPEG, or GIF files.
-
-### Appendices {#appendices .unnumbered}
-
-PNAS prefers that authors submit individual source files to ensure
-readability. If this is not possible, supply a single PDF file that
-contains all of the SI associated with the paper. This file type will be
-published in raw format and will not be edited or composed.
+Laura et Cloé
 
 
 <!-- Leave these lines as they are at the end of your .Rmd file to ensure placement of methods & acknowledgements sections before the references-->
