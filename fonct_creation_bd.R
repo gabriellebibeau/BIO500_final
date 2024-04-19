@@ -40,8 +40,8 @@ creation_bd <- function(df_sites, df_especes){ #df.site/especes doivent être re
       FOREIGN KEY (id_site) REFERENCES infos_sites(id_site)
       );"
     dbSendQuery(bd, creer_especes_par_site)
-
     dbDisconnect(bd)
+    
     bd <- dbConnect(RSQLite::SQLite(), dbname = "bd_benthos.bd")
     
     # Injection des enregistrements dans la base

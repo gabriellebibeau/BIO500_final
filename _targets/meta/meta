@@ -1,10 +1,10 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 abondance_tot|function|4eb0b8d4dd18729c|||||||||||||||
 ajout_IDs|function|0bcc05e35f645f6b|||||||||||||||
-boxplot_rich|function|50db904c51ee1875|||||||||||||||
-boxplot_trans|stem|6fca8361e01b11f1|072274bf3834576b|684513d8c5aa293e|72299052||t19830.653565735s|ac5678394de34e6f|277|rds|local|vector|||0.03||
+boxplot_rich|function|aa904ac4fc532dd5|||||||||||||||
+boxplot_trans|stem|6fca8361e01b11f1|072274bf3834576b|2c0e176e4b7d9d0c|72299052||t19832.6025867294s|ac5678394de34e6f|277|rds|local|vector|||0.03||
 classer_col|function|577894518e9d9e3f|||||||||||||||
-creation_bd|function|f1c98429fc09bd6c|||||||||||||||
+creation_bd|function|3ce8b9da2698c76c|||||||||||||||
 df_classe|stem|283d1ff97a7c190b|3b5e5bd30334f29b|6a991053b7517cdc|1953629488||t19823.7428914276s|a050c68ae7bfc39d|9535|rds|local|vector|||0.25||
 df_complet|stem|a298f9211906373d|a70b7a667afa6d08|6576faaee612d524|-1546520906||t19816.9267889557s|b024ce6320606816|10398|rds|local|vector|||0.78||
 df_especes|stem|83fada1a2572453e|670b1c60aadfa3ca|5a16d41c47e8c05c|1916376725||t19816.9305368124s|a3564f1527418577|6456|rds|local|vector|||0||
@@ -13,16 +13,16 @@ df_propre|stem|1865313a4a1b4872|42a111c32e845492|f5065b9cb5299a04|2070995684||t1
 df_sites|stem|e65440305a9b2468|21bdb2c3f49ead4a|5a16d41c47e8c05c|2070607737||t19816.9310460567s|4a652b55858f305c|1936|rds|local|vector|||0.02||
 extract_abond|function|c916cffce6445783|||||||||||||||
 extract_rich|function|fe7dd39429d9f470|||||||||||||||
-fichier_SQL|stem|374f9662f8232f57|fc0d6619e7de2b32|160579943c823082|1460155912||t19824.9134144668s|9dfd31c781e2fd5b|66|rds|local|vector|||0.11|Closing open result set, pending rows. There are 1 result in use. The connection will be released when they are closed|
+fichier_SQL|stem|374f9662f8232f57|fc0d6619e7de2b32|0f8f861a217b1ce3|1460155912||t19832.6025814505s|9dfd31c781e2fd5b|66|rds|local|vector|||0.11|Closing open result set, pending rows. There are 1 result in use. The connection will be released when they are closed|
 fichier_SQL_corr|stem||c3d750a76f6693de|d2969266cde448d6|-160616464||t19823.7578296918s||0|rds|local|vector|||0.06|Closing open result set, pending rows. There are 1 result in use. The connection will be released when they are closed|erreur dïvaluation de largument value lors de la sïlection dune mïthode pour la fonction dbWriteTable  largument df_especes est manquant, avec aucune valeur par défaut
 fichier_SQlL|stem||c3d750a76f6693de|d2969266cde448d6|-1350682262||t19823.7441760737s||0|rds|local|vector|||0.05|Closing open result set, pending rows. There are 1 result in use. The connection will be released when they are closed|erreur dïvaluation de largument value lors de la sïlection dune mïthode pour la fonction dbWriteTable  largument df_especes est manquant, avec aucune valeur par défaut
 fus_fichiers|function|b5e69659e20352bc|||||||||||||||
-graph_rich|function|586be09f4de86b31|||||||||||||||
-graphs_richesse|stem|67e3bcd8537f6d6b|5fb5bd9eafe4619f|dd6038567b6692ac|1719366590||t19830.6511877082s|a1c456b03adbfbf8|44|rds|local|vector|||0.09||
+graph_rich|function|e65ba73cf5df6d99|||||||||||||||
+graphs_richesse|stem|67e3bcd8537f6d6b|5fb5bd9eafe4619f|2224141e7059199e|1719366590||t19832.6025862745s|a1c456b03adbfbf8|44|rds|local|vector|||0.37||
 interactions|stem|a26b7b62b37f5013|ba0db5c0c707cee0|2bad72e5a257827c|1813311746||t19830.6548261193s|ee143e4c8ea21b7d|350|rds|local|vector|||0.39||
 nettoyage|function|c5e18a962a9a4d6d|||||||||||||||
-ordination|stem|3857ea71c9f08fde|88720c0961fedf57|32e32184940bb6d1|293788068||t19830.6563112927s|4fc290feced40d7a|832|rds|local|vector|||0.92||
-ordination_sites|function|064403e4ddb05b84|||||||||||||||
+ordination|stem|3857ea71c9f08fde|88720c0961fedf57|be25407af2403941|293788068||t19832.6026084711s|4fc290feced40d7a|832|rds|local|vector|||1.84|Removed 2 rows containing missing values or values outside the scale rangegeom_path.|
+ordination_sites|function|b12f7a28b66fee8f|||||||||||||||
 repertoire|stem|890f8ef84212a0e0|dc347a75de70646b|ef46db3751d8e999|1479107300||t19816.9236768519s|41200f7f0df0ebd3|96|rds|local|vector|||1.44||
 tab_inter|function|88a930c52d1b4137|||||||||||||||
 table_abondance|stem|9b7e61c9324f224e|e55f00aa3e67f535|1309af44482ae010|-1423426999||t19824.9157158813s|1b9545636c97d6f0|3393|rds|local|vector|||0.01||
