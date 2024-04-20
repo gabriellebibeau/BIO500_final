@@ -13,35 +13,6 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
-% Pandoc citation processing
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-% for Pandoc 2.8 to 2.10.1
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
-% For Pandoc 2.11+
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
 \templatetype{pnasresearcharticle}  % Choose template
@@ -76,8 +47,8 @@ here.}
 
 
 
-\correspondingauthor{\textsuperscript{1} To whom correspondence should
-be addressed. E-mail:
+\correspondingauthor{\textsuperscript{1} À qui la correspondance devrait
+être addressée. Courriel:
 \href{mailto:bibg1101@usherbrooke.ca}{\nolinkurl{bibg1101@usherbrooke.ca}}}
 
 % Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
@@ -130,78 +101,6 @@ information please see the
 \href{http://www.pnas.org/site/authors/format.xhtml}{PNAS Information
 for Authors}.
 
-\hypertarget{author-affiliations}{%
-\subsection*{Author Affiliations}\label{author-affiliations}}
-\addcontentsline{toc}{subsection}{Author Affiliations}
-
-Include department, institution, and complete address, with the
-ZIP/postal code, for each author. Use lower case letters to match
-authors with institutions, as shown in the example. Authors with an
-ORCID ID may supply this information at submission.
-
-\hypertarget{submitting-manuscripts}{%
-\subsection*{Submitting Manuscripts}\label{submitting-manuscripts}}
-\addcontentsline{toc}{subsection}{Submitting Manuscripts}
-
-All authors must submit their articles at
-\href{http://www.pnascentral.org/cgi-bin/main.plex}{PNAScentral}. If you
-are using Overleaf to write your article, you can use the ``Submit to
-PNAS'' option in the top bar of the editor window.
-
-\hypertarget{format}{%
-\subsection*{Format}\label{format}}
-\addcontentsline{toc}{subsection}{Format}
-
-Many authors find it useful to organize their manuscripts with the
-following order of sections; Title, Author Affiliation, Keywords,
-Abstract, Significance Statement, Results, Discussion, Materials and
-methods, Acknowledgments, and References. Other orders and headings are
-permitted.
-
-\hypertarget{manuscript-length}{%
-\subsection*{Manuscript Length}\label{manuscript-length}}
-\addcontentsline{toc}{subsection}{Manuscript Length}
-
-PNAS generally uses a two-column format averaging 67 characters,
-including spaces, per line. The maximum length of a Direct Submission
-research article is six pages and a PNAS PLUS research article is ten
-pages including all text, spaces, and the number of characters displaced
-by figures, tables, and equations. When submitting tables, figures,
-and/or equations in addition to text, keep the text for your manuscript
-under 39,000 characters (including spaces) for Direct Submissions and
-72,000 characters (including spaces) for PNAS PLUS.
-
-\hypertarget{references}{%
-\subsection*{References}\label{references}}
-\addcontentsline{toc}{subsection}{References}
-
-References should be cited in numerical order as they appear in text;
-this will be done automatically via bibtex, e.g. (1) and (2, 3). All
-references, including for the SI, should be included in the main
-manuscript file. References appearing in both sections should not be
-duplicated. SI references included in tables should be included with the
-main reference section.
-
-\hypertarget{data-archival}{%
-\subsection*{Data Archival}\label{data-archival}}
-\addcontentsline{toc}{subsection}{Data Archival}
-
-PNAS must be able to archive the data essential to a published article.
-Where such archiving is not possible, deposition of data in public
-databases, such as GenBank, ArrayExpress, Protein Data Bank, Unidata,
-and others outlined in the Information for Authors, is acceptable.
-
-\hypertarget{language-editing-services}{%
-\subsection*{Language-Editing
-Services}\label{language-editing-services}}
-\addcontentsline{toc}{subsection}{Language-Editing Services}
-
-Prior to submission, authors who believe their manuscripts would benefit
-from professional editing are encouraged to use a language-editing
-service (see list at www.pnas.org/site/authors/language-editing.xhtml).
-PNAS does not take responsibility for or endorse these services, and
-their use has no bearing on acceptance of a manuscript for publication.
-
 \begin{figure}
 \centering
 \includegraphics{frog.png}
@@ -209,164 +108,131 @@ their use has no bearing on acceptance of a manuscript for publication.
 justification setting.{}}
 \end{figure}
 
-\hypertarget{sec:figures}{%
-\subsection*{Digital Figures}\label{sec:figures}}
-\addcontentsline{toc}{subsection}{Digital Figures}
+Emma (introduction, pas de titre pcq c'est ce qui est recommandé dans le
+template de l'article et je trouvais que ça ferait professionnel)
 
-Only TIFF, EPS, and high-resolution PDF for Mac or PC are allowed for
-figures that will appear in the main text, and images must be final
-size. Authors may submit U3D or PRC files for 3D images; these must be
-accompanied by 2D representations in TIFF, EPS, or high-resolution PDF
-format. Color images must be in RGB (red, green, blue) mode. Include the
-font files for any text.
+\hypertarget{muxe9thodes}{%
+\subsubsection*{Méthodes}\label{muxe9thodes}}
+\addcontentsline{toc}{subsubsection}{Méthodes}
 
-Figures and Tables should be labelled and referenced in the standard way
-using the \texttt{\textbackslash{}label\{\}} and
-\texttt{\textbackslash{}ref\{\}} commands.
+Le jeu de données utilisé contient une partie des inventaires du benthos
+faits par le ministère de l'Environnement, de la Lutte contre les
+Changements Climatiques, de la Faune et des Parcs (MELCCFP) dans le
+cadre du suivi de la qualité de l'eau des rivières du Québec. Ces
+données, extraites du site Biodiversité Québec, recensent les espèces de
+macroinvertébrés benthiques vivant dans les rivières du Québec.
+L'échantillonnage a été réalisé en suivant le protocole
+d'échantillonnage des macroinvertébrés benthiques d'eau douce du Québec.
 
-Figure \[fig:frog\] shows an example of how to insert a column-wide
-figure. To insert a figure wider than one column, please use the
-\texttt{\textbackslash{}begin\{figure*\}...\textbackslash{}end\{figure*\}}
-environment. Figures wider than one column should be sized to 11.4 cm or
-17.8 cm wide.
+Avant l'analyse des données, celles-ci sont passées à travers plusieurs
+étapes de manipulations. Premièrement, les données, extraites sous forme
+d'une multitude de fichiers .csv, ont été manipulées pour être jointes
+en une seule matrice. Deuxièmement, la matrice a été nettoyée, notamment
+en assignant une classe pertinentes aux valeurs de la matrice (ex: les
+dates en format `Date' et non en format `Character'), en enlevant les
+colonnes importunes (ne contenant que des NAs ou étant des doublons) et
+en remplaçant les données problématiques par des NAs (valeurs de -99
+pour des variables ayant des valeurs réalistiquement positives).
+Troisièmement, des numéros d'identification (IDs) ont été assignés pour
+toutes les combinaisons de dates, de sites et d'heures. Finalement, une
+base de données .db a été créer pour entreposer deux tables : une tables
+contenant des informations reliées aux IDs de sites et une table
+contenant des informations sur les abondances des taxons de benthos
+identifiés.
 
-\hypertarget{single-column-equations}{%
-\subsection*{Single column equations}\label{single-column-equations}}
-\addcontentsline{toc}{subsection}{Single column equations}
+Différentes analyses ont été performées sur les données pour répondre
+aux questions posées par ce rapport. D'abord, des régressions linéaires
+simples (p=0.05) de la richesse spécifique ont été produites en fonction
+des variables suivantes : la largeur de la rivière, la profoncdeur de la
+rivière, la vitesse du courant et la température de l'eau. Ensuite, un
+diagramme à moustache validé par un test de t avec un interval de
+confiance de 0.95 a été réalisé pour la richesse spécifique en fonction
+de la transparence de l'eau. Puis, une vérification d'intéractions pour
+toutes les combinaisons possibles de variables abiotiques a été conduite
+avec des régressions linéaires simples (p=0.05). La majorité des
+variables (toutes sauf la température de l'eau) n'ont pas une
+distribution normale. Toutefois, suite à des tests de régressions
+linéaires généralisées avec différentes familles (par exemple la
+poisson), nous en sommes venues à la conclusion que les erreurs avaient
+une plus belle distribution (normale) lorsque nous utilisions la
+régression linéaire simple. Finalement, une ordination de type PCoA
+(Principal Coordinates Analysis) de la composition en abondance des
+communatés benthiques a été produite seulement avec les échantillons
+pris plus d'une fois (à des moments différents) sur un même site. Aucun
+tests statistiques n'a été réalisé pour confirmer la significativité des
+observations permises par l'outil de visualisation qu'est l'ordination.
 
-Authors may use 1- or 2-column equations in their article, according to
-their preference.
+\hypertarget{ruxe9sultats}{%
+\subsubsection*{Résultats}\label{ruxe9sultats}}
+\addcontentsline{toc}{subsubsection}{Résultats}
 
-To allow an equation to span both columns, options are to use the
-\texttt{\textbackslash{}begin\{figure*\}...\textbackslash{}end\{figure*\}}
-environment mentioned above for figures, or to use the
-\texttt{\textbackslash{}begin\{widetext\}...\textbackslash{}end\{widetext\}}
-environment as shown in equation \[eqn:example\] below.
+Nous avons d'abord testé l'effet des différentes variables abiotiques
+(largeur de la rivière, profondeur de la rivière, transparence de l'eau,
+température de l'eau et vitesse du courant) sur la richesse spécifique
+des échantillons analysés. Les régressions linéaires à la figure
+\ref{fig:regression_richesse} nous permettent d'observer un effet
+significatif pour la variable de la température, mais pas pour les
+autres.
 
-Please note that this option may run into problems with floats and
-footnotes, as mentioned in the \href{http://texdoc.net/pkg/cuted}{cuted
-package documentation}. In the case of problems with footnotes, it may
-be possible to correct the situation using commands
-\texttt{\textbackslash{}footnotemark} and
-\texttt{\textbackslash{}footnotetext}.
+\begin{figure}
+\centering
+\includegraphics{regression_richesse.png}
+\caption{Régressions linéaires de la richesse en fonction de (A) la
+largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse
+du courant et (D) la température de l'eau.
+\label{fig:regression_richesse}}
+\end{figure}
 
-\[\begin{aligned}
-(x+y)^3&=(x+y)(x+y)^2\\
-       &=(x+y)(x^2+2xy+y^2) \label{eqn:example} \\
-       &=x^3+3x^2y+3xy^3+x^3. 
-\end{aligned}\]
+L'effet de la transparence a été visualié en diagramme à moustache
+plutôt qu'en régression linéaire. Il s'avère que cette variable
+n'affecte pas non plus significativement la richesse spécifique des
+communautés de benthos.
 
-\hypertarget{supporting-information-si}{%
-\subsection*{Supporting Information
-(SI)}\label{supporting-information-si}}
-\addcontentsline{toc}{subsection}{Supporting Information (SI)}
+\begin{figure}
+\centering
+\includegraphics{boxplot_richesse.png}
+\caption{Diagramme à moustache de la richesse spécifique des
+échantillons de benthos en fonction de la transparence de l'eau lors de
+l'échantillonnage. \label{fig:boxplot_richesse}}
+\end{figure}
 
-The main text of the paper must stand on its own without the SI. Refer
-to SI in the manuscript at an appropriate point in the text. Number
-supporting figures and tables starting with S1, S2, etc. Authors are
-limited to no more than 10 SI files, not including movie files. Authors
-who place detailed materials and methods in SI must provide sufficient
-detail in the main text methods to enable a reader to follow the logic
-of the procedures and results and also must reference the online
-methods. If a paper is fundamentally a study of a new method or
-technique, then the methods must be described completely in the main
-text. Because PNAS edits SI and composes it into a single PDF, authors
-must provide the following file formats only.
+Ensuite, nous avons vérifié s'il y avait des interactions entre les
+variables. Selon le tableau de la figure \ref{fig:tableau_interaction},
+il n'y a aucune interaction significative entre les variables abiotiques
+en ce qui concerne la richesse spécifique des échantillons.
 
-\hypertarget{si-text}{%
-\subsubsection*{SI Text}\label{si-text}}
-\addcontentsline{toc}{subsubsection}{SI Text}
+\begin{figure}
+\centering
+\includegraphics{tableau_interaction.png}
+\caption{Tableau de la significativité des interactions entre les
+variables affectant la richesse spécifique des échantillons dans des
+régressions linéaires. \label{fig:tableau_interaction}}
+\end{figure}
 
-Supply Word, RTF, or LaTeX files (LaTeX files must be accompanied by a
-PDF with the same file name for visual reference).
+Finalement, la diversité beta a été observé à l'aide d'une ordination
+PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites
+semblent avoir des commuanutés de benthos similaires entre les
+différentes périodes d'échantillonnages, alors que d'autres sont plutôt
+variées. Entre-eux, les sites sont parfois très proches en terme de
+composition même s'ils sont différents géographiquement, d'autres fois
+complètement différents.
 
-\hypertarget{si-figures}{%
-\subsubsection*{SI Figures}\label{si-figures}}
-\addcontentsline{toc}{subsubsection}{SI Figures}
+\begin{figure}
+\centering
+\includegraphics{ordination_sites.png}
+\caption{PCoA des communautés de benthos échantillonnées par
+Biodiversité Québec en fonction du site. \label{fig:ordination_sites}}
+\end{figure}
 
-Provide a brief legend for each supporting figure after the supporting
-text. Provide figure images in TIFF, EPS, high-resolution PDF, JPEG, or
-GIF format; figures may not be embedded in manuscript text. When saving
-TIFF files, use only LZW compression; do not use JPEG compression. Do
-not save figure numbers, legends, or author names as part of the image.
-Composite figures must be pre-assembled.
+\hypertarget{discussion}{%
+\subsubsection*{Discussion}\label{discussion}}
+\addcontentsline{toc}{subsubsection}{Discussion}
 
-\hypertarget{d-figures}{%
-\subsubsection*{3D Figures}\label{d-figures}}
-\addcontentsline{toc}{subsubsection}{3D Figures}
-
-Supply a composable U3D or PRC file so that it may be edited and
-composed. Authors may submit a PDF file but please note it will be
-published in raw format and will not be edited or composed.
-
-\hypertarget{si-tables}{%
-\subsubsection*{SI Tables}\label{si-tables}}
-\addcontentsline{toc}{subsubsection}{SI Tables}
-
-Supply Word, RTF, or LaTeX files (LaTeX files must be accompanied by a
-PDF with the same file name for visual reference); include only one
-table per file. Do not use tabs or spaces to separate columns in Word
-tables.
-
-\hypertarget{si-datasets}{%
-\subsubsection*{SI Datasets}\label{si-datasets}}
-\addcontentsline{toc}{subsubsection}{SI Datasets}
-
-Supply Excel (.xls), RTF, or PDF files. This file type will be published
-in raw format and will not be edited or composed.
-
-\hypertarget{si-movies}{%
-\subsubsection*{SI Movies}\label{si-movies}}
-\addcontentsline{toc}{subsubsection}{SI Movies}
-
-Supply Audio Video Interleave (avi), Quicktime (mov), Windows Media
-(wmv), animated GIF (gif), or MPEG files and submit a brief legend for
-each movie in a Word or RTF file. All movies should be submitted at the
-desired reproduction size and length. Movies should be no more than 10
-MB in size.
-
-\hypertarget{still-images}{%
-\subsubsection*{Still images}\label{still-images}}
-\addcontentsline{toc}{subsubsection}{Still images}
-
-Authors must provide a still image from each video file. Supply TIFF,
-EPS, high-resolution PDF, JPEG, or GIF files.
-
-\hypertarget{appendices}{%
-\subsubsection*{Appendices}\label{appendices}}
-\addcontentsline{toc}{subsubsection}{Appendices}
-
-PNAS prefers that authors submit individual source files to ensure
-readability. If this is not possible, supply a single PDF file that
-contains all of the SI associated with the paper. This file type will be
-published in raw format and will not be edited or composed.
+Laura et Cloé
 
 \showmatmethods
 \showacknow
 \pnasbreak
-
-\hypertarget{refs}{}
-\begin{CSLReferences}{0}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-belkin2002using}{}}%
-\CSLLeftMargin{1. }%
-\CSLRightInline{Belkin M, Niyogi P (2002) Using manifold stucture for
-partially labeled classification. \emph{Advances in Neural Information
-Processing Systems}, pp 929--936.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-berard1994embedding}{}}%
-\CSLLeftMargin{2. }%
-\CSLRightInline{Bérard P, Besson G, Gallot S (1994) Embedding riemannian
-manifolds by their heat kernel. \emph{Geometric \& Functional Analysis
-GAFA} 4(4):373--398.}
-
-\leavevmode\vadjust pre{\hypertarget{ref-coifman2005geometric}{}}%
-\CSLLeftMargin{3. }%
-\CSLRightInline{Coifman RR, et al. (2005) Geometric diffusions as a tool
-for harmonic analysis and structure definition of data: Diffusion maps.
-\emph{Proceedings of the National Academy of Sciences of the United
-States of America} 102(21):7426--7431.}
-
-\end{CSLReferences}
 
 
 

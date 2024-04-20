@@ -45,7 +45,7 @@ keywords:
 pnas_type: pnasresearcharticle
 
 bibliography: pnas-sample.bib
-csl: pnas.csl
+cls: pnas.cls
 
 ## change to true to add optional line numbering
 lineno: false

@@ -1,6 +1,13 @@
 graph_rich <- function(tbl_rich) {
   
-  png('regression_richesse.png') #ouverture du png
+  # Définir le dossier dans lequel l'image sera enregistrée
+  dossier_rapport <- "rapport"
+  
+  #Définir le chemin vers l'image créée
+  image <- file.path(dossier_rapport, "regression_richesse.png")
+  
+  # Ouvrir le fichier PNG
+  png(image)
   par(mfrow = c(2, 2)) 
   
   #plot largeur
@@ -16,18 +23,18 @@ graph_rich <- function(tbl_rich) {
   abline(reg_profondeur)
   
   #plot vitesse
-  plot_vitesse <- plot(tbl_rich$vitesse_courant,tbl_rich$richesse, xlim = c(0,9), ylim = c(0,55))
+  plot(tbl_rich$vitesse_courant,tbl_rich$richesse, xlim = c(0,9), ylim = c(0,55))
   reg_vitesse <- lm(tbl_rich$richesse~tbl_rich$vitesse_courant)
   summary(reg_vitesse)
   abline(reg_vitesse)
   
   #plot temperature
-  plot_temperature <- plot(tbl_rich$temperature_eau_c,tbl_rich$richesse, xlim = c(0,22), ylim = c(0,55))
+  plot(tbl_rich$temperature_eau_c,tbl_rich$richesse, xlim = c(0,22), ylim = c(0,55))
   reg_temperature <-lm(tbl_rich$richesse~tbl_rich$temperature_eau_c)
   summary(reg_temperature) #p<0,05! p=0,0295
   abline(reg_temperature)
   
   dev.off() #fermeture et enregistrement de l'image
   
-  return() #retourner une image 
+  return('regression_richesse.png') #retourner l'image 
 }

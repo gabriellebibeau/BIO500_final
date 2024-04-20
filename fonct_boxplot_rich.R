@@ -1,5 +1,13 @@
 boxplot_rich <- function(tbl_rich) {
-  png('boxplot_richesse.png') #ouverture du png
+  
+  # Définir le dossier dans lequel l'image sera enregistrée
+  dossier_rapport <- "rapport"
+  
+  #Définir le chemin vers l'image créée
+  image <- file.path(dossier_rapport, 'boxplot_richesse.png')
+  
+  # Ouvrir le fichier PNG
+  png(image)
   
   donnees_trans_sp <-data.frame(tbl_rich$transparence_eau, tbl_rich$richesse)
   colnames(donnees_trans_sp) <- c("transparence_eau", "richesse_specifique")

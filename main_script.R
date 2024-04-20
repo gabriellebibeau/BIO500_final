@@ -5,7 +5,6 @@ library(glue)
 library(RSQLite)
 library(dplyr)
 library(rmarkdown)
-library(tarchetypes)
 
 # 1. Importer les fichiers.csv du répertoire et les fusionner avec la fonction fusion_pls_fichiers
 
@@ -68,4 +67,3 @@ library(tarchetypes)
   source("fonct_ordination_sites.R")
   ordination <- ordination_sites(table_abondance)
  
-  tbl_abd <- table_abondance  

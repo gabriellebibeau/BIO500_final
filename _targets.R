@@ -3,7 +3,7 @@
 # Dépendances
 library(targets)
 tar_option_set(packages = c("RSQLite", "dplyr","rmarkdown",
-                            "tarchetypes","vegan","ggplot2","glue"))
+                            "vegan","ggplot2","glue"))
 
 # Scripts R
 source("fonct_fus_fichiers.r")
