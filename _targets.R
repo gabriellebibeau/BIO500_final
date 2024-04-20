@@ -92,8 +92,8 @@ list(
     command = ordination_sites(table_abondance)
   ),
   #Création du rapport RMarkdown
-  tar_render(
-    rapport, 
-    "rapport/rapport.Rmd"
-   )
+  tar_target(
+    name = rapport, 
+    command = rmarkdown::render("rapport.Rmd")
+  )
 )
