@@ -94,6 +94,6 @@ list(
   #Création du rapport RMarkdown
   tar_target(
     name = rapport, 
-    command = rmarkdown::render("rapport.Rmd")
+    command = rmarkdown::render("rapport/rapport.Rmd")
   )
 )
