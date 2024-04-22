@@ -72,11 +72,6 @@ information please see the [PNAS Information for
 Authors](http://www.pnas.org/site/authors/format.xhtml).
 
 
-![Placeholder image of a frog with a long example caption to show
-justification setting.<span data-label="fig:frog"></span>](frog.png)
-
-
-
 Emma (introduction, pas de titre pcq c'est ce qui est recommandé dans le template de l'article et je trouvais que ça ferait professionnel)
 
 
@@ -108,8 +103,7 @@ Finalement, la diversité beta a été observé à l'aide d'une ordination PCoA.
 ![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
 
 ### Discussion {#discussion .unnumbered}
-
-Laura et Cloé
+Les résultats ne donnent que très peu d'information quant aux variables expliquant la diversité du benthos. Mise à part la température, aucun facteur d’habitat ne donne de résultat significatif. La littérature mentionne clairement l’impact de la température sur les communautés benthiques, mais l’effet des autres variables reste incertain (Jowett, 2003; Godson et al., 2022). Une relation entre la vélocité, largeur et profondeur des rivières a déjà été démontrée, mais elle ne semble pas s’appliquer aux petits cours d’eau (Jowett, 2003). De plus, la vélocité devrait être mesurée au niveau du substrat, l’espace occupé par le benthos, plutôt que dans la colonne d’eau, ce qui pourrait expliquer que les résultats obtenus ne sont pas significatifs (Jowett, 2003). De plus, plusieurs variables faisant parties des plus importantes, telles que les caractéristiques du substrat, n’ont pas été testées dû à l’absence de données (Jowett, 2003; Godson et al., 2022). D’autres caractéristiques de l’habitat peuvent affecter la structure des populations d’invertébrés benthiques lorsqu’elles sont mises en relation avec les caractéristiques des sédiments (Jowett, 2003; Godson et al., 2022). Il serait donc pertinent d’ajouter ces mesures au protocole de caractérisation du milieu dans les futures études. Aussi, les tests n’ont été effectués que sur un échantillon de données de benthos disponibles. Augmenter la quantité de données pourrait également augmenter les chances d’obtenir des résultats significatifs.
 
 
 <!-- Leave these lines as they are at the end of your .Rmd file to ensure placement of methods & acknowledgements sections before the references-->
