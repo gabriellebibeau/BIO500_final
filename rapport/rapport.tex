@@ -13,6 +13,35 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
+% Pandoc citation processing
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+% for Pandoc 2.8 to 2.10.1
+\newenvironment{cslreferences}%
+  {}%
+  {\par}
+% For Pandoc 2.11+
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
 \templatetype{pnasresearcharticle}  % Choose template
@@ -81,28 +110,21 @@ in full within the abstract itself and cited in the text.
 \acknow{Merci à Victor Cameron et Benjamin Mercier sans qui ce projet
 n'aurait été possible.}
 
-This PNAS journal template is provided to help you write your work in
-the correct journal format. Instructions for use are provided below.
+========================================
 
-Note: please start your introduction without including the word
-``Introduction'' as a section heading (except for math articles in the
-Physical Sciences section); this heading is implied in the first
-paragraphs.
-
-\hypertarget{guide-to-using-this-template}{%
-\section*{Guide to using this
-template}\label{guide-to-using-this-template}}
-\addcontentsline{toc}{section}{Guide to using this template}
-
-Please note that whilst this template provides a preview of the typeset
-manuscript for submission, to help in this preparation, it will not
-necessarily be the final publication layout. For more detailed
-information please see the
-\href{http://www.pnas.org/site/authors/format.xhtml}{PNAS Information
-for Authors}.
-
-Emma (introduction, pas de titre pcq c'est ce qui est recommandé dans le
-template de l'article et je trouvais que ça ferait professionnel)
+Dans le contexte actuel de constantes variations climatiques,
+conséquences des changements climatiques, il est primordial d'analyser
+les réactions de la biodiversité face à de telles variations afin d'être
+en mesure de mieux la comprendre et ainsi, de mieux la protéger. C'est
+pourquoi, dans le cadre d'un suivi annuel de la biodiversité benthique
+de ruisseaux, cette étude se penchera sur l'influence des variations
+spatiales et temporelles sur la structure des communautés de milieux
+lotiques. L'objectif est d'évaluer l'impact de différentes variables
+abiotiques environnementales sur la richesse spécifique benthique de
+ruisseaux. Pour ce faire, cinq variables environnementales seront prises
+en compte sur différents sites : la profondeur et la largeur du cours
+d'eau, la transparence de son eau, sa température ainsi que la vitesse
+du courant.
 
 \hypertarget{muxe9thodes}{%
 \subsubsection*{Méthodes}\label{muxe9thodes}}
@@ -110,50 +132,46 @@ template de l'article et je trouvais que ça ferait professionnel)
 
 Le jeu de données utilisé contient une partie des inventaires du benthos
 faits par le ministère de l'Environnement, de la Lutte contre les
-Changements Climatiques, de la Faune et des Parcs (MELCCFP) dans le
-cadre du suivi de la qualité de l'eau des rivières du Québec. Ces
-données, extraites du site Biodiversité Québec, recensent les espèces de
-macroinvertébrés benthiques vivant dans les rivières du Québec.
-L'échantillonnage a été réalisé en suivant le protocole
-d'échantillonnage des macroinvertébrés benthiques d'eau douce du Québec.
+Changements Climatiques, de la Faune et des Parcs (MELCCFP) avec le
+protocole d'échantillonnage des macroinvertébrés benthiques d'eau douce
+du Québec dans le cadre du suivi de la qualité de l'eau des rivières du
+Québec. Ces données, extraites du site Biodiversité Québec, recensent
+les espèces de macroinvertébrés benthiques dans les rivières du Québec.
 
 Avant l'analyse des données, celles-ci sont passées à travers plusieurs
-étapes de manipulations. Premièrement, les données, extraites sous forme
-d'une multitude de fichiers .csv, ont été manipulées pour être jointes
-en une seule matrice. Deuxièmement, la matrice a été nettoyée, notamment
-en assignant une classe pertinentes aux valeurs de la matrice (ex: les
-dates en format `Date' et non en format `Character'), en enlevant les
-colonnes importunes (ne contenant que des NAs ou étant des doublons) et
-en remplaçant les données problématiques par des NAs (valeurs de -99
-pour des variables ayant des valeurs réalistiquement positives).
-Troisièmement, des numéros d'identification (IDs) ont été assignés pour
-toutes les combinaisons de dates, de sites et d'heures. Finalement, une
-base de données .db a été créer pour entreposer deux tables : une tables
-contenant des informations reliées aux IDs de sites et une table
-contenant des informations sur les abondances des taxons de benthos
-identifiés.
+manipulations. Premièrement, les données, extraites sous forme de
+fichiers .csv, ont été manipulées pour être regroupées en une matrice.
+Deuxièmement, la matrice a été nettoyée, notamment en assignant une
+classe pertinente aux valeurs de la matrice (ex: les dates en format
+`Date' et non en format `Character'), en enlevant les colonnes
+importunes (ne contenant que des NAs ou étant des doublons) et en
+remplaçant les données problématiques par des NAs (valeurs de -99 pour
+des variables strictement positives dans la réalité). Troisièmement, des
+numéros d'identification (IDs) ont été assignés pour toutes les
+combinaisons de dates, de sites et d'heures. Finalement, une base de
+données .db a été créée pour entreposer deux tables : une contenant des
+informations reliées aux IDs et l'autre, des informations sur les
+abondances des taxons de benthos.
 
 Différentes analyses ont été performées sur les données pour répondre
 aux questions posées par ce rapport. D'abord, des régressions linéaires
 simples (p=0.05) de la richesse spécifique ont été produites en fonction
-des variables suivantes : la largeur de la rivière, la profoncdeur de la
+des variables suivantes : la largeur de la rivière, la profondeur de la
 rivière, la vitesse du courant et la température de l'eau. Ensuite, un
-diagramme à moustache validé par un test de t avec un interval de
+diagramme à moustache validé par un test de t avec un intervalle de
 confiance de 0.95 a été réalisé pour la richesse spécifique en fonction
-de la transparence de l'eau. Puis, une vérification d'intéractions pour
+de la transparence de l'eau. Puis, une vérification d'interactions pour
 toutes les combinaisons possibles de variables abiotiques a été conduite
-avec des régressions linéaires simples (p=0.05). La majorité des
-variables (toutes sauf la température de l'eau) n'ont pas une
-distribution normale. Toutefois, suite à des tests de régressions
-linéaires généralisées avec différentes familles (par exemple la
-poisson), nous en sommes venues à la conclusion que les erreurs avaient
-une plus belle distribution (normale) lorsque nous utilisions la
-régression linéaire simple. Finalement, une ordination de type PCoA
-(Principal Coordinates Analysis) de la composition en abondance des
-communatés benthiques a été produite seulement avec les échantillons
-pris plus d'une fois (à des moments différents) sur un même site. Aucun
-tests statistiques n'a été réalisé pour confirmer la significativité des
-observations permises par l'outil de visualisation qu'est l'ordination.
+avec des régressions linéaires simples (p=0.05). Seule la température de
+l'eau a une distribution normale. Suite à des tests de régressions
+linéaires généralisées avec différentes familles (par exemple Poisson),
+nous avons conclu que les erreurs avaient une distribution plus normale
+lorsque nous utilisions la régression linéaire simple. Finalement, une
+ordination de type PCoA (Principal Coordinates Analysis) de la
+composition en abondance des communautés benthiques a été produite
+seulement avec les échantillons pris plus d'une fois sur un même site.
+Aucun test statistique n'a été réalisé pour valider les observations
+permises par cet outil de visualisation.
 
 \hypertarget{ruxe9sultats}{%
 \subsubsection*{Résultats}\label{ruxe9sultats}}
@@ -176,8 +194,8 @@ du courant et (D) la température de l'eau.
 \label{fig:regression_richesse}}
 \end{figure}
 
-L'effet de la transparence a été visualié en diagramme à moustache
-plutôt qu'en régression linéaire. Il s'avère que cette variable
+L'effet de la transparence a été visualisé en diagramme à moustache
+(Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable
 n'affecte pas non plus significativement la richesse spécifique des
 communautés de benthos.
 
@@ -202,11 +220,11 @@ variables affectant la richesse spécifique des échantillons dans des
 régressions linéaires. \label{fig:tableau_interaction}}
 \end{figure}
 
-Finalement, la diversité beta a été observé à l'aide d'une ordination
+Finalement, la diversité beta a été observée à l'aide d'une ordination
 PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites
 semblent avoir des commuanutés de benthos similaires entre les
 différentes périodes d'échantillonnages, alors que d'autres sont plutôt
-variées. Entre-eux, les sites sont parfois très proches en terme de
+variées. Entre eux, les sites sont parfois très proches en termes de
 composition même s'ils sont différents géographiquement, d'autres fois
 complètement différents.
 
@@ -221,32 +239,82 @@ Biodiversité Québec en fonction du site. \label{fig:ordination_sites}}
 \subsubsection*{Discussion}\label{discussion}}
 \addcontentsline{toc}{subsubsection}{Discussion}
 
-Les résultats ne donnent que très peu d'information quant aux variables
-expliquant la diversité du benthos. Mise à part la température, aucun
-facteur d'habitat ne donne de résultat significatif. La littérature
-mentionne clairement l'impact de la température sur les communautés
-benthiques, mais l'effet des autres variables reste incertain (Jowett,
-2003; Godson et al., 2022). Une relation entre la vélocité, largeur et
-profondeur des rivières a déjà été démontrée, mais elle ne semble pas
-s'appliquer aux petits cours d'eau (Jowett, 2003). De plus, la vélocité
-devrait être mesurée au niveau du substrat, l'espace occupé par le
-benthos, plutôt que dans la colonne d'eau, ce qui pourrait expliquer que
-les résultats obtenus ne sont pas significatifs (Jowett, 2003). De plus,
-plusieurs variables faisant parties des plus importantes, telles que les
-caractéristiques du substrat, n'ont pas été testées dû à l'absence de
-données (Jowett, 2003; Godson et al., 2022). D'autres caractéristiques
-de l'habitat peuvent affecter la structure des populations d'invertébrés
-benthiques lorsqu'elles sont mises en relation avec les caractéristiques
-des sédiments (Jowett, 2003; Godson et al., 2022). Il serait donc
-pertinent d'ajouter ces mesures au protocole de caractérisation du
-milieu dans les futures études. Aussi, les tests n'ont été effectués que
-sur un échantillon de données de benthos disponibles. Augmenter la
-quantité de données pourrait également augmenter les chances d'obtenir
-des résultats significatifs.
+Les résultats de l'étude offrent une vision limitée des variables qui
+influent sur la diversité du benthos. Mise à part la température, aucun
+facteur d'habitat n'a révélé de résultats significatifs. La littérature
+souligne l'impact clair de la température sur les communautés
+benthiques, mais l'effet des autres variables reste incertain (Jowett
+2003; Godson, Vincent, and Krishnakumar 2022).Bien qu'une relation entre
+la vélocité, la largeur et la profondeur des rivières ait été démontrée
+dans d'autres études, elle ne semble pas s'appliquer aux petits cours
+d'eau (Jowett 2003; Godson, Vincent, and Krishnakumar 2022). De plus, la
+vélocité devrait être mesurée au niveau du substrat, l'espace occupé par
+le benthos, plutôt que dans la colonne d'eau, ce qui pourrait expliquer
+le manque de résultats significatifs (Jowett 2003; Godson, Vincent, and
+Krishnakumar 2022). En outre, plusieurs variables importantes, telles
+que les caractéristiques du substrat, n'ont pas été testées en raison de
+l'absence de données (Jowett 2003; Godson, Vincent, and Krishnakumar
+2022). D'autres caractéristiques de l'habitat peuvent également
+influencer la structure des populations d'invertébrés benthiques
+lorsqu'elles sont mises en relation avec les caractéristiques des
+sédiments (Jowett 2003; Godson, Vincent, and Krishnakumar 2022). Il
+serait donc pertinent d'ajouter ces mesures au protocole de
+caractérisation du milieu dans les futures études. De plus, les tests
+ont été effectués sur un échantillon limité de données de benthos, ce
+qui peut avoir réduit notre capacité à obtenir des résultats
+significatifs. Augmenter la quantité de données pourrait donc accroître
+nos chances de détection de relations significatives.
+
+En ce qui concerne les interactions entre les variables abiotiques, nos
+résultats montrent qu'aucune interaction significative n'a été observée
+concernant la richesse spécifique des échantillons. Cela pourrait être
+attribué à la sensibilité limitée de la méthode utilisée pour détecter
+ces interactions, en raison de considérations telles que les méthodes de
+sélection de variables et les approches de sélection de modèles
+Claeskens (2016).
+
+Enfin, en ce qui concerne l'ordination, nos résultats révèlent que
+certains sites présentent des communautés de benthos similaires à
+travers différentes périodes d'échantillonnage, tandis que d'autres
+présentent une plus grande variabilité. Malgré des différences
+géographiques, certains sites ont une composition similaire, tandis que
+d'autres sont distincts les uns des autres. Cette observation pourrait
+s'expliquer par le fait que la similarité des communautés écologiques
+diminue avec la distance, mais des facteurs tels que l'échelle spatiale,
+les propriétés des organismes, la région d'étude et l'écosystème peuvent
+influencer cette relation pour rendre des sites semblables entre eux
+malgré la distance qui les sépare Soininen, McDonald, and Hillebrand
+(2007).
 
 \showmatmethods
 \showacknow
 \pnasbreak
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-claeskens_statistical_2016}{}}%
+Claeskens, Gerda. 2016. {``Statistical {Model} {Choice}.''} \emph{Annual
+Review of Statistics and Its Application} 3 (March).
+\url{https://doi.org/10.1146/annurev-statistics-041715-033413}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-godson_ecology_2022}{}}%
+Godson, Prince S., Salom Gnana Thanga Vincent, and S. Krishnakumar.
+2022. \emph{Ecology and {Biodiversity} of {Benthos}}. San Diego, UNITED
+STATES: Elsevier.
+\url{http://ebookcentral.proquest.com/lib/usherbrookemgh-ebooks/detail.action?docID=6940166}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-jowett_hydraulic_2003}{}}%
+Jowett, I. G. 2003. {``Hydraulic Constraints on Habitat Suitability for
+Benthic Invertebrates in Gravel-Bed Rivers.''} \emph{River Research and
+Applications} 19 (5-6): 495--507. \url{https://doi.org/10.1002/rra.734}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-soininen_distance_2007}{}}%
+Soininen, Janne, Robert McDonald, and Helmut Hillebrand. 2007. {``The
+Distance Decay of Similarity in Ecological Communities.''}
+\emph{Ecography} 30 (1): 3--12.
+\url{https://doi.org/10.1111/j.0906-7590.2007.04817.x}.
+
+\end{CSLReferences}
 
 
 
