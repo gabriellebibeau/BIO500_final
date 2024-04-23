@@ -69,21 +69,42 @@ Différentes analyses ont été performées sur les données pour répondre aux 
 
 ### Résultats {#résultats .unnumbered}
 
-Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur de la rivière, profondeur de la rivière, transparence de l'eau, température de l'eau et vitesse du courant) sur la richesse spécifique des échantillons analysés. Les régressions linéaires à la figure \ref{fig:regression_richesse} nous permettent d'observer un effet significatif pour la variable de la température, mais pas pour les autres. 
+```{r, echo=FALSE}
+source('fonct_graph_rich.R')
+graph_rich(table_richesse)
+```
 
 ![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. \label{fig:regression_richesse}](regression_richesse.png)
 
-L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
+Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur de la rivière, profondeur de la rivière, transparence de l'eau, température de l'eau et vitesse du courant) sur la richesse spécifique des échantillons analysés. Les régressions linéaires à la figure \ref{fig:regression_richesse} nous permettent d'observer un effet significatif pour la variable de la température, mais pas pour les autres. 
+
+```{r, echo=FALSE}
+source('fonct_boxplot_rich.R')
+boxplot_rich(table_richesse)
+```
 
 ![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse}](boxplot_richesse.png)
 
-Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
+L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
+
+```{r, echo=FALSE}
+source('fonct_tab_inter.R')
+tab_inter(table_richesse)
+```
 
 ![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.png)
 
-Finalement, la diversité beta a été observée à l'aide d'une ordination PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre eux, les sites sont parfois très proches en termes de composition même s'ils sont différents géographiquement, d'autres fois complètement différents.  
+Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
+
+```{r, echo=FALSE}
+source('fonct_ordination_sites.R')
+ordination_sites(table_abondance)
+```
 
 ![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
+
+Finalement, la diversité beta a été observée à l'aide d'une ordination PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre eux, les sites sont parfois très proches en termes de composition même s'ils sont différents géographiquement, d'autres fois complètement différents.  
+
 
 ### Discussion {#discussion .unnumbered}
 Les résultats de l'étude offrent une vision limitée des variables qui influent sur la diversité du benthos. Mise à part la température, aucun facteur d’habitat n'a révélé de résultats significatifs. La littérature souligne l’impact clair de la température sur les communautés benthiques, mais l’effet des autres variables reste incertain [@jowett_hydraulic_2003;@godson_ecology_2022].Bien qu'une relation entre la vélocité, la largeur et la profondeur des rivières ait été démontrée dans d'autres études, elle ne semble pas s’appliquer aux petits cours d’eau [@jowett_hydraulic_2003;@godson_ecology_2022]. De plus, la vélocité devrait être mesurée au niveau du substrat, l’espace occupé par le benthos, plutôt que dans la colonne d’eau, ce qui pourrait expliquer le manque de résultats significatifs [@jowett_hydraulic_2003;@godson_ecology_2022].  En outre, plusieurs variables importantes, telles que les caractéristiques du substrat, n’ont pas été testées en raison de l’absence de données  [@jowett_hydraulic_2003;@godson_ecology_2022]. D’autres caractéristiques de l’habitat peuvent également influencer la structure des populations d’invertébrés benthiques lorsqu’elles sont mises en relation avec les caractéristiques des sédiments [@jowett_hydraulic_2003;@godson_ecology_2022]. Il serait donc pertinent d’ajouter ces mesures au protocole de caractérisation du milieu dans les futures études. De plus, les tests ont été effectués sur un échantillon limité de données de benthos, ce qui peut avoir réduit notre capacité à obtenir des résultats significatifs. Augmenter la quantité de données pourrait donc accroître nos chances de détection de relations significatives.

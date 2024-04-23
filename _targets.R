@@ -13,18 +13,13 @@ source("fonct_ajout_IDs.R")
 source("fonct_creation_bd.R")
 source("fonct_extract_rich.R")
 source("fonct_extract_abond.R")
-source("fonct_graph_rich.R")
-source("fonct_boxplot_rich.R")
-source("fonct_tab_inter.R")
-source("fonct_ordination_sites.R")
-
 
 # Pipeline
 list(
   #Emplacement des fichiers
   tar_target(
     name = repertoire,
-    command = "C:/Users/cloet/Desktop/BIO500_final/benthos",
+    command = "benthos",
   ),
   #Fusionner les fichiers
   tar_target(
@@ -71,26 +66,6 @@ list(
     name = table_abondance,
     command = extract_abond(fichier_SQL)
   ),  
-  #Création des graphiques de régressions 
-  tar_target(
-    name = graphs_richesse,
-    command = graph_rich(table_richesse)
-  ),
-  #Création du boxplot de la transparence 
-  tar_target(
-    name = boxplot_trans,
-    command = boxplot_rich(table_richesse)
-  ),
-  #Création du tableau des interactions 
-  tar_target(
-    name = interactions,
-    command = tab_inter(table_richesse)
-  ),
-  #Création de l'ordination
-  tar_target(
-    name = ordination,
-    command = ordination_sites(table_abondance)
-  ),
   #Création du rapport RMarkdown
   tar_target(
     name = rapport, 
