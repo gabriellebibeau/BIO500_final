@@ -72,7 +72,7 @@ information please see the [PNAS Information for
 Authors](http://www.pnas.org/site/authors/format.xhtml).
 
 
-Emma (introduction, pas de titre pcq c'est ce qui est recommandé dans le template de l'article et je trouvais que ça ferait professionnel)
+Dans le contexte actuel de constantes variations climatiques, conséquences des changements climatiques, il est primordial d’analyser les réactions de la biodiversité face à de telles variations afin d’être en mesure de mieux la comprendre et ainsi, de mieux la protéger. C’est pourquoi, dans le cadre d’un suivi annuel de la biodiversité benthique de ruisseaux, cette étude se penchera sur l'influence des variations spatiales et temporelles sur la structure des communautés de milieux lotiques. L’objectif est d’évaluer l’impact de différentes variables abiotiques environnementales sur la richesse spécifique benthique de ruisseaux. Pour ce faire, cinq variables environnementales seront prises en compte sur différents sites : la profondeur et la largeur du cours d’eau, la transparence de son eau, sa température ainsi que la vitesse du courant. 
 
 
 ### Méthodes {#méthodes .unnumbered}

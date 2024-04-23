@@ -50,34 +50,74 @@ bd <- dbConnect(RSQLite::SQLite(), dbname = fichier_SQL)
 donnees_sites <- dbGetQuery(bd, 'SELECT * FROM sites') 
 
 #plot largeur
-plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,80))
+plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,80), xlab = "Largeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa largeur")
 reg_largeur <-lm(table_richesse$richesse~table_richesse$largeur_riviere)
 summary(reg_largeur)
+abline(reg_largeur, col = "violet", lwd = 3)
+text(x = 70, y = 50, labels = "p-value=0.895")
+
+?text
+#plot profondeur
+plot(table_richesse$profondeur_riviere,table_richesse$richesse, xlim = c(0,1), xlab = "Profondeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa profondeur")
+reg_profondeur <-lm(table_richesse$richesse~table_richesse$profondeur_riviere)
+summary(reg_profondeur)
+abline(reg_profondeur, col = "limegreen", lwd = 3)
+text(x = 0.9, y = 50, labels = "p-value=0.293")
+
+#plot vitesse
+plot_vitesse <- plot(table_richesse$vitesse_courant,table_richesse$richesse, xlim = c(0,9), xlab = "Vitesse de la rivière (m/s)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la vitesse de son courant")
+reg_vitesse <- lm(table_richesse$richesse~table_richesse$vitesse_courant)
+summary(reg_vitesse)
+abline(reg_vitesse, col = "salmon", lwd = 3)
+text(x = 8, y = 50, labels = "p-value=0.532")
+
+#plot temperature
+plot_temperature <- plot(table_richesse$temperature_eau_c,table_richesse$richesse, xlim = c(0,22), xlab = "Température de la rivière (˚C)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la température de l'eau")
+reg_temperature <-lm(table_richesse$richesse~table_richesse$temperature_eau_c)
+summary(reg_temperature) #p<0,05! p=0,0295
+abline(reg_temperature, col =  "turquoise3", lwd = 3)
+text(x = 19, y = 50, labels = "p-value=0,0295")
+
+#plot transparence
+donnees_trans_sp <-data.frame(table_richesse$transparence_eau, table_richesse$richesse)
+colnames(donnees_trans_sp) <- c("transparence_eau", "richesse_specifique")
+plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans_sp, xlab = "Niveau de transparence de l'eau", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la transparence de son eau")
+#comment tester la significativite avec un box plot?
+
+
+#fonction 1
+#plot transparence
+donnees_trans_sp <-data.frame(table_richesse$transparence_eau, table_richesse$richesse)
+colnames(donnees_trans_sp) <- c("transparence_eau", "richesse_specifique")
+factor(donnees_trans_sp, levels=)
+plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans_sp)
+#comment tester la significativite avec un box plot?
+
+
+#fonction 2
+par(mfrow = c(2,2))
+#plot largeur
+plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,80))
+reg_largeur <-lm(table_richesse$richesse~table_richesse$largeur_riviere)
 abline(reg_largeur)
 
 #plot profondeur
 plot(table_richesse$profondeur_riviere,table_richesse$richesse, xlim = c(0,1))
 reg_profondeur <-lm(table_richesse$richesse~table_richesse$profondeur_riviere)
-summary(reg_profondeur)
 abline(reg_profondeur)
 
 #plot vitesse
 plot_vitesse <- plot(table_richesse$vitesse_courant,table_richesse$richesse, xlim = c(0,9))
 reg_vitesse <- lm(table_richesse$richesse~table_richesse$vitesse_courant)
-summary(reg_vitesse)
 abline(reg_vitesse)
 
 #plot temperature
 plot_temperature <- plot(table_richesse$temperature_eau_c,table_richesse$richesse, xlim = c(0,22))
 reg_temperature <-lm(table_richesse$richesse~table_richesse$temperature_eau_c)
-summary(reg_temperature) #p<0,05! p=0,0295
+ #p<0,05! p=0,0295
 abline(reg_temperature)
 
-#plot transparence
-donnees_trans_sp <-data.frame(table_richesse$transparence_eau, table_richesse$richesse,)
-colnames(donnees_trans_sp) <- c("transparence_eau", "richesse_specifique")
-plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans_sp)
-#comment tester la significativite avec un box plot?
+
 
 
 #Si jamais encore utile
