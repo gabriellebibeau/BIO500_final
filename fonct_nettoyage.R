@@ -1,3 +1,5 @@
+#Fonction retirant les colonnes doubles ou inutiles et les données problématiques
+
 nettoyage <- function(table_fusionnee){ #La fonction a seulement besoin d'une matrice ou data frame quelconque pour fonctionner
   
   #1. Création d'une nouvelle table pour les colonnes utilisées

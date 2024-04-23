@@ -1,5 +1,4 @@
-
-                                 #Fonction «traitement_donnees_IDs»#
+#Fonction ajoutant les identifiants uniques des sites
 
 ajout_IDs <- function(df) {
   

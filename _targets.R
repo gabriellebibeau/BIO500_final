@@ -1,4 +1,4 @@
-# _targets.R file
+# Fichier _targets.R
 
 # Dépendances
 library(targets)
@@ -16,27 +16,27 @@ source("fonct_extract_abond.R")
 
 # Pipeline
 list(
-  #Emplacement des fichiers
+  #Spécifier l'emplacement des fichiers
   tar_target(
     name = repertoire,
-    command = "benthos",
+    command = "benthos", 
   ),
   #Fusionner les fichiers
   tar_target(
     name = df_complet,
     command = fus_fichiers(repertoire)
   ),
-  #Enlever les colonnes non-pertinentes
+  #Enlever les colonnes non-pertinentes et données problématiques
   tar_target(
     name = df_propre,
     command = nettoyage(df_complet)
   ),
-  #Changer classes des colonnes
+  #Changer les classes des colonnes
   tar_target(
     name = df_classe,
     command = classer_col(df_propre)
   ),
-  #Ajouter les IDs uniques
+  #Ajouter les identifiants uniques des sites
   tar_target(
     name = df_IDs,
     command = ajout_IDs(df_classe)

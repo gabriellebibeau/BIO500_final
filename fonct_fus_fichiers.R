@@ -1,5 +1,4 @@
-### Fonction permettant d'importer et fusionner des fichiers de type .csv dans un répertoire spécifique ###
-
+# Fonction permettant d'importer et fusionner des fichiers de type .csv dans un répertoire spécifique
 
 # Objets à spécifier pour utiliser la fonction
   #repertoire <- "./data/" # Spécifiez le chemin du répertoire contenant les fichiers
@@ -9,7 +8,7 @@
 #Création de la fonction
 fus_fichiers <- function(repertoire) {
   
-  # Créer une liste de tous les fichiers correspondant au motif de nom dans le répertoire
+  # Créer une liste de tous les fichiers .csv dans le répertoire
   fichiers <- list.files(pattern = "\\.csv$", path = repertoire, full.names = TRUE)
 
   # Utilise lapply pour lire tous les fichiers et fusionner les dataframes
