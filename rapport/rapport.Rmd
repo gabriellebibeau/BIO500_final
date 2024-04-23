@@ -81,7 +81,7 @@ Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur
 
 ```{r, echo=FALSE}
 source('fonct_boxplot_rich.R')
-boxplot_rich(table_richesse)
+boxplot_rich(donnees_richesse)
 ```
 
 ![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse}](boxplot_richesse.png)
@@ -90,7 +90,7 @@ L'effet de la transparence a été visualisé en diagramme à moustache (Figure 
 
 ```{r, echo=FALSE}
 source('fonct_tab_inter.R')
-tab_inter(table_richesse)
+tab_inter(donnees_richesse)
 ```
 
 ![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.png)
@@ -100,7 +100,7 @@ Ensuite, nous avons vérifié s'il y avait des interactions entre les variables.
 ```{r, echo=FALSE}
 donnees_abondance <- tar_read(table_abondance)
 source('fonct_ordination_sites.R')
-ordination_sites(table_abondance)
+ordination_sites(donnees_abondance)
 ```
 
 ![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
