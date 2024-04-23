@@ -1,5 +1,5 @@
 ---
-title: Template for preparing your research report submission to PNAS using RMarkdown
+title: L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux lotiques
 
 # Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
 author:
@@ -27,8 +27,7 @@ author_contributions: |
   Please provide details of author contributions here.
 
 abstract: |
-  Please provide an abstract of no more than 250 words in a single paragraph. Abstracts should explain to the general reader the major contributions of the article. References in the abstract must be cited in full within the abstract itself and cited in the text.
-
+  Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélés que seule la température influençait significativement la richesse spécifique, mais que des cours d’eau aux conditions similaires semblaient également présentés une diversité d’espèces plus semblable par rapport à des ruisseaux aux conditions différentes.
 
 significance: |
   Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the Significance Statement is to explain the relevance of the work in broad context to a broad readership. The Significance Statement appears in the paper itself and is required for all research papers.
@@ -55,7 +54,7 @@ output: rticles::pnas_article
 
 ========================================
 
-Dans le contexte actuel de constantes variations climatiques, conséquences des changements climatiques, il est primordial d’analyser les réactions de la biodiversité face à de telles variations afin d’être en mesure de mieux la comprendre et ainsi, de mieux la protéger. C’est pourquoi, dans le cadre d’un suivi annuel de la biodiversité benthique de ruisseaux, cette étude se penchera sur l'influence des variations spatiales et temporelles sur la structure des communautés de milieux lotiques. L’objectif est d’évaluer l’impact de différentes variables abiotiques environnementales sur la richesse spécifique benthique de ruisseaux. Pour ce faire, cinq variables environnementales seront prises en compte sur différents sites : la profondeur et la largeur du cours d’eau, la transparence de son eau, sa température ainsi que la vitesse du courant. 
+Dans le contexte actuel de constantes variations climatiques, conséquences des changements climatiques, il est primordial d’analyser les réactions de la biodiversité face à de telles variations afin d’être en mesure de mieux la comprendre et ainsi, de mieux la protéger. C’est pourquoi, dans le cadre d’un suivi annuel de la biodiversité benthique de ruisseaux, cette étude se penchera sur l'influence des variations spatiales et temporelles sur la structure des communautés de milieux lotiques. L’objectif est d’évaluer l’impact de différentes variables abiotiques environnementales sur la richesse spécifique benthique de ruisseaux. Pour ce faire, un ddénombrement des espèces ainsi que cinq variables environnementales seront prises en compte sur différents sites : la profondeur et la largeur du cours d’eau, la transparence de son eau, sa température ainsi que la vitesse du courant. 
 
 
 ### Méthodes {#méthodes .unnumbered}

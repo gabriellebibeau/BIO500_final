@@ -18,7 +18,7 @@ graph_rich <- function(tbl_rich) {
   # Les mêmes étapes de création des graphiques et des régressions linéaires décrites pour le premier graphique ci-dessous sont ensuite répétées pour chacun des trois autres graphiques
   # Les couleurs des graphiques ont été choisies aléatoirement.
   # Graphique de la richesse spécifique en fonction de la largeur de la rivière
-  plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,80), xlab = "Largeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa largeur")
+  plot(tble_rich$largeur_riviere,table_richesse$richesse, xlim = c(0,80), xlab = "Largeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa largeur")
   # Établir quelle est la relation entre ces deux variables et si elle est significative
   reg_largeur <-lm(table_richesse$richesse~table_richesse$largeur_riviere)
   summary(reg_largeur)

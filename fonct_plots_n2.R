@@ -44,10 +44,6 @@ source("fonct_extract_abond.R")
 table_abondance <- extract_abond(fichier_SQL)
 
 
-#plots de la richesse specifique selon les 5 variables abiotique decrivant sites
-bd <- dbConnect(RSQLite::SQLite(), dbname = fichier_SQL)
-
-donnees_sites <- dbGetQuery(bd, 'SELECT * FROM sites') 
 
 #plot largeur
 plot(table_richesse$largeur_riviere,table_richesse$richesse, xlim = c(0,80), xlab = "Largeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa largeur")
@@ -89,10 +85,9 @@ plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans
 #plot transparence
 donnees_trans_sp <-data.frame(table_richesse$transparence_eau, table_richesse$richesse)
 colnames(donnees_trans_sp) <- c("transparence_eau", "richesse_specifique")
-factor(donnees_trans_sp, levels=)
-plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans_sp)
+plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans_sp, col = "lightblue", xlab = "Transparence de l'eau", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la transparence de l'eau")
 #comment tester la significativite avec un box plot?
-
+?boxplot
 
 #fonction 2
 par(mfrow = c(2,2))
