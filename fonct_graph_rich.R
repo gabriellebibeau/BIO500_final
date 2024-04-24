@@ -18,9 +18,9 @@ graph_rich <- function(tbl_rich) {
   # Les mêmes étapes de création des graphiques et des régressions linéaires décrites pour le premier graphique ci-dessous sont ensuite répétées pour chacun des trois autres graphiques
   # Les couleurs des graphiques ont été choisies aléatoirement.
   # Graphique de la richesse spécifique en fonction de la largeur de la rivière
-  plot(tble_rich$largeur_riviere,table_richesse$richesse, xlim = c(0,80), xlab = "Largeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa largeur")
+  plot(tbl_rich$largeur_riviere,tbl_rich$richesse, xlim = c(0,80), xlab = "Largeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa largeur")
   # Établir quelle est la relation entre ces deux variables et si elle est significative
-  reg_largeur <-lm(table_richesse$richesse~table_richesse$largeur_riviere)
+  reg_largeur <-lm(tbl_rich$richesse~tbl_rich$largeur_riviere)
   summary(reg_largeur)
   # Afficher la régression sur le graphique (quelle soit significative ou non)
   abline(reg_largeur, col = "violet", lwd = 3)
@@ -28,22 +28,22 @@ graph_rich <- function(tbl_rich) {
   text(x = 70, y = 50, labels = "p-value=0.895")
  
   # Graphique de la richesse spécifique en fonction de la profondeur de la rivière
-  plot(table_richesse$profondeur_riviere,table_richesse$richesse, xlim = c(0,1), xlab = "Profondeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa profondeur")
-  reg_profondeur <-lm(table_richesse$richesse~table_richesse$profondeur_riviere)
+  plot(tbl_rich$profondeur_riviere,tbl_rich$richesse, xlim = c(0,1), xlab = "Profondeur de la rivière (m)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de sa profondeur")
+  reg_profondeur <-lm(tbl_rich$richesse~tbl_rich$profondeur_riviere)
   summary(reg_profondeur)
   abline(reg_profondeur, col = "limegreen", lwd = 3)
   text(x = 0.87, y = 50, labels = "p-value=0.293")
    
   # Graphique de la richesse spécifique en fonction de la  vitesse du courant de la rivière
-  plot_vitesse <- plot(table_richesse$vitesse_courant,table_richesse$richesse, xlim = c(0,9), xlab = "Vitesse de la rivière (m/s)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la vitesse de son courant")
-  reg_vitesse <- lm(table_richesse$richesse~table_richesse$vitesse_courant)
+  plot_vitesse <- plot(tbl_rich$vitesse_courant,tbl_rich$richesse, xlim = c(0,9), xlab = "Vitesse de la rivière (m/s)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la vitesse de son courant")
+  reg_vitesse <- lm(tbl_rich$richesse~tbl_rich$vitesse_courant)
   summary(reg_vitesse)
   abline(reg_vitesse, col = "salmon", lwd = 3)
   text(x = 7.8, y = 50, labels = "p-value=0.532")
   
   #Graphique de la richesse spécifique en fonction de la température de l'eau de la rivière
-  plot_temperature <- plot(table_richesse$temperature_eau_c,table_richesse$richesse, xlim = c(0,22), xlab = "Température de la rivière (˚C)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la température de l'eau")
-  reg_temperature <-lm(table_richesse$richesse~table_richesse$temperature_eau_c)
+  plot_temperature <- plot(tbl_rich$temperature_eau_c,tbl_rich$richesse, xlim = c(0,22), xlab = "Température de la rivière (˚C)", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la température de l'eau")
+  reg_temperature <-lm(tbl_rich$richesse~tbl_rich$temperature_eau_c)
   summary(reg_temperature) #p<0,05! p=0,0295
   abline(reg_temperature, col =  "turquoise3", lwd = 3)
   text(x = 19, y = 50, labels = "p-value=0,0295")

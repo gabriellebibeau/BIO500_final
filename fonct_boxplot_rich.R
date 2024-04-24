@@ -9,7 +9,7 @@ boxplot_rich <- function(tbl_rich) {
   # Ouvrir le fichier PNG
   png(image)
   
-  donnees_trans_sp <-data.frame(table_richesse$transparence_eau, table_richesse$richesse)
+  donnees_trans_sp <-data.frame(tbl_rich$transparence_eau, tbl_rich$richesse)
   colnames(donnees_trans_sp) <- c("transparence_eau", "richesse_specifique")
   plot_transparence <- boxplot(richesse_specifique~transparence_eau, donnees_trans_sp, col = "lightblue", xlab = "Transparence de l'eau", ylab = "Richesse spécifique", main = "La richesse spécifique de la rivière en fonction de la transparence de l'eau")
  

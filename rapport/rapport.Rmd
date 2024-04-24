@@ -27,7 +27,7 @@ author_contributions: |
   Please provide details of author contributions here.
 
 abstract: |
-  Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélés que seule la température influençait significativement la richesse spécifique, mais que des cours d’eau aux conditions similaires semblaient également présentés une diversité d’espèces plus semblable par rapport à des ruisseaux aux conditions différentes.
+  Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélé que seule la température influençait significativement la richesse spécifique parmi les variables abiotiques testées. Le site échantillonné semblait avoir un effet sur la composition de certaines communautés benthiques, mais pas toutes.
 
 significance: |
   Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the Significance Statement is to explain the relevance of the work in broad context to a broad readership. The Significance Statement appears in the paper itself and is required for all research papers.
@@ -68,39 +68,17 @@ Différentes analyses ont été performées sur les données pour répondre aux 
 
 ### Résultats {#résultats .unnumbered}
 
-```{r, echo=FALSE}
-donnees_richesse <- tar_read(table_richesse)
-source('fonct_graph_rich.R')
-graph_rich(donnees_richesse)
-```
-
 ![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. \label{fig:regression_richesse}](regression_richesse.png)
 
 Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur de la rivière, profondeur de la rivière, transparence de l'eau, température de l'eau et vitesse du courant) sur la richesse spécifique des échantillons analysés. Les régressions linéaires à la figure \ref{fig:regression_richesse} nous permettent d'observer un effet significatif pour la variable de la température, mais pas pour les autres. 
-
-```{r, echo=FALSE}
-source('fonct_boxplot_rich.R')
-boxplot_rich(donnees_richesse)
-```
 
 ![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse}](boxplot_richesse.png)
 
 L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
 
-```{r, echo=FALSE}
-source('fonct_tab_inter.R')
-tab_inter(donnees_richesse)
-```
-
 ![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.png)
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
-
-```{r, echo=FALSE}
-donnees_abondance <- tar_read(table_abondance)
-source('fonct_ordination_sites.R')
-ordination_sites(donnees_abondance)
-```
 
 ![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)
 

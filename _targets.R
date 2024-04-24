@@ -2,17 +2,21 @@
 
 # Dépendances
 library(targets)
-tar_option_set(packages = c("RSQLite", "dplyr","rmarkdown",
+tar_option_set(packages = c("tarchetypes", "RSQLite", "dplyr","rmarkdown",
                             "vegan","ggplot2","glue","knitr"))
 
 # Scripts R
-source("fonct_fus_fichiers.r")
+source("fonct_fus_fichiers.R")
 source("fonct_nettoyage.R")
 source("fonct_classer_col.R")
 source("fonct_ajout_IDs.R")
 source("fonct_creation_bd.R")
 source("fonct_extract_rich.R")
 source("fonct_extract_abond.R")
+source("fonct_graph_rich.R")
+source("fonct_boxplot_rich.R")
+source("fonct_tab_inter.R")
+source("fonct_ordination_sites.R")
 
 # Pipeline
 list(
@@ -57,18 +61,44 @@ list(
     command = creation_bd(df_sites, df_especes)
   ),
   #Extraction des données de richesse de SQLite
-  tar_target(
+  tarchetypes::tar_force(
     name = table_richesse,
-    command = extract_rich(fichier_SQL)
+    command = extract_rich(fichier_SQL),
+    force = TRUE
   ),
   #Extraction des données d'abondance de SQLite
-  tar_target(
+  tarchetypes::tar_force(
     name = table_abondance,
-    command = extract_abond(fichier_SQL)
+    command = extract_abond(fichier_SQL),
+    force = TRUE
   ),  
+  #Création des graphiques de régressions 
+  tarchetypes::tar_force(
+    name = graphs_richesse,
+    command = graph_rich(table_richesse),
+    force = TRUE
+  ),
+  #Création du boxplot de la transparence 
+  tarchetypes::tar_force(
+    name = boxplot_trans,
+    command = boxplot_rich(table_richesse),
+    force = TRUE
+  ),
+  #Création du tableau des interactions 
+  tarchetypes::tar_force(
+    name = interactions,
+    command = tab_inter(table_richesse),
+    force = TRUE
+  ),
+  #Création de l'ordination
+  tarchetypes::tar_force(
+    name = ordination,
+    command = ordination_sites(table_abondance),
+    force = TRUE
+  )#,
   #Création du rapport RMarkdown
-  tar_target(
-    name = rapport, 
-    command = rmarkdown::render("rapport/rapport.Rmd")
-  )
+  #tar_render(
+    #rapport, 
+    #"rapport/rapport.Rmd"
+  #)
 )

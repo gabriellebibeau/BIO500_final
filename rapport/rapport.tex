@@ -46,8 +46,8 @@
 
 \templatetype{pnasresearcharticle}  % Choose template
 
-\title{Template for preparing your research report submission to PNAS
-using RMarkdown}
+\title{L'influence de l'environnement abiotique sur la richesse
+spécifique des petits milieux lotiques}
 
 \author[a,1]{Gabrielle Bibeau}
 \author[a]{Laura Glaude}
@@ -84,10 +84,17 @@ here.}
  \keywords{  Benthos |  Biodiversité  } 
 
 \begin{abstract}
-Please provide an abstract of no more than 250 words in a single
-paragraph. Abstracts should explain to the general reader the major
-contributions of the article. References in the abstract must be cited
-in full within the abstract itself and cited in the text.
+Dans le cadre d'un suivi de la biodiversité benthique, cette étude
+évalue l'impact de différentes variables environnementales sur la
+richesse spécifique de petits écosystèmes lotiques, les rivières et
+ruisseaux. Nous tentons d'évaluer si la profondeur du ruisseau, sa
+largeur, la température de son eau et sa transparence ainsi que la
+vitesse du courant sont corrélées avec la diversité d'espèces présentes
+dans le milieu. Nos tests statistiques ont révélé que seule la
+température influençait significativement la richesse spécifique parmi
+les variables abiotiques testées. Le site échantillonné semblait avoir
+un effet sur la composition de certaines communautés benthiques, mais
+pas toutes.
 \end{abstract}
 
 \dates{This manuscript was compiled on \today}
@@ -121,10 +128,10 @@ de ruisseaux, cette étude se penchera sur l'influence des variations
 spatiales et temporelles sur la structure des communautés de milieux
 lotiques. L'objectif est d'évaluer l'impact de différentes variables
 abiotiques environnementales sur la richesse spécifique benthique de
-ruisseaux. Pour ce faire, cinq variables environnementales seront prises
-en compte sur différents sites : la profondeur et la largeur du cours
-d'eau, la transparence de son eau, sa température ainsi que la vitesse
-du courant.
+ruisseaux. Pour ce faire, un ddénombrement des espèces ainsi que cinq
+variables environnementales seront prises en compte sur différents sites
+: la profondeur et la largeur du cours d'eau, la transparence de son
+eau, sa température ainsi que la vitesse du courant.
 
 \hypertarget{muxe9thodes}{%
 \subsubsection*{Méthodes}\label{muxe9thodes}}
@@ -177,6 +184,15 @@ permises par cet outil de visualisation.
 \subsubsection*{Résultats}\label{ruxe9sultats}}
 \addcontentsline{toc}{subsubsection}{Résultats}
 
+\begin{figure}
+\centering
+\includegraphics{regression_richesse.png}
+\caption{Régressions linéaires de la richesse en fonction de (A) la
+largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse
+du courant et (D) la température de l'eau.
+\label{fig:regression_richesse}}
+\end{figure}
+
 Nous avons d'abord testé l'effet des différentes variables abiotiques
 (largeur de la rivière, profondeur de la rivière, transparence de l'eau,
 température de l'eau et vitesse du courant) sur la richesse spécifique
@@ -187,11 +203,10 @@ autres.
 
 \begin{figure}
 \centering
-\includegraphics{regression_richesse.png}
-\caption{Régressions linéaires de la richesse en fonction de (A) la
-largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse
-du courant et (D) la température de l'eau.
-\label{fig:regression_richesse}}
+\includegraphics{boxplot_richesse.png}
+\caption{Diagramme à moustache de la richesse spécifique des
+échantillons de benthos en fonction de la transparence de l'eau lors de
+l'échantillonnage. \label{fig:boxplot_richesse}}
 \end{figure}
 
 L'effet de la transparence a été visualisé en diagramme à moustache
@@ -201,10 +216,10 @@ communautés de benthos.
 
 \begin{figure}
 \centering
-\includegraphics{boxplot_richesse.png}
-\caption{Diagramme à moustache de la richesse spécifique des
-échantillons de benthos en fonction de la transparence de l'eau lors de
-l'échantillonnage. \label{fig:boxplot_richesse}}
+\includegraphics{tableau_interaction.png}
+\caption{Tableau de la significativité des interactions entre les
+variables affectant la richesse spécifique des échantillons dans des
+régressions linéaires. \label{fig:tableau_interaction}}
 \end{figure}
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les
@@ -214,10 +229,9 @@ en ce qui concerne la richesse spécifique des échantillons.
 
 \begin{figure}
 \centering
-\includegraphics{tableau_interaction.png}
-\caption{Tableau de la significativité des interactions entre les
-variables affectant la richesse spécifique des échantillons dans des
-régressions linéaires. \label{fig:tableau_interaction}}
+\includegraphics{ordination_sites.png}
+\caption{PCoA des communautés de benthos échantillonnées par
+Biodiversité Québec en fonction du site. \label{fig:ordination_sites}}
 \end{figure}
 
 Finalement, la diversité beta a été observée à l'aide d'une ordination
@@ -227,13 +241,6 @@ différentes périodes d'échantillonnages, alors que d'autres sont plutôt
 variées. Entre eux, les sites sont parfois très proches en termes de
 composition même s'ils sont différents géographiquement, d'autres fois
 complètement différents.
-
-\begin{figure}
-\centering
-\includegraphics{ordination_sites.png}
-\caption{PCoA des communautés de benthos échantillonnées par
-Biodiversité Québec en fonction du site. \label{fig:ordination_sites}}
-\end{figure}
 
 \hypertarget{discussion}{%
 \subsubsection*{Discussion}\label{discussion}}
