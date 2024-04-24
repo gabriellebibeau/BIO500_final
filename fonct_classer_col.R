@@ -10,12 +10,13 @@ classer_col <- function(donnees_fus_pert){ #La fonction ne peut prendre que des 
       if(k == "heure_obs"){ #Si c'est la colonne du temps
         donnees_fusionnees_pertinentes[k] <- as.difftime(donnees_fusionnees_pertinentes[1:nrow(donnees_fusionnees_pertinentes), k], format = "%Hh%M.%S")
       
+        #Pour modifier les données ayant le 2e type de format
         for (l in 1:nrow(donnees_fusionnees_pertinentes)) {
           if(is.na(donnees_fusionnees_pertinentes[l,k]) == TRUE){
             donnees_fusionnees_pertinentes[l,k] <- as.difftime(donnees_fus_pert[l,k])
-          }
+          } #fin de la boucle l
           
-        } #fin de la boucle l
+        } #fin de la boucle k
         
         } #mettre les valeurs de cette colonne en difftime (h)
       
