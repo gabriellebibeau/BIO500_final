@@ -66,7 +66,7 @@ ordination_sites <- function(tbl_abd){ #on rentre la table d'abondance
       labs(x = nom_axe[1], y = nom_axe[2]) +
       theme_minimal()
     
-    ggsave('ordination_sites.pdf', ordination, width = 6) #enregistrement
+    ggsave('ordination_sites.png', ordination, width = 6) #enregistrement
     
     return(pcoa)
   

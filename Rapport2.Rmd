@@ -1,8 +1,8 @@
 ---
 title: "L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux lotiques"
 author: "Gabrielle Bibeau, Laura Glaude, Emmanuelle Langlois et Cloé Tanguay"
-output: html_document
-Bibliography: BIO500_final.bib
+output: pdf_document
+bibliography: BIO500_final.bib
 ---
 
 Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélé que seule la température influençait significativement la richesse spécifique parmi les variables abiotiques testées. Le site échantillonné semblait avoir un effet sur la composition de certaines communautés benthiques, mais pas toutes.
@@ -23,20 +23,20 @@ Différentes analyses ont été performées sur les données pour répondre aux 
 
 ### Résultats 
 
-![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. \label{fig:regression_richesse}](regression_richesse.pdf)
+![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. \label{fig:regression_richesse}](regression_richesse.png)[H]
 
 
 Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur de la rivière, profondeur de la rivière, transparence de l'eau, température de l'eau et vitesse du courant) sur la richesse spécifique des échantillons analysés. Les régressions linéaires à la figure \ref{fig:regression_richesse} nous permettent d'observer un effet significatif pour la variable de la température, mais pas pour les autres. 
 
-![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse}](boxplot_richesse.pdf)
+![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse}](boxplot_richesse.png)[H]
 
 L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
 
-![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.pdf)
+![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.pdf)[H]
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
 
-![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites](ordination_sites.pdf)
+![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites}](ordination_sites.png)[H]
 
 Finalement, la diversité beta a été observée à l'aide d'une ordination PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre eux, les sites sont parfois très proches en termes de composition même s'ils sont différents géographiquement, d'autres fois complètement différents.  
 
@@ -46,4 +46,7 @@ Les résultats de l'étude offrent une vision limitée des variables qui influen
 
 En ce qui concerne les interactions entre les variables abiotiques, nos résultats montrent qu'aucune interaction significative n'a été observée concernant la richesse spécifique des échantillons. Cela pourrait être attribué à la sensibilité limitée de la méthode utilisée pour détecter ces interactions, en raison de considérations telles que les méthodes de sélection de variables et les approches de sélection de modèles @claeskens_statistical_2016.
 
-Enfin, en ce qui concerne l'ordination, nos résultats révèlent que certains sites présentent des communautés de benthos similaires à travers différentes périodes d'échantillonnage, tandis que d'autres présentent une plus grande variabilité. Malgré des différences géographiques, certains sites ont une composition similaire, tandis que d'autres sont distincts les uns des autres. Cette observation pourrait s'expliquer par le fait que la similarité des communautés écologiques diminue avec la distance, mais des facteurs tels que l'échelle spatiale, les propriétés des organismes, la région d'étude et l'écosystème peuvent influencer cette relation pour rendre des sites semblables entre eux malgré la distance qui les sépare @soininen_distance_2007. 
+Enfin, en ce qui concerne l'ordination, nos résultats révèlent que certains sites présentent des communautés de benthos similaires à travers différentes périodes d'échantillonnage, tandis que d'autres présentent une plus grande variabilité. Malgré des différences géographiques, certains sites ont une composition similaire, tandis que d'autres sont distincts les uns des autres. Cette observation pourrait s'expliquer par le fait que la similarité des communautés écologiques diminue avec la distance, mais des facteurs tels que l'échelle spatiale, les propriétés des organismes, la région d'étude et l'écosystème peuvent influencer cette relation pour rendre des sites semblables entre eux malgré la distance qui les sépare [@soininen_distance_2007]. 
+
+
+### Références
