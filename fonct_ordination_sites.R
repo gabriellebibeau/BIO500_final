@@ -66,13 +66,7 @@ ordination_sites <- function(tbl_abd){ #on rentre la table d'abondance
       labs(x = nom_axe[1], y = nom_axe[2]) +
       theme_minimal()
     
-    # Définir le dossier dans lequel l'image sera enregistrée
-    dossier_rapport <- "rapport"
-    
-    #Définir le chemin vers l'image créée
-    image <- file.path(dossier_rapport, 'ordination_sites.pdf')
-    
-    ggsave(image, ordination, width = 5)
+    ggsave('ordination_sites.pdf', ordination, width = 6) #enregistrement
     
     return(pcoa)
   

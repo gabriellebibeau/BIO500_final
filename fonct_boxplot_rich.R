@@ -1,13 +1,7 @@
 boxplot_rich <- function(tbl_rich) {
   
-  # Définir le dossier dans lequel l'image sera enregistrée
-  dossier_rapport <- "rapport"
-  
-  #Définir le chemin vers l'image créée
-  image <- file.path(dossier_rapport, 'boxplot_richesse.pdf')
-  
-  # Ouvrir le fichier PNG
-  pdf(image, width = 4, height = 4)
+# Ouvrir le fichier PNG
+  pdf('boxplot_richesse.pdf', width = 4, height = 4)
   
   # Créer l'ordre de préférence
   tbl_rich$transparence_eau <- factor(tbl_rich$transparence_eau , levels=c("faible", "moyenne", "élevée"))
