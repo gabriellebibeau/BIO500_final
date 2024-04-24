@@ -49,10 +49,10 @@ tab_inter <- function(tbl_rich){
   dossier_rapport <- "rapport"
   
   #Définir le chemin vers l'image créée
-  image <- file.path(dossier_rapport, 'tableau_interaction.png')
+  image <- file.path(dossier_rapport, 'tableau_interaction.pdf')
   
   # Ouvrir le fichier PNG
-  png(image)
+  pdf(image)
   gridExtra::grid.table(resultats)
   dev.off()
   

@@ -70,7 +70,7 @@ ordination_sites <- function(tbl_abd){ #on rentre la table d'abondance
     dossier_rapport <- "rapport"
     
     #Définir le chemin vers l'image créée
-    image <- file.path(dossier_rapport, 'ordination_sites.png')
+    image <- file.path(dossier_rapport, 'ordination_sites.pdf')
     
     ggsave(image, ordination)
     

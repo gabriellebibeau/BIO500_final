@@ -8,10 +8,10 @@ graph_rich <- function(tbl_rich) {
   dossier_rapport <- "rapport"
   
   # Définir le chemin vers l'image créée
-  image <- file.path(dossier_rapport, "regression_richesse.png")
+  image <- file.path(dossier_rapport, "regression_richesse.pdf")
   
   # Ouvrir le fichier PNG
-  png(image)
+  pdf(image)
   # Les quatres graphiques sont inclues dans la même image
   par(mfrow = c(2, 2)) 
   

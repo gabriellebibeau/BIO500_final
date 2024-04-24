@@ -95,10 +95,10 @@ list(
     name = ordination,
     command = ordination_sites(table_abondance),
     force = TRUE
-  ),
+  )#,
   #Création du rapport RMarkdown
-  tar_render(
-    name = rapport, 
-    command = "rapport/rapport.Rmd"
-  )
+  #tar_render(
+    #name = rapport, 
+    #command = "rapport/rapport.Rmd"
+  #)
 )
