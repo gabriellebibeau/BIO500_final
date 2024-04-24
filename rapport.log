@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.22)  24 APR 2024 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.4.22)  24 APR 2024 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Rapport2.tex
-(./Rapport2.tex
+**rapport.tex
+(./rapport.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
 (c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -348,8 +348,9 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count295
 \l__pdf_internal_box=\box54
-) (./Rapport2.aux)
-\openout1 = `Rapport2.aux'.
+)
+No file rapport.aux.
+\openout1 = `rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 98.
 LaTeX Font Info:    ... okay on input line 98.
@@ -464,79 +465,25 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 {c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-<regression_richesse.png, id=17, 481.8pt x 481.8pt>
-File: regression_richesse.png Graphic file (type png)
-<use regression_richesse.png>
-Package pdftex.def Info: regression_richesse.png  used on input line 179.
-(pdftex.def)             Requested size: 469.77148pt x 469.77148pt.
 
-Overfull \hbox (12.81087pt too wide) in paragraph at lines 179--180
-[]\T1/lmr/m/n/10 (-20) [H] 
- []
+LaTeX Warning: File `regression_richesse.png' not found on input line 181.
 
 
-LaTeX Warning: Reference `fig:regression_richesse' on page 2 undefined on input line 185.
+! Package pdftex.def Error: File `regression_richesse.png' not found: using draft setting.
 
-[2 <./regression_richesse.png>]
-<boxplot_richesse.png, id=25, 481.8pt x 481.8pt>
-File: boxplot_richesse.png Graphic file (type png)
-<use boxplot_richesse.png>
-Package pdftex.def Info: boxplot_richesse.png  used on input line 189.
-(pdftex.def)             Requested size: 469.77148pt x 469.77148pt.
-
-Overfull \hbox (12.81087pt too wide) in paragraph at lines 189--190
-[][]\T1/lmr/m/n/10 (-20) [H] 
- []
-
-
-LaTeX Warning: Reference `fig:boxplot_richesse' on page 3 undefined on input line 192.
-
-<tableau_interaction.png, id=26, 5.01875pt x 3.01125pt>
-File: tableau_interaction.png Graphic file (type png)
-<use tableau_interaction.png>
-Package pdftex.def Info: tableau_interaction.png  used on input line 196.
-(pdftex.def)             Requested size: 5.01872pt x 3.01123pt.
-
-LaTeX Warning: Reference `fig:tableau_interaction' on page 3 undefined on input line 199.
-
-<ordination_sites.png, id=27, 433.62pt x 505.89pt>
-File: ordination_sites.png Graphic file (type png)
-<use ordination_sites.png>
-Package pdftex.def Info: ordination_sites.png  used on input line 203.
-(pdftex.def)             Requested size: 433.62555pt x 505.89645pt.
-[3 <./boxplot_richesse.png> <./tableau_interaction.png>]
-
-LaTeX Warning: Reference `fig:ordination_sites' on page 4 undefined on input line 206.
-
-[4 <./ordination_sites.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 272.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 272.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 272.
-[5] (./Rapport2.aux)
- ***********
-LaTeX2e <2023-11-01> patch level 1
-L3 programming layer <2024-03-14>
- ***********
-
-LaTeX Warning: There were undefined references.
-
- ) 
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.181 \includegraphics{regression_richesse.png}
+                                                
 Here is how much of TeX's memory you used:
- 13010 strings out of 476021
- 205936 string characters out of 5789794
+ 12884 strings out of 476021
+ 204505 string characters out of 5789794
  1940496 words of memory out of 5000000
- 34839 multiletter control sequences out of 15000+600000
- 603611 words of font info for 122 fonts, out of 8000000 for 9000
+ 34786 multiletter control sequences out of 15000+600000
+ 585398 words of font info for 84 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 89i,6n,93p,1005b,449s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/cloet/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
-Output written on Rapport2.pdf (5 pages, 248969 bytes).
-PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 22589 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 89i,6n,93p,1004b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
+!  ==> Fatal error occurred, no output PDF file produced!

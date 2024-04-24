@@ -46,8 +46,8 @@ tab_inter <- function(tbl_rich){
 
   #7.Mettre le tableau en image
   
-  # Ouvrir le fichier PNG
-  png('tableau_interaction.png', width = 5, height = 3.5)
+  # Ouvrir le fichier PDF
+  pdf('tableau_interaction.pdf', width = 5, height = 3.5)
   gridExtra::grid.table(resultats)
   dev.off()
   

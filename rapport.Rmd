@@ -1,97 +1,75 @@
 ---
-title: "L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux lotiques" 
-
-author:
-  - name: Gabrielle Bibeau
-    affiliation: a,1
-  - name: Laura Glaude
-    affiliation: a
-  - name: Emmanuelle Langlois
-    affiliation: a
-  - name: Cloé Tanguay
-    affiliation: a
-    
-address:
-  - code: a
-    address: Université de Sherbrooke, Département de Biologie, 2500 Boulevard de l'Université, Sherbrooke, Québec, Canada
-
-corresponding_author:
-  code: 1
-  text: "À qui la correspondance devrait être addressée. Courriel: bibg1101@usherbrooke.ca"
-
-# For footer text
-lead_author_surname: BIO500
-
-author_contributions: |
-  Tous les auteurs ont contribué de façon égale.
-  
-abstract: |
-  Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélé que seule la température influençait significativement la richesse spécifique parmi les variables abiotiques testées. Le site échantillonné semblait avoir un effet sur la composition de certaines communautés benthiques, mais pas toutes.
-
-significance: |
-  Notre recherche est significative pour la compréhension des facteurs influençants les communautés benthiques dans les rivières du Québec.
-
-acknowledgements: |
-  Merci à Victor Cameron et Benjamin Mercier sans qui ce projet n'aurait été possible.
-
-keywords:
-  - Benthos
-  - Biodiversité
-
-
-## must be one of: pnasresearcharticle (usual two-column layout), pnasmathematics (one column layout), or pnasinvited (invited submissions only)
-pnas_type: pnasresearcharticle
-
+title: "L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux lotiques"
+author: "Gabrielle Bibeau, Laura Glaude, Emmanuelle Langlois et Cloé Tanguay"
+output: pdf_document
 bibliography: BIO500_final.bib
-cls: pnas.cls
-
-## change to true to add optional line numbering
-lineno: false
-
-output: rticles::pnas_article
 ---
+
+Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélé que seule la température influençait significativement la richesse spécifique parmi les variables abiotiques testées. Le site échantillonné semblait avoir un effet sur la composition de certaines communautés benthiques, mais pas toutes.
+
+### Intoduction
 
 Dans le contexte actuel de constantes variations climatiques, conséquences des changements climatiques, il est primordial d’analyser les réactions de la biodiversité face à de telles variations afin d’être en mesure de mieux la comprendre et ainsi, de mieux la protéger. C’est pourquoi, dans le cadre d’un suivi annuel de la biodiversité benthique de ruisseaux, cette étude se penchera sur l'influence des variations spatiales et temporelles sur la structure des communautés de milieux lotiques. L’objectif est d’évaluer l’impact de différentes variables abiotiques environnementales sur la richesse spécifique benthique de ruisseaux. Pour ce faire, un ddénombrement des espèces ainsi que cinq variables environnementales seront prises en compte sur différents sites : la profondeur et la largeur du cours d’eau, la transparence de son eau, sa température ainsi que la vitesse du courant. 
 
 
-### Méthodes {#méthodes .unnumbered}
+### Méthodes
 
 Le jeu de données utilisé contient une partie des inventaires du benthos faits par le ministère de l'Environnement, de la Lutte contre les Changements Climatiques, de la Faune et des Parcs (MELCCFP) avec le protocole d’échantillonnage des macroinvertébrés benthiques d’eau douce du Québec dans le cadre du suivi de la qualité de l'eau des rivières du Québec. Ces données, extraites du site Biodiversité Québec, recensent les espèces de macroinvertébrés benthiques dans les rivières du Québec.  
 
 Avant l'analyse des données, celles-ci sont passées à travers plusieurs manipulations. Premièrement, les données, extraites sous forme de fichiers .csv, ont été manipulées pour être regroupées en une matrice. Deuxièmement, la matrice a été nettoyée, notamment en assignant une classe pertinente aux valeurs de la matrice (ex: les dates en format 'Date' et non en format 'Character'), en enlevant les colonnes importunes (ne contenant que des NAs ou étant des doublons) et en remplaçant les données problématiques par des NAs (valeurs de -99 pour des variables strictement positives dans la réalité). Troisièmement, des numéros d'identification (IDs) ont été assignés pour toutes les combinaisons de dates, de sites et d'heures. Finalement, une base de données .db a été créée pour entreposer deux tables : une contenant des informations reliées aux IDs et l'autre, des informations sur les abondances des taxons de benthos.
 
-Différentes analyses ont été performées sur les données pour répondre aux questions posées par ce rapport. D'abord, des régressions linéaires simples (p=0.05) de la richesse spécifique ont été produites en fonction des variables suivantes : la largeur de la rivière, la profondeur de la rivière, la vitesse du courant et la température de l'eau. Ensuite, un diagramme à moustache validé par un test de t avec un intervalle de confiance de 0.95 a été réalisé pour la richesse spécifique en fonction de la transparence de l'eau. Puis, une vérification d'interactions pour toutes les combinaisons possibles de variables abiotiques a été conduite avec des régressions linéaires simples (p=0.05).  Seule la température de l'eau a une distribution normale. Suite à des tests de régressions linéaires généralisées avec différentes familles (par exemple Poisson), nous avons conclu que les erreurs avaient une distribution plus normale lorsque nous utilisions la régression linéaire simple. Finalement, une ordination de type PCoA (Principal Coordinates Analysis) de la composition en abondance des communautés benthiques a été produite seulement avec les échantillons pris plus d'une fois sur un même site. Aucun test statistique n'a été réalisé pour valider les observations permises par cet outil de visualisation.
+Différentes analyses ont été performées sur les données pour répondre aux questions posées par ce rapport. D'abord, des régressions linéaires simples (p=0.05) de la richesse spécifique ont été produites en fonction des variables suivantes : la largeur de la rivière, la profondeur de la rivière, la vitesse du courant et la température de l'eau. Ensuite, un diagramme à moustache a été réalisé pour la richesse spécifique en fonction de la transparence de l'eau. Puis, une vérification d'interactions pour toutes les combinaisons possibles de variables abiotiques a été conduite avec des régressions linéaires simples (p=0.05).  Seule la température de l'eau a une distribution normale. Suite à des tests de régressions linéaires généralisées avec différentes familles (par exemple Poisson), nous avons conclu que les erreurs avaient une distribution plus normale lorsque nous utilisions la régression linéaire simple. Finalement, une ordination de type PCoA (Principal Coordinates Analysis) de la composition en abondance des communautés benthiques a été produite seulement avec les échantillons pris plus d'une fois sur un même site. Aucun test statistique n'a été réalisé pour valider les observations permises par cet outil de visualisation.
 
 
-### Résultats {#résultats .unnumbered}
+### Résultats 
 
-![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. \label{fig:regression_richesse}](regression_richesse.pdf){ width: 20.5px; }
+\begin{figure}[h]
+\centering
+\includegraphics{regression_richesse.png}
+\caption{Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau}
+\label{fig:regression_richesse}
+\end{figure}
 
 
 Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur de la rivière, profondeur de la rivière, transparence de l'eau, température de l'eau et vitesse du courant) sur la richesse spécifique des échantillons analysés. Les régressions linéaires à la figure \ref{fig:regression_richesse} nous permettent d'observer un effet significatif pour la variable de la température, mais pas pour les autres. 
 
-![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse}](boxplot_richesse.pdf){ width: 20.5px; }
+\begin{figure}
+\centering
+\includegraphics{boxplot_richesse.png}
+\caption{Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage.}
+\label{fig:boxplot_richesse}
+\end{figure}
+
 
 L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
 
-![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.pdf){ width: 20.5px; }
+
+\begin{figure}
+\centering
+\includegraphics{tableau_interaction.pdf}
+\caption{Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires.}
+\label{fig:tableau_interaction}
+\end{figure}
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
 
-![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites](ordination_sites.pdf){ width: 20.5px; }
+\begin{figure}
+\centering
+\includegraphics{ordination_sites.png}
+\caption{PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site.}
+\label{fig:ordination_sites}
+\end{figure}
+
 
 Finalement, la diversité beta a été observée à l'aide d'une ordination PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre eux, les sites sont parfois très proches en termes de composition même s'ils sont différents géographiquement, d'autres fois complètement différents.  
 
 
-### Discussion {#discussion .unnumbered}
+### Discussion
 Les résultats de l'étude offrent une vision limitée des variables qui influent sur la diversité du benthos. Mise à part la température, aucun facteur d’habitat n'a révélé de résultats significatifs. La littérature souligne l’impact clair de la température sur les communautés benthiques, mais l’effet des autres variables reste incertain [@jowett_hydraulic_2003;@godson_ecology_2022].Bien qu'une relation entre la vélocité, la largeur et la profondeur des rivières ait été démontrée dans d'autres études, elle ne semble pas s’appliquer aux petits cours d’eau [@jowett_hydraulic_2003;@godson_ecology_2022]. De plus, la vélocité devrait être mesurée au niveau du substrat, l’espace occupé par le benthos, plutôt que dans la colonne d’eau, ce qui pourrait expliquer le manque de résultats significatifs [@jowett_hydraulic_2003;@godson_ecology_2022].  En outre, plusieurs variables importantes, telles que les caractéristiques du substrat, n’ont pas été testées en raison de l’absence de données  [@jowett_hydraulic_2003;@godson_ecology_2022]. D’autres caractéristiques de l’habitat peuvent également influencer la structure des populations d’invertébrés benthiques lorsqu’elles sont mises en relation avec les caractéristiques des sédiments [@jowett_hydraulic_2003;@godson_ecology_2022]. Il serait donc pertinent d’ajouter ces mesures au protocole de caractérisation du milieu dans les futures études. De plus, les tests ont été effectués sur un échantillon limité de données de benthos, ce qui peut avoir réduit notre capacité à obtenir des résultats significatifs. Augmenter la quantité de données pourrait donc accroître nos chances de détection de relations significatives.
 
 En ce qui concerne les interactions entre les variables abiotiques, nos résultats montrent qu'aucune interaction significative n'a été observée concernant la richesse spécifique des échantillons. Cela pourrait être attribué à la sensibilité limitée de la méthode utilisée pour détecter ces interactions, en raison de considérations telles que les méthodes de sélection de variables et les approches de sélection de modèles @claeskens_statistical_2016.
 
-Enfin, en ce qui concerne l'ordination, nos résultats révèlent que certains sites présentent des communautés de benthos similaires à travers différentes périodes d'échantillonnage, tandis que d'autres présentent une plus grande variabilité. Malgré des différences géographiques, certains sites ont une composition similaire, tandis que d'autres sont distincts les uns des autres. Cette observation pourrait s'expliquer par le fait que la similarité des communautés écologiques diminue avec la distance, mais des facteurs tels que l'échelle spatiale, les propriétés des organismes, la région d'étude et l'écosystème peuvent influencer cette relation pour rendre des sites semblables entre eux malgré la distance qui les sépare @soininen_distance_2007. 
+Enfin, en ce qui concerne l'ordination, nos résultats révèlent que certains sites présentent des communautés de benthos similaires à travers différentes périodes d'échantillonnage, tandis que d'autres présentent une plus grande variabilité. Malgré des différences géographiques, certains sites ont une composition similaire, tandis que d'autres sont distincts les uns des autres. Cette observation pourrait s'expliquer par le fait que la similarité des communautés écologiques diminue avec la distance, mais des facteurs tels que l'échelle spatiale, les propriétés des organismes, la région d'étude et l'écosystème peuvent influencer cette relation pour rendre des sites semblables entre eux malgré la distance qui les sépare [@soininen_distance_2007]. 
 
 
-<!-- Leave these lines as they are at the end of your .Rmd file to ensure placement of methods & acknowledgements sections before the references-->
-\showmatmethods
-\showacknow
-\pnasbreak
+### Références

@@ -1,30 +1,65 @@
-\documentclass[9pt,twocolumn,twoside,]{pnas-new}
-
-% Use the lineno option to display guide line numbers if required.
-% Note that the use of elements such as single-column equations
-% may affect the guide line number alignment.
-
-
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-% tightlist command for lists without linebreak
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-
-% Pandoc citation processing
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
 \newlength{\cslentryspacingunit} % times entry-spacing
 \setlength{\cslentryspacingunit}{\parskip}
-% for Pandoc 2.8 to 2.10.1
-\newenvironment{cslreferences}%
-  {}%
-  {\par}
-% For Pandoc 2.11+
 \newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
  {% don't indent paragraphs
   \setlength{\parindent}{0pt}
@@ -42,43 +77,27 @@
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
 \newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
-
-
-\templatetype{pnasresearcharticle}  % Choose template
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux lotiques},
+  pdfauthor={Gabrielle Bibeau, Laura Glaude, Emmanuelle Langlois et Cloé Tanguay},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{L'influence de l'environnement abiotique sur la richesse
 spécifique des petits milieux lotiques}
+\author{Gabrielle Bibeau, Laura Glaude, Emmanuelle Langlois et Cloé
+Tanguay}
+\date{}
 
-\author[a,1]{Gabrielle Bibeau}
-\author[a]{Laura Glaude}
-\author[a]{Emmanuelle Langlois}
-\author[a]{Cloé Tanguay}
+\begin{document}
+\maketitle
 
-  \affil[a]{Université de Sherbrooke, Département de Biologie, 2500
-Boulevard de l'Université, Sherbrooke, Québec, Canada}
-
-
-% Please give the surname of the lead author for the running footer
-\leadauthor{BIO500}
-
-% Please add here a significance statement to explain the relevance of your work
-\significancestatement{Notre recherche est significative pour la
-compréhension des facteurs influençants les communautés benthiques dans
-les rivières du Québec.}
-
-
-\authorcontributions{Tous les auteurs ont contribué de façon égale.}
-
-
-
-\correspondingauthor{\textsuperscript{1} À qui la correspondance devrait
-être addressée. Courriel:
-\href{mailto:bibg1101@usherbrooke.ca}{\nolinkurl{bibg1101@usherbrooke.ca}}}
-
-% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
- \keywords{  Benthos |  Biodiversité  } 
-
-\begin{abstract}
 Dans le cadre d'un suivi de la biodiversité benthique, cette étude
 évalue l'impact de différentes variables environnementales sur la
 richesse spécifique de petits écosystèmes lotiques, les rivières et
@@ -90,27 +109,9 @@ température influençait significativement la richesse spécifique parmi
 les variables abiotiques testées. Le site échantillonné semblait avoir
 un effet sur la composition de certaines communautés benthiques, mais
 pas toutes.
-\end{abstract}
 
-\dates{This manuscript was compiled on \today}
-\doi{\url{www.pnas.org/cgi/doi/10.1073/pnas.XXXXXXXXXX}}
-
-\begin{document}
-
-% Optional adjustment to line up main text (after abstract) of first page with line numbers, when using both lineno and twocolumn options.
-% You should only change this length when you've finalised the article contents.
-\verticaladjustment{-2pt}
-
-
-
-\maketitle
-\thispagestyle{firststyle}
-\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
-
-% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
-
-\acknow{Merci à Victor Cameron et Benjamin Mercier sans qui ce projet
-n'aurait été possible.}
+\hypertarget{intoduction}{%
+\subsubsection{Intoduction}\label{intoduction}}
 
 Dans le contexte actuel de constantes variations climatiques,
 conséquences des changements climatiques, il est primordial d'analyser
@@ -127,8 +128,7 @@ variables environnementales seront prises en compte sur différents sites
 eau, sa température ainsi que la vitesse du courant.
 
 \hypertarget{muxe9thodes}{%
-\subsubsection*{Méthodes}\label{muxe9thodes}}
-\addcontentsline{toc}{subsubsection}{Méthodes}
+\subsubsection{Méthodes}\label{muxe9thodes}}
 
 Le jeu de données utilisé contient une partie des inventaires du benthos
 faits par le ministère de l'Environnement, de la Lutte contre les
@@ -158,32 +158,29 @@ aux questions posées par ce rapport. D'abord, des régressions linéaires
 simples (p=0.05) de la richesse spécifique ont été produites en fonction
 des variables suivantes : la largeur de la rivière, la profondeur de la
 rivière, la vitesse du courant et la température de l'eau. Ensuite, un
-diagramme à moustache validé par un test de t avec un intervalle de
-confiance de 0.95 a été réalisé pour la richesse spécifique en fonction
-de la transparence de l'eau. Puis, une vérification d'interactions pour
-toutes les combinaisons possibles de variables abiotiques a été conduite
-avec des régressions linéaires simples (p=0.05). Seule la température de
-l'eau a une distribution normale. Suite à des tests de régressions
-linéaires généralisées avec différentes familles (par exemple Poisson),
-nous avons conclu que les erreurs avaient une distribution plus normale
-lorsque nous utilisions la régression linéaire simple. Finalement, une
-ordination de type PCoA (Principal Coordinates Analysis) de la
-composition en abondance des communautés benthiques a été produite
-seulement avec les échantillons pris plus d'une fois sur un même site.
-Aucun test statistique n'a été réalisé pour valider les observations
-permises par cet outil de visualisation.
+diagramme à moustache a été réalisé pour la richesse spécifique en
+fonction de la transparence de l'eau. Puis, une vérification
+d'interactions pour toutes les combinaisons possibles de variables
+abiotiques a été conduite avec des régressions linéaires simples
+(p=0.05). Seule la température de l'eau a une distribution normale.
+Suite à des tests de régressions linéaires généralisées avec différentes
+familles (par exemple Poisson), nous avons conclu que les erreurs
+avaient une distribution plus normale lorsque nous utilisions la
+régression linéaire simple. Finalement, une ordination de type PCoA
+(Principal Coordinates Analysis) de la composition en abondance des
+communautés benthiques a été produite seulement avec les échantillons
+pris plus d'une fois sur un même site. Aucun test statistique n'a été
+réalisé pour valider les observations permises par cet outil de
+visualisation.
 
 \hypertarget{ruxe9sultats}{%
-\subsubsection*{Résultats}\label{ruxe9sultats}}
-\addcontentsline{toc}{subsubsection}{Résultats}
+\subsubsection{Résultats}\label{ruxe9sultats}}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\includegraphics{regression_richesse.pdf}
-\caption{Régressions linéaires de la richesse en fonction de (A) la
-largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse
-du courant et (D) la température de l'eau.
-\label{fig:regression_richesse}}
+\includegraphics{regression_richesse.png}
+\caption{Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau}
+\label{fig:regression_richesse}
 \end{figure}
 
 Nous avons d'abord testé l'effet des différentes variables abiotiques
@@ -196,10 +193,9 @@ autres.
 
 \begin{figure}
 \centering
-\includegraphics{boxplot_richesse.pdf}
-\caption{Diagramme à moustache de la richesse spécifique des
-échantillons de benthos en fonction de la transparence de l'eau lors de
-l'échantillonnage. \label{fig:boxplot_richesse}}
+\includegraphics{boxplot_richesse.png}
+\caption{Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage.}
+\label{fig:boxplot_richesse}
 \end{figure}
 
 L'effet de la transparence a été visualisé en diagramme à moustache
@@ -210,9 +206,8 @@ communautés de benthos.
 \begin{figure}
 \centering
 \includegraphics{tableau_interaction.pdf}
-\caption{Tableau de la significativité des interactions entre les
-variables affectant la richesse spécifique des échantillons dans des
-régressions linéaires. \label{fig:tableau_interaction}}
+\caption{Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires.}
+\label{fig:tableau_interaction}
 \end{figure}
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les
@@ -222,10 +217,9 @@ en ce qui concerne la richesse spécifique des échantillons.
 
 \begin{figure}
 \centering
-\includegraphics{ordination_sites.pdf}
-\caption{PCoA des communautés de benthos échantillonnées par
-Biodiversité Québec en fonction du site.
-\textbackslash label\{fig:ordination\_sites}
+\includegraphics{ordination_sites.png}
+\caption{PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site.}
+\label{fig:ordination_sites}
 \end{figure}
 
 Finalement, la diversité beta a été observée à l'aide d'une ordination
@@ -237,8 +231,7 @@ composition même s'ils sont différents géographiquement, d'autres fois
 complètement différents.
 
 \hypertarget{discussion}{%
-\subsubsection*{Discussion}\label{discussion}}
-\addcontentsline{toc}{subsubsection}{Discussion}
+\subsubsection{Discussion}\label{discussion}}
 
 Les résultats de l'étude offrent une vision limitée des variables qui
 influent sur la diversité du benthos. Mise à part la température, aucun
@@ -284,12 +277,12 @@ s'expliquer par le fait que la similarité des communautés écologiques
 diminue avec la distance, mais des facteurs tels que l'échelle spatiale,
 les propriétés des organismes, la région d'étude et l'écosystème peuvent
 influencer cette relation pour rendre des sites semblables entre eux
-malgré la distance qui les sépare Soininen, McDonald, and Hillebrand
-(2007).
+malgré la distance qui les sépare (Soininen, McDonald, and Hillebrand
+2007).
 
-\showmatmethods
-\showacknow
-\pnasbreak
+\hypertarget{ruxe9fuxe9rences}{%
+\subsubsection*{Références}\label{ruxe9fuxe9rences}}
+\addcontentsline{toc}{subsubsection}{Références}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
@@ -316,10 +309,5 @@ Distance Decay of Similarity in Ecological Communities.''}
 \url{https://doi.org/10.1111/j.0906-7590.2007.04817.x}.
 
 \end{CSLReferences}
-
-
-
-% Bibliography
-% \bibliography{pnas-sample}
 
 \end{document}

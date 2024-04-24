@@ -1,8 +1,8 @@
 name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
 ajout_IDs|function|0bcc05e35f645f6b|||||||||||||||
 boxplot_rich|function|95adf16dbfff3b13|||||||||||||||
-boxplot_trans|stem|9e365f8268f7186c|abc38cec0d39b657|f9ccbbd99ecee49a|72299052||t19837.6376852689s|39a4ea80a937df4e|280|rds|local|vector|||0.08||
-boxplot_trans_change|stem|b09cd9ba3adb2628|be2fe59bd4af2dfc|ef46db3751d8e999|-1513292272||t19837.637572989s|1d635f53cb385f1d|65|rds|local|vector|||0.01||
+boxplot_trans|stem|9e365f8268f7186c|abc38cec0d39b657|e2132326c8370ae8|72299052||t19837.7006806926s|39a4ea80a937df4e|280|rds|local|vector|||0.01||
+boxplot_trans_change|stem|eedcd63cb3549499|be2fe59bd4af2dfc|ef46db3751d8e999|-1513292272||t19837.7012666367s|1d635f53cb385f1d|65|rds|local|vector|||0||
 classer_col|function|577894518e9d9e3f|||||||||||||||
 creation_bd|function|3ce8b9da2698c76c|||||||||||||||
 df_classe|stem|283d1ff97a7c190b|3b5e5bd30334f29b|6a991053b7517cdc|1953629488||t19837.634930296s|a050c68ae7bfc39d|9535|rds|local|vector|||0.67||
@@ -16,18 +16,18 @@ extract_rich|function|fe7dd39429d9f470|||||||||||||||
 fichier_SQL|stem|374f9662f8232f57|fc0d6619e7de2b32|0f8f861a217b1ce3|1460155912||t19837.634938055s|9dfd31c781e2fd5b|66|rds|local|vector|||0.44|Closing open result set, pending rows. There are 1 result in use. The connection will be released when they are closed|
 fus_fichiers|function|b5e69659e20352bc|||||||||||||||
 graph_rich|function|b5790ef3fb05d495|||||||||||||||
-graphs_richesse|stem|e0e9cb196f95dec6|3034759520379c61|63ae518e2eceb8a5|1719366590||t19837.6376839487s|ff026697d66e9a9f|75|rds|local|vector|||0.14||
-graphs_richesse_change|stem|ec69b3e40d69d4a1|be2fe59bd4af2dfc|ef46db3751d8e999|-1177215856||t19837.6375718763s|1d635f53cb385f1d|65|rds|local|vector|||2.31||
-interactions|stem|a26b7b62b37f5013|ffe52321a98a053d|7607b40dd9645b3c|1813311746||t19837.6376916813s|ee143e4c8ea21b7d|350|rds|local|vector|||0.51|width5, height3 ne sont probablement pas des valeurs en pixels|
-interactions_change|stem|040f5a4ba78a872e|be2fe59bd4af2dfc|ef46db3751d8e999|1414016859||t19837.6375726155s|1d635f53cb385f1d|65|rds|local|vector|||0.01||
+graphs_richesse|stem|e0e9cb196f95dec6|3034759520379c61|e2ca255862f1a588|1719366590||t19837.7006803192s|ff026697d66e9a9f|75|rds|local|vector|||0.06||
+graphs_richesse_change|stem|b53fc29ba6cba55f|be2fe59bd4af2dfc|ef46db3751d8e999|-1177215856||t19837.7012661057s|1d635f53cb385f1d|65|rds|local|vector|||1.11||
+interactions|stem|a26b7b62b37f5013|ffe52321a98a053d|bd6a7a240a1bc2bf|1813311746||t19837.7006836397s|ee143e4c8ea21b7d|350|rds|local|vector|||0.23||
+interactions_change|stem|ed2cf03ff98eeb4f|be2fe59bd4af2dfc|ef46db3751d8e999|1414016859||t19837.7012665189s|1d635f53cb385f1d|65|rds|local|vector|||0.01||
 nettoyage|function|c5e18a962a9a4d6d|||||||||||||||
-ordination|stem|3857ea71c9f08fde|b0ef0b2fad82609a|c57aa700ed2ca7aa|293788068||t19837.6377316411s|4fc290feced40d7a|832|rds|local|vector|||3.41|Removed 2 rows containing missing values or values outside the scale rangegeom_path.|
-ordination_change|stem|11d24e0caa89a625|be2fe59bd4af2dfc|ef46db3751d8e999|2146019040||t19837.6375734798s|93a4d4dc4116d568|64|rds|local|vector|||0||
+ordination|stem|3857ea71c9f08fde|b0ef0b2fad82609a|2c32d975a5928dd7|293788068||t19837.7006989144s|4fc290feced40d7a|832|rds|local|vector|||1.31|Removed 2 rows containing missing values or values outside the scale rangegeom_path.|
+ordination_change|stem|f8e69bfb1ff9b6d1|be2fe59bd4af2dfc|ef46db3751d8e999|2146019040||t19837.7012669236s|1d635f53cb385f1d|65|rds|local|vector|||0.02||
 ordination_sites|function|7ad93f80018d0e14|||||||||||||||
-rapport|stem|361a4674d535e36f|88f4a76fe1e5ff4b|ef46db3751d8e999|-1266156412|Rapport2.pdf*Rapport2.Rmd|t19837.63767699s|a581eb32cc8c6c57|259016|file|local|vector|||9.02|LaTeX Warning Reference figregression_richesse on page 2 undefined on input line 185.. LaTeX Warning Reference figboxplot_richesse on page 3 undefined on input line 192.. LaTeX Warning Reference figtableau_interaction on page 3 undefined on input line 199.. LaTeX Warning Reference figordination_sites on page 4 undefined on input line 206.. LaTeX Warning There were undefined references.|
+rapport|stem|1c221acf90c0c3db|d03e88e9037c1551|ef46db3751d8e999|-1266156412|rapport.pdf*rapport.Rmd|t19837.7006767844s||263726|file|local|vector|||7.65||LaTeX failed to compile rapport.tex. See httpsyihui.orgtinytexrdebugging for debugging tips. See rapport.log for more info.
 repertoire|stem|e81f02825410153b|c78d911a70aa0622|ef46db3751d8e999|1479107300||t19837.6314029918s|a44f74ecaf054496|60|rds|local|vector|||0||
-tab_inter|function|82033eb630b1df6c|||||||||||||||
-table_abondance|stem|9b7e61c9324f224e|1c7a3dd9a3651bbd|d37f63f6273eb6ca|-1423426999||t19837.6376820806s|1b9545636c97d6f0|3393|rds|local|vector|||0.03||
-table_abondance_change|stem|a7e06e5e160881e3|be2fe59bd4af2dfc|ef46db3751d8e999|1154102651||t19837.6375739315s|1d635f53cb385f1d|65|rds|local|vector|||0.02||
-table_richesse|stem|a8abcfd93dc84c4c|85f231a4ef5826f8|61306338bda8b223|553903527||t19837.6376812435s|3d6ef44d6b37d74c|1189|rds|local|vector|||0.05||
-table_richesse_change|stem|961671d5783055fd|be2fe59bd4af2dfc|ef46db3751d8e999|-380686868||t19837.6376790491s|1d635f53cb385f1d|65|rds|local|vector|||0||
+tab_inter|function|a4e7f846c1b6edb9|||||||||||||||
+table_abondance|stem|9b7e61c9324f224e|1c7a3dd9a3651bbd|56692cfe7ab015ee|-1423426999||t19837.7006795124s|1b9545636c97d6f0|3393|rds|local|vector|||0.02||
+table_abondance_change|stem|e43c9204196439a8|be2fe59bd4af2dfc|ef46db3751d8e999|1154102651||t19837.7012670824s|1d635f53cb385f1d|65|rds|local|vector|||0||
+table_richesse|stem|a8abcfd93dc84c4c|85f231a4ef5826f8|c01bacdb704e5d7f|553903527||t19837.700679073s|3d6ef44d6b37d74c|1189|rds|local|vector|||0.01||
+table_richesse_change|stem|081a9c2a8387e124|be2fe59bd4af2dfc|ef46db3751d8e999|-380686868||t19837.7006785207s|1d635f53cb385f1d|65|rds|local|vector|||0||
