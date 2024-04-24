@@ -96,9 +96,9 @@ list(
     command = ordination_sites(table_abondance),
     force = TRUE
   ),
-  Création du rapport RMarkdown
-  tarchetypes::tar_render(
+  #Création du rapport RMarkdown
+ tarchetypes::tar_render(
     name = rapport, 
-    command = "Rapport2.Rmd"
+    path = "Rapport2.Rmd"
   )
 )

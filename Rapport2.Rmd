@@ -32,7 +32,7 @@ Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur
 
 L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
 
-![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.pdf)[H]
+![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction}](tableau_interaction.png)[H]
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
 
