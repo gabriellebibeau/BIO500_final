@@ -4,8 +4,14 @@ graph_rich <- function(tbl_rich) {
   # Ces graphiques permettront aux lecteurs de visualiser nos résultats.
   # Les quatre graphiques sont insérés dans la même figure, car ils suivent la même analyse et le même type de régression. Cela permet de les comparer entre eux.
   
- # Ouvrir le fichier PNG
-  pdf("regression_richesse.pdf")
+  # Définir le dossier dans lequel l'image sera enregistrée
+  dossier_rapport <- "rapport"
+  
+  # Définir le chemin vers l'image créée
+  image <- file.path(dossier_rapport, "regression_richesse.pdf")
+  
+  # Ouvrir le fichier PNG
+  pdf(image, width = 4, height = 6)
   # Les quatres graphiques sont inclues dans la même image
   par(mfrow = c(2, 2)) 
   
