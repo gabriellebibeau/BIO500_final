@@ -11,7 +11,7 @@ graph_rich <- function(tbl_rich) {
   image <- file.path(dossier_rapport, "regression_richesse.pdf")
   
   # Ouvrir le fichier PNG
-  pdf(image)
+  pdf(image, width = 3.42)
   # Les quatres graphiques sont inclues dans la même image
   par(mfrow = c(2, 2)) 
   

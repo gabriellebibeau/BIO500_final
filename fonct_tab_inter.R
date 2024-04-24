@@ -52,7 +52,7 @@ tab_inter <- function(tbl_rich){
   image <- file.path(dossier_rapport, 'tableau_interaction.pdf')
   
   # Ouvrir le fichier PNG
-  pdf(image)
+  pdf(image, width = 3.42)
   gridExtra::grid.table(resultats)
   dev.off()
   
