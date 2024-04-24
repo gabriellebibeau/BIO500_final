@@ -22,8 +22,14 @@ corresponding_author:
 # For footer text
 lead_author_surname: BIO500
 
+author_contributions: |
+  Tous les auteurs ont contribué de façon égale.
+  
 abstract: |
   Dans le cadre d’un suivi de la biodiversité benthique, cette étude évalue l’impact de différentes variables environnementales sur la richesse spécifique de petits écosystèmes lotiques, les rivières et ruisseaux. Nous tentons d’évaluer si la profondeur du ruisseau, sa largeur, la température de son eau et sa transparence ainsi que la vitesse du courant sont corrélées avec la diversité d’espèces présentes dans le milieu. Nos tests statistiques ont révélé que seule la température influençait significativement la richesse spécifique parmi les variables abiotiques testées. Le site échantillonné semblait avoir un effet sur la composition de certaines communautés benthiques, mais pas toutes.
+
+significance: |
+  Authors must submit a 120-word maximum statement about the significance of their research paper written at a level understandable to an undergraduate educated scientist outside their field of speciality. The primary goal of the Significance Statement is to explain the relevance of the work in broad context to a broad readership. The Significance Statement appears in the paper itself and is required for all research papers.
 
 acknowledgements: |
   Merci à Victor Cameron et Benjamin Mercier sans qui ce projet n'aurait été possible.
