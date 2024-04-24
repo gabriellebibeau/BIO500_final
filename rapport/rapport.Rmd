@@ -1,5 +1,5 @@
 ---
-title: "L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux" lotiques
+title: "L'influence de l'environnement abiotique sur la richesse spécifique des petits milieux lotiques" 
 
 author:
   - name: Gabrielle Bibeau
@@ -65,20 +65,26 @@ Différentes analyses ont été performées sur les données pour répondre aux 
 
 ### Résultats {#résultats .unnumbered}
 
-![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. <span data-label="fig:regression_richesse"></span>](regression_richesse.png)
+![Régressions linéaires de la richesse en fonction de (A) la largeur de la rivière, (B) la profoncdeur de la rivière, (C) la vitesse du courant et (D) la température de l'eau. <span data-label="fig:regression_richesse"></span> width="100"](regression_richesse.png)
 \[fig:regression_richesse\]
 
 Nous avons d'abord testé l'effet des différentes variables abiotiques (largeur de la rivière, profondeur de la rivière, transparence de l'eau, température de l'eau et vitesse du courant) sur la richesse spécifique des échantillons analysés. Les régressions linéaires à la figure \ref{fig:regression_richesse} nous permettent d'observer un effet significatif pour la variable de la température, mais pas pour les autres. 
 
-![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. \label{fig:boxplot_richesse} alt >](boxplot_richesse.png)
+![Diagramme à moustache de la richesse spécifique des échantillons de benthos en fonction de la transparence de l'eau lors de l'échantillonnage. <span data-label="fig:boxplot_richesse"></span](boxplot_richesse.png)
+
+\[fig:boxplot_richesse\]
 
 L'effet de la transparence a été visualisé en diagramme à moustache (Figure \ref{fig:boxplot_richesse}). Il s'avère que cette variable n'affecte pas non plus significativement la richesse spécifique des communautés de benthos.
 
-![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. \label{fig:tableau_interaction} alt >](tableau_interaction.png)
+![Tableau de la significativité des interactions entre les variables affectant la richesse spécifique des échantillons dans des régressions linéaires. <span data-label="fig:tableau_interaction"></span](tableau_interaction.png)
+
+\[fig:tableau_interaction\]
 
 Ensuite, nous avons vérifié s'il y avait des interactions entre les variables. Selon le tableau de la figure \ref{fig:tableau_interaction}, il n'y a aucune interaction significative entre les variables abiotiques en ce qui concerne la richesse spécifique des échantillons.
 
-![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. \label{fig:ordination_sites} alt >](ordination_sites.png)
+![PCoA des communautés de benthos échantillonnées par Biodiversité Québec en fonction du site. <span data-label="fig:ordination_sites"></span](ordination_sites.png)
+
+\[fig:ordination_sites\]
 
 Finalement, la diversité beta a été observée à l'aide d'une ordination PCoA. À l'oeil, sur la figure \ref{fig:ordination_sites}, certains sites semblent avoir des commuanutés de benthos similaires entre les différentes périodes d'échantillonnages, alors que d'autres sont plutôt variées. Entre eux, les sites sont parfois très proches en termes de composition même s'ils sont différents géographiquement, d'autres fois complètement différents.  
 
