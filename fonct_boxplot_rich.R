@@ -13,5 +13,5 @@ boxplot_rich <- function(tbl_rich) {
   
   dev.off() #fermeture et enregistrement de la figure
   
-  return(plot_transparence)
+  return('boxplot_richesse.png')
 }

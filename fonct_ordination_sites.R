@@ -68,7 +68,7 @@ ordination_sites <- function(tbl_abd){ #on rentre la table d'abondance
     
     ggsave('ordination_sites.png', ordination, width = 6) #enregistrement
     
-    return(pcoa)
+    return('ordination_sites.png')
   
 } #fin fonction
 

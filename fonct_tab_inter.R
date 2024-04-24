@@ -51,6 +51,6 @@ tab_inter <- function(tbl_rich){
   gridExtra::grid.table(resultats)
   dev.off()
   
-  return(resultats)
+  return('tableau_interaction.pdf')
 
 } #fin fonction

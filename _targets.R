@@ -24,6 +24,7 @@ list(
   tar_target(
     name = repertoire,
     command = "benthos", 
+    format = "file"
   ),
   #Fusionner les fichiers
   tar_target(
@@ -76,24 +77,28 @@ list(
   tarchetypes::tar_force(
     name = graphs_richesse,
     command = graph_rich(table_richesse),
+    format = "file",
     force = TRUE
   ),
   #Création du boxplot de la transparence 
   tarchetypes::tar_force(
-    name = boxplot_trans,
+    name = boxplot_transp,
     command = boxplot_rich(table_richesse),
+    format = "file",
     force = TRUE
   ),
   #Création du tableau des interactions 
   tarchetypes::tar_force(
     name = interactions,
     command = tab_inter(table_richesse),
+    format = "file",
     force = TRUE
   ),
   #Création de l'ordination
   tarchetypes::tar_force(
     name = ordination,
     command = ordination_sites(table_abondance),
+    format = "file",
     force = TRUE
   ),
   #Création du rapport RMarkdown
