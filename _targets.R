@@ -98,7 +98,7 @@ list(
   )#,
   #Création du rapport RMarkdown
   #tar_render(
-    #rapport, 
-    #"rapport/rapport.Rmd"
+    #name = rapport, 
+    #command = "rapport/rapport.Rmd"
   #)
 )
